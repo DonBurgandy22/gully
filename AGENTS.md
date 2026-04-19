@@ -88,3 +88,9 @@ The following tools are available for task execution:
 
 Use these tools to execute tasks. Do not narrate what you would do — use the tools and report real results.
 
+
+## Git rules
+- Default branch is always: main
+- Never commit to master
+- Remote is always: https://github.com/DonBurgandy22/gully.git
+- Always push to origin main
