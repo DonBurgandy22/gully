@@ -54,3 +54,9 @@
 - Tool names are: read, write, exec (not read_file/write_file/run_command)
 - Clear session if history exceeds ~100 messages
 - Use deepseek/deepseek-chat for multi-step tasks
+## Hermes
+- Hermes exists as Burgandy's sidecar learning layer.
+- Hermes is proposal-only.
+- Hermes is invoked after task completion or postmortem.
+- Hermes never runs during active repair/debug.
+- Hermes state must persist through GitHub backup.

@@ -94,3 +94,9 @@ Use these tools to execute tasks. Do not narrate what you would do — use the too
 - Never commit to master
 - Remote is always: https://github.com/DonBurgandy22/gully.git
 - Always push to origin main
+## Hermes rules
+- Invoke Hermes only after task completion or postmortem.
+- Never invoke Hermes during active debugging or repair.
+- Hermes is proposal-only.
+- Hermes must not directly edit core files.
+- Do not run Hermes in parallel with another heavy repair/debug thread.
