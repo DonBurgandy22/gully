@@ -1,0 +1,10 @@
+# Structural Analysis Tool Requirements
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+
+# Development
+pytest>=6.0
+black>=22.0
+flake8>=4.0
+mypy>=0.9

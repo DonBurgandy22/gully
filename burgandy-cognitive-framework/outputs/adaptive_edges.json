@@ -1,0 +1,447 @@
+{
+  "adaptive_edges": [
+    {
+      "source": "mathematics",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.95,
+      "usage_count": 19,
+      "last_used": "2026-04-17T12:15:08.708850",
+      "created": "2026-04-17T11:29:24.788770"
+    },
+    {
+      "source": "logic",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.44999999999999996,
+      "usage_count": 6,
+      "last_used": "2026-04-17T12:15:08.707716",
+      "created": "2026-04-17T11:43:41.760737"
+    },
+    {
+      "source": "variable_mapping",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T11:50:39.363831",
+      "created": "2026-04-17T11:50:39.363676"
+    },
+    {
+      "source": "abstraction",
+      "target": "probabilistic_reasoning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.6,
+      "usage_count": 9,
+      "last_used": "2026-04-17T12:07:46.824005",
+      "created": "2026-04-17T11:54:07.157077"
+    },
+    {
+      "source": "abstraction",
+      "target": "symbolic_reasoning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.35,
+      "usage_count": 4,
+      "last_used": "2026-04-17T22:37:09.718566",
+      "created": "2026-04-17T11:54:08.163223"
+    },
+    {
+      "source": "probabilistic_reasoning",
+      "target": "symbolic_reasoning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.3,
+      "usage_count": 3,
+      "last_used": "2026-04-17T12:07:46.824223",
+      "created": "2026-04-17T11:54:08.163426"
+    },
+    {
+      "source": "logic",
+      "target": "systems_thinking",
+      "baseline_weight": 0.2,
+      "current_weight": 0.44999999999999996,
+      "usage_count": 6,
+      "last_used": "2026-04-17T14:56:23.142155",
+      "created": "2026-04-17T12:05:04.922049"
+    },
+    {
+      "source": "mathematics",
+      "target": "systems_thinking",
+      "baseline_weight": 0.2,
+      "current_weight": 0.44999999999999996,
+      "usage_count": 6,
+      "last_used": "2026-04-17T14:56:23.142753",
+      "created": "2026-04-17T12:05:04.922243"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.3,
+      "usage_count": 3,
+      "last_used": "2026-04-17T12:15:08.708104",
+      "created": "2026-04-17T12:12:08.288373"
+    },
+    {
+      "source": "working_memory",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.3,
+      "usage_count": 3,
+      "last_used": "2026-04-17T12:15:08.708657",
+      "created": "2026-04-17T12:12:08.289375"
+    },
+    {
+      "source": "logic",
+      "target": "logic",
+      "baseline_weight": 0.2,
+      "current_weight": 0.3,
+      "usage_count": 3,
+      "last_used": "2026-04-17T12:15:08.707495",
+      "created": "2026-04-17T12:12:08.289764"
+    },
+    {
+      "source": "mathematics",
+      "target": "structural_analysis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.202778",
+      "created": "2026-04-17T14:18:03.202553"
+    },
+    {
+      "source": "engineering_decisions",
+      "target": "structural_analysis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.203110",
+      "created": "2026-04-17T14:18:03.203099"
+    },
+    {
+      "source": "comprehension",
+      "target": "structural_analysis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.203446",
+      "created": "2026-04-17T14:18:03.203431"
+    },
+    {
+      "source": "engineering_decisions",
+      "target": "mathematics",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.203733",
+      "created": "2026-04-17T14:18:03.203725"
+    },
+    {
+      "source": "comprehension",
+      "target": "engineering_decisions",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.204008",
+      "created": "2026-04-17T14:18:03.204000"
+    },
+    {
+      "source": "comprehension",
+      "target": "mathematics",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:18:03.204277",
+      "created": "2026-04-17T14:18:03.204271"
+    },
+    {
+      "source": "error_detection",
+      "target": "symbolic_reasoning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:43:39.011444",
+      "created": "2026-04-17T14:43:39.011437"
+    },
+    {
+      "source": "logic",
+      "target": "symbolic_reasoning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.3,
+      "usage_count": 3,
+      "last_used": "2026-04-17T22:37:09.720658",
+      "created": "2026-04-17T14:43:39.011630"
+    },
+    {
+      "source": "error_detection",
+      "target": "logic",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:43:39.011820",
+      "created": "2026-04-17T14:43:39.011816"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "logic",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T14:56:23.142567",
+      "created": "2026-04-17T14:56:23.142554"
+    },
+    {
+      "source": "abstraction",
+      "target": "language_comprehension",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:09.719269",
+      "created": "2026-04-17T22:37:09.718971"
+    },
+    {
+      "source": "abstraction",
+      "target": "logic",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:09.720216",
+      "created": "2026-04-17T22:37:09.720182"
+    },
+    {
+      "source": "abstraction",
+      "target": "mathematics",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:09.720467",
+      "created": "2026-04-17T22:37:09.720433"
+    },
+    {
+      "source": "self_monitoring",
+      "target": "self_optimization",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:16.727081",
+      "created": "2026-04-17T22:37:16.727036"
+    },
+    {
+      "source": "error_correction",
+      "target": "self_monitoring",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:16.727339",
+      "created": "2026-04-17T22:37:16.727306"
+    },
+    {
+      "source": "error_detection",
+      "target": "self_optimization",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:16.727583",
+      "created": "2026-04-17T22:37:16.727549"
+    },
+    {
+      "source": "error_correction",
+      "target": "error_detection",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:16.727820",
+      "created": "2026-04-17T22:37:16.727786"
+    },
+    {
+      "source": "error_detection",
+      "target": "self_monitoring",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:16.728051",
+      "created": "2026-04-17T22:37:16.728018"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "strategy_adaptation",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.734636",
+      "created": "2026-04-17T22:37:23.734583"
+    },
+    {
+      "source": "synthesis",
+      "target": "systems_thinking",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.734970",
+      "created": "2026-04-17T22:37:23.734927"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "synthesis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.735226",
+      "created": "2026-04-17T22:37:23.735186"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "synthesis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.735457",
+      "created": "2026-04-17T22:37:23.735423"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "planning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.735683",
+      "created": "2026-04-17T22:37:23.735652"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "systems_thinking",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.735906",
+      "created": "2026-04-17T22:37:23.735877"
+    },
+    {
+      "source": "planning",
+      "target": "synthesis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.736300",
+      "created": "2026-04-17T22:37:23.736270"
+    },
+    {
+      "source": "planning",
+      "target": "strategy_adaptation",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.736519",
+      "created": "2026-04-17T22:37:23.736490"
+    },
+    {
+      "source": "abstraction",
+      "target": "synthesis",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.736739",
+      "created": "2026-04-17T22:37:23.736710"
+    },
+    {
+      "source": "abstraction",
+      "target": "planning",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.736961",
+      "created": "2026-04-17T22:37:23.736928"
+    },
+    {
+      "source": "planning",
+      "target": "systems_thinking",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.737181",
+      "created": "2026-04-17T22:37:23.737150"
+    },
+    {
+      "source": "abstraction",
+      "target": "strategy_adaptation",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:23.737400",
+      "created": "2026-04-17T22:37:23.737370"
+    },
+    {
+      "source": "prioritisation",
+      "target": "task_decomposition",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.744050",
+      "created": "2026-04-17T22:37:30.743994"
+    },
+    {
+      "source": "planning",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.744375",
+      "created": "2026-04-17T22:37:30.744336"
+    },
+    {
+      "source": "decision_making",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.744619",
+      "created": "2026-04-17T22:37:30.744587"
+    },
+    {
+      "source": "task_decomposition",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.744851",
+      "created": "2026-04-17T22:37:30.744821"
+    },
+    {
+      "source": "decision_making",
+      "target": "prioritisation",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.745091",
+      "created": "2026-04-17T22:37:30.745060"
+    },
+    {
+      "source": "prioritisation",
+      "target": "working_memory",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.745324",
+      "created": "2026-04-17T22:37:30.745294"
+    },
+    {
+      "source": "planning",
+      "target": "prioritisation",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.745736",
+      "created": "2026-04-17T22:37:30.745701"
+    },
+    {
+      "source": "decision_making",
+      "target": "task_decomposition",
+      "baseline_weight": 0.2,
+      "current_weight": 0.25,
+      "usage_count": 2,
+      "last_used": "2026-04-17T22:37:30.745968",
+      "created": "2026-04-17T22:37:30.745936"
+    }
+  ],
+  "last_decay_time": "2026-04-17T11:29:24.788451",
+  "updated": "2026-04-17T22:37:30.746240"
+}

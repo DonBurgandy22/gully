@@ -1,0 +1,40 @@
+{
+  "framework_name": "Burgandy Cognitive Framework",
+  "version": "1.0",
+  "owner": "Daryl Keenan Mack",
+  "project": "Burgandy",
+  "activation_engine": {
+    "decay_per_step": 0.1,
+    "max_activation_cap": 0.95,
+    "max_iterations": 20,
+    "max_loop_visits": 3,
+    "seed_activation_scale": 1.0
+  },
+  "visualization": {
+    "node_size_multiplier": 40,
+    "edge_width_multiplier": 5,
+    "layer_colors": {
+      "1": "#4A90D9",
+      "2": "#E67E22",
+      "3": "#9B59B6",
+      "4": "#27AE60",
+      "5": "#E74C3C",
+      "6": "#95A5A6"
+    },
+    "html_output": "outputs/burgandy_network.html",
+    "png_output": "outputs/burgandy_network.png"
+  },
+  "paths": {
+    "data_dir": "data",
+    "outputs_dir": "outputs",
+    "docs_dir": "docs"
+  },
+  "layers": {
+    "1": "Foundational Cognition",
+    "2": "Reasoning",
+    "3": "Formal Manipulation",
+    "4": "Executive Cognition",
+    "5": "Meta / Recursive Cognition",
+    "6": "Burgandy Domain Clusters"
+  }
+}

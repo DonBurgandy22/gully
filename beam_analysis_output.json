@@ -1,0 +1,175 @@
+{
+  "beam": {
+    "geometry": {
+      "width": 0.3,
+      "depth": 0.5,
+      "length": 6.0,
+      "cover": 0.025
+    },
+    "materials": {
+      "concrete_fc": 30,
+      "concrete_ec": 30000.0,
+      "steel_fy": 500,
+      "steel_es": 200000.0
+    },
+    "reinforcement": {
+      "bars_top": [],
+      "bars_bottom": [],
+      "spacing": 0.15
+    },
+    "loads": [
+      {
+        "type": "udl",
+        "magnitude": 5.0,
+        "load_type": "live"
+      },
+      {
+        "type": "point",
+        "position": 3.0,
+        "magnitude": 20.0,
+        "load_type": "live"
+      },
+      {
+        "type": "udl",
+        "magnitude": 3531.6000000000004,
+        "load_type": "dead"
+      }
+    ],
+    "results": {
+      "max_moment": 15892.2,
+      "max_shear": 10594.800000000001,
+      "max_deflection": 0.000635688,
+      "bending_stress": 1271376.0000000002,
+      "shear_stress": 105948.00000000001,
+      "loads": [
+        {
+          "type": "udl",
+          "magnitude": 5.0,
+          "load_type": "live"
+        },
+        {
+          "type": "point",
+          "position": 3.0,
+          "magnitude": 20.0,
+          "load_type": "live"
+        },
+        {
+          "type": "udl",
+          "magnitude": 3531.6000000000004,
+          "load_type": "dead"
+        }
+      ],
+      "geometry": {
+        "width": 0.3,
+        "depth": 0.5,
+        "length": 6.0,
+        "area": 0.15,
+        "inertia": 0.0031249999999999997
+      },
+      "materials": {
+        "concrete_fc": 30,
+        "concrete_ec": 30000.0,
+        "steel_fy": 500
+      }
+    }
+  },
+  "analysis": {
+    "analysis": {
+      "max_moment": 15892.2,
+      "max_shear": 10594.800000000001,
+      "max_deflection": 0.000635688,
+      "bending_stress": 1271376.0000000002,
+      "shear_stress": 105948.00000000001,
+      "loads": [
+        {
+          "type": "udl",
+          "magnitude": 5.0,
+          "load_type": "live"
+        },
+        {
+          "type": "point",
+          "position": 3.0,
+          "magnitude": 20.0,
+          "load_type": "live"
+        },
+        {
+          "type": "udl",
+          "magnitude": 3531.6000000000004,
+          "load_type": "dead"
+        }
+      ],
+      "geometry": {
+        "width": 0.3,
+        "depth": 0.5,
+        "length": 6.0,
+        "area": 0.15,
+        "inertia": 0.0031249999999999997
+      },
+      "materials": {
+        "concrete_fc": 30,
+        "concrete_ec": 30000.0,
+        "steel_fy": 500
+      }
+    },
+    "design": {
+      "required_area": 0.0057,
+      "minimum_area": 0.00018524999999999998,
+      "maximum_area": 0.0057,
+      "suggested_bars": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "neutral_axis_depth": 0.024459726038239243,
+      "shear_reinforcement_required": true,
+      "shear_stress": 74349.47368421053,
+      "concrete_shear_capacity": 106.6098888941411,
+      "design_moment": 15892.2
+    },
+    "deflection": {
+      "actual_deflection": 0.000635688,
+      "limit": 0.024,
+      "ratio": 0.026487,
+      "ok": true,
+      "exceeds_limit": false
+    },
+    "recommendations": [
+      {
+        "issue": "Reinforcement approaching maximum limit",
+        "recommendation": "Consider increasing beam dimensions or using higher strength materials",
+        "priority": "medium",
+        "code_reference": "SANS 10100-1: Maximum reinforcement",
+        "calculation": null
+      },
+      {
+        "issue": "Shear reinforcement required",
+        "recommendation": "Provide shear links (stirrups) at appropriate spacing",
+        "priority": "high",
+        "code_reference": "SANS 10100-1: Shear design",
+        "calculation": null
+      }
+    ],
+    "summary": {
+      "design_status": "OK",
+      "safety_factor": 10.618416581719332,
+      "efficiency": 1.0,
+      "cost_estimate": {
+        "concrete": 2250.0,
+        "steel": 6711.750000000001,
+        "formwork": 3000.0,
+        "total": 11961.75,
+        "per_meter": 1993.625
+      },
+      "key_issues": 1,
+      "optimization_opportunities": 1
+    }
+  },
+  "timestamp": "2026-04-17T12:15:00Z",
+  "version": "1.0",
+  "generated_by": "Burgandy AI Structural Assistant"
+}

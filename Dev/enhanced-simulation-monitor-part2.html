@@ -1,0 +1,503 @@
+                <div class="stat">
+                    <span class="stat-label">Success Threshold:</span>
+                    <span class="stat-value" id="successThreshold">R20M → R1M</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Success Rate:</span>
+                    <span class="stat-value" id="successRate">15%</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🧠 Learning Progress</h2>
+                <div class="stat">
+                    <span class="stat-label">Decision Patterns:</span>
+                    <span class="stat-value" id="decisionPatterns">1,247</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Optimization Cycles:</span>
+                    <span class="stat-value" id="optimizationCycles">42</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">IQ Growth:</span>
+                    <span class="stat-value" id="iqGrowth">+18%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Learning Efficiency:</span>
+                    <span class="stat-value" id="learningEfficiency">65%</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🚀 Next Target</h2>
+                <div class="stat">
+                    <span class="stat-label">Target Simulations:</span>
+                    <span class="stat-value" id="targetSimulations">1,000,000,000</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Estimated Time:</span>
+                    <span class="stat-value" id="estimatedTime">~33 minutes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Memory Required:</span>
+                    <span class="stat-value" id="memoryRequired">~2GB</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Status:</span>
+                    <span class="stat-value" id="nextTargetStatus">READY</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="control-panel">
+            <h2>🎯 Enhanced Control Panel</h2>
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="simulationCount">Simulation Count:</label>
+                    <input type="range" id="simulationCount" min="1000000" max="1000000000" step="1000000" value="1000000000">
+                    <div class="stat">
+                        <span class="stat-label">Selected:</span>
+                        <span class="stat-value" id="selectedCount">1,000,000,000</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="successThresholdInput">Success Threshold (ZAR):</label>
+                    <input type="number" id="successThresholdInput" min="1000000" max="100000000" step="1000000" value="1000000">
+                    <div class="stat">
+                        <span class="stat-label">Target:</span>
+                        <span class="stat-value" id="selectedThreshold">R1,000,000</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="decisionComplexity">Decision Complexity:</label>
+                    <select id="decisionComplexity">
+                        <option value="simple">Simple (Basic decisions)</option>
+                        <option value="medium" selected>Medium (Realistic scenarios)</option>
+                        <option value="complex">Complex (Advanced optimization)</option>
+                        <option value="extreme">Extreme (1B simulations)</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="learningRate">Learning Rate:</label>
+                    <input type="range" id="learningRate" min="1" max="100" step="1" value="65">
+                    <div class="stat">
+                        <span class="stat-label">Rate:</span>
+                        <span class="stat-value" id="selectedLearningRate">65%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" id="runSimulationBtn" onclick="runSimulation()">
+                    🚀 Run 1B Simulations
+                </button>
+                <button class="btn btn-secondary" id="exportResultsBtn" onclick="exportResults()">
+                    📥 Export Results
+                </button>
+                <button class="btn btn-success" id="analyzePatternsBtn" onclick="analyzePatterns()">
+                    🧠 Analyze Patterns
+                </button>
+                <button class="btn btn-danger" id="clearLogsBtn" onclick="clearLogs()">
+                    🗑️ Clear Logs
+                </button>
+            </div>
+            
+            <div class="shortcut-hint">
+                Keyboard Shortcuts: Ctrl+R (Run) | Ctrl+E (Export) | Ctrl+L (Clear) | Ctrl+A (Analyze)
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>📈 Net Worth Growth Chart</h3>
+                <div class="chart-container">
+                    <canvas id="netWorthChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>📊 Decision Pattern Radar</h3>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>🎯 Success Rate by Complexity</h3>
+                <div class="chart-container">
+                    <canvas id="successRateChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>⚡ Simulation Performance</h3>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="live-monitor">
+            <h2>📊 Live Simulation Monitor Panel</h2>
+            <div class="log-container" id="logContainer">
+                <div class="log-entry log-info">
+                    <span class="log-icon">ℹ️</span>
+                    <span class="log-time">08:02:17</span>
+                    <span class="log-message">System initialized. Ready for 1 billion simulations.</span>
+                </div>
+                <div class="log-entry log-success">
+                    <span class="log-icon">✅</span>
+                    <span class="log-time">08:02:15</span>
+                    <span class="log-message">Enhanced simulation monitor loaded successfully.</span>
+                </div>
+                <div class="log-entry log-warning">
+                    <span class="log-icon">⚠️</span>
+                    <span class="log-time">08:02:10</span>
+                    <span class="log-message">Previous tunnel expired. New tunnel will be created.</span>
+                </div>
+                <div class="log-entry log-info">
+                    <span class="log-icon">📊</span>
+                    <span class="log-time">08:02:05</span>
+                    <span class="log-message">Charts initialized with 1M simulation data.</span>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="addLog('info', 'Manual log entry added')">
+                    📝 Add Log
+                </button>
+                <button class="btn btn-secondary" onclick="simulateProgress()">
+                    ⚡ Simulate Progress
+                </button>
+                <button class="btn btn-success" onclick="loadRealData()">
+                    🔄 Load Real Data
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-access">
+            <h2>📱 Mobile Access</h2>
+            <p>Use this URL to access from your phone:</p>
+            <div class="url-display" id="currentUrl">https://burgandy-sim-enhanced.loca.lt</div>
+            <p>Scan QR code or click link to open on mobile device</p>
+            <div class="qr-container">
+                <div id="qrcode"></div>
+            </div>
+            <p>Last updated: <span id="timestamp">3/31/2026, 8:02:17 AM</span></p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+        // Initialize variables
+        let simulationRunning = false;
+        let simulationProgress = 0;
+        let logEntries = [];
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimestamp();
+            initializeCharts();
+            setupEventListeners();
+            generateQRCode();
+            setupKeyboardShortcuts();
+        });
+        
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('timestamp').textContent = now.toLocaleString();
+        }
+        
+        function initializeCharts() {
+            // Net Worth Growth Chart
+            const netWorthCtx = document.getElementById('netWorthChart').getContext('2d');
+            new Chart(netWorthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Simulated Net Worth (ZAR)',
+                        data: [50000, 120000, 250000, 450000, 750000, 1200000, 1800000, 2500000, 3500000, 5000000, 7500000, 10000000],
+                        borderColor: '#00dbde',
+                        backgroundColor: 'rgba(0, 219, 222, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'white'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'white',
+                                callback: function(value) {
+                                    return 'R' + (value / 1000000).toFixed(1) + 'M';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Radar Chart
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Investment', 'Savings', 'Risk', 'Growth', 'Stability', 'Innovation'],
+                    datasets: [
+                        {
+                            label: 'Optimal Pattern',
+                            data: [90, 85, 75, 95, 80, 70],
+                            borderColor: '#00dbde',
+                            backgroundColor: 'rgba(0, 219, 222, 0.2)',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#00dbde'
+                        },
+                        {
+                            label: 'Current Pattern',
+                            data: [65, 70, 60, 75, 85, 55],
+                            borderColor: '#fc00ff',
+                            backgroundColor: 'rgba(252, 0, 255, 0.2)',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#fc00ff'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            pointLabels: {
+                                color: 'white'
+                            },
+                            ticks: {
+                                color: 'white',
+                                backdropColor: 'transparent'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Success Rate Chart
+            const successCtx = document.getElementById('successRateChart').getContext('2d');
+            new Chart(successCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Simple', 'Medium', 'Complex', 'Extreme'],
+                    datasets: [{
+                        label: 'Success Rate (%)',
+                        data: [85, 65, 45, 15],
+                        backgroundColor: [
+                            'rgba(0, 176, 155, 0.7)',
+                            'rgba(0, 219, 222, 0.7)',
+                            'rgba(252, 0, 255, 0.7)',
+                            'rgba(255, 65, 108, 0.7)'
+                        ],
+                        borderColor: [
+                            '#00b09b',
+                            '#00dbde',
+                            '#fc00ff',
+                            '#ff416c'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'white'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'white',
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Performance Chart
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            new Chart(performanceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completed', 'In Progress', 'Failed', 'Queued'],
+                    datasets: [{
+                        data: [85, 10, 3, 2],
+                        backgroundColor: [
+                            '#00b09b',
+                            '#00dbde',
+                            '#ff416c',
+                            '#fc00ff'
+                        ],
+                        borderColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: 'white',
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function setupEventListeners() {
+            // Simulation count slider
+            const simulationCount = document.getElementById('simulationCount');
+            const selectedCount = document.getElementById('selectedCount');
+            
+            simulationCount.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                selectedCount.textContent = value.toLocaleString();
+                
+                // Update estimated time based on count
+                const estimatedTime = document.getElementById('estimatedTime');
+                const minutes = Math.round((value / 60000) * 2); // Based on 60k/sec rate
+                estimatedTime.textContent = `~${minutes} minutes`;
+            });
+            
+            // Success threshold input
+            const successThreshold = document.getElementById('successThresholdInput');
+            const selectedThreshold = document.getElementById('selectedThreshold');
+            
+            successThreshold.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                selectedThreshold.textContent = `R${value.toLocaleString()}`;
+            });
+            
+            // Learning rate slider
+            const learningRate = document.getElementById('learningRate');
+            const selectedLearningRate = document.getElementById('selectedLearningRate');
+            
+            learningRate.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                selectedLearningRate.textContent = `${value}%`;
+            });
+        }
+        
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey) {
+                    switch(e.key.toLowerCase()) {
+                        case 'r':
+                            e.preventDefault();
+                            runSimulation();
+                            break;
+                        case 'e':
+                            e.preventDefault();
+                            exportResults();
+                            break;
+                        case 'l':
+                            e.preventDefault();
+                            clearLogs();
+                            break;
+                        case 'a':
+                            e.preventDefault();
+                            analyzePatterns();
+                            break;
+                    }
+                }
+            });
+        }
+        
+        function generateQRCode() {
+            const currentUrl = window.location.href;
+            document.getElementById('currentUrl').textContent = currentUrl;
+            
+            // Generate QR code
+            const qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: currentUrl,
+                width: 150,
+                height: 150,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+        
+        function runSimulation() {
+            if (simulationRunning) {
+                addLog('warning', 'Simulation already running');
+                return;
+            }
+            
+            simulationRunning = true;
+            simulationProgress = 0;
+            
+            const simulationCount = parseInt(document.getElementById('simulationCount').value);
+            const successThreshold = parseInt(document.getElementById('successThresholdInput').value);
+            const complexity = document.getElementById('decisionComplexity').value;
+            
+            // Show loading screen
+            document.getElementById('loading').style.display = 'flex';

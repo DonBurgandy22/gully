@@ -1,0 +1,976 @@
+2026-03-28 23:52:04 RESTART - context: 70% - task: Auto-restart trigger - trigger: 70%
+2026-03-28 23:55:20 RESTART - context: 70% - task: Auto-restart trigger - trigger: 70%
+2026-03-28 23:55:40 RESTART - SUCCESS - gateway restarted
+[2026-03-29 00:12:26] AUTO-RESTART TRIGGERED
+[2026-03-29 00:12:26] Clearing session files...
+[2026-03-29 00:12:26] Sessions cleared
+[2026-03-29 00:12:26] Restarting gateway...
+[2026-03-29 00:12:54] Restart complete
+[2026-03-29 00:17:50] AUTO-RESTART TRIGGERED
+[2026-03-29 00:17:50] Clearing session files...
+[2026-03-29 00:17:50] Sessions cleared
+[2026-03-29 00:17:50] Restarting gateway...
+[2026-03-29 00:27:05] AUTO-RESTART TRIGGERED
+[2026-03-29 00:27:05] Clearing session files...
+[2026-03-29 00:27:05] Sessions cleared
+[2026-03-29 00:27:05] Restarting gateway...
+[2026-03-29 00:27:18] Restart complete
+[2026-03-29 00:35:55] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 00:35:55] Saved session-summary.md
+[2026-03-29 00:35:55] Appended to memory\2026-03-29.md
+[2026-03-29 00:35:55] Updated save-log.txt
+[2026-03-29 00:35:55] Memory save completed - ready for restart
+[2026-03-29 00:36:13] 🚀 COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 00:36:13] Step 1/3: Saving memory...
+[2026-03-29 00:36:13] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 00:36:13] Saved session-summary.md
+[2026-03-29 00:36:13] Appended to memory\2026-03-29.md
+[2026-03-29 00:36:13] Updated save-log.txt
+[2026-03-29 00:36:13] Memory save completed - ready for restart
+[2026-03-29 00:36:13] ✅ Memory saved successfully
+[2026-03-29 00:36:13] Step 2/3: Clearing session files...
+[2026-03-29 00:36:13] Cleared 1 session files
+[2026-03-29 00:36:13] Step 3/3: Restarting gateway...
+[2026-03-29 00:36:14] ❌ Restart error: This command cannot be run due to the error: %1 is not a valid Win32 application.
+[2026-03-29 00:42:01] Context monitor error: Unable to connect to the remote server
+[2026-03-29 01:09:36] 🚀 COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 01:09:36] Step 1/3: Saving memory...
+[2026-03-29 01:09:36] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:09:36] Saved session-summary.md
+[2026-03-29 01:09:36] Appended to memory\2026-03-29.md
+[2026-03-29 01:09:36] Updated save-log.txt
+[2026-03-29 01:09:36] Memory save completed - ready for restart
+[2026-03-29 01:09:36] ✅ Memory saved successfully
+[2026-03-29 01:09:36] Step 2/3: Clearing session files...
+[2026-03-29 01:09:36] Cleared 2 session files
+[2026-03-29 01:09:36] Step 3/3: Restarting gateway...
+[2026-03-29 01:11:01] Context monitor error: Unable to connect to the remote server
+[2026-03-29 01:13:43] SKIP - Restart already in progress (lock file age: 247.4496921 seconds)
+[2026-03-29 01:13:59] 🚀 COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 01:13:59] Step 1/3: Saving memory...
+[2026-03-29 01:13:59] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:13:59] Saved session-summary.md
+[2026-03-29 01:13:59] Appended to memory\2026-03-29.md
+[2026-03-29 01:13:59] Updated save-log.txt
+[2026-03-29 01:13:59] Memory save completed - ready for restart
+[2026-03-29 01:13:59] ✅ Memory saved successfully
+[2026-03-29 01:13:59] Step 2/3: Clearing session files...
+[2026-03-29 01:13:59] Cleared 1 session files
+[2026-03-29 01:13:59] Step 3/3: Restarting gateway...
+[2026-03-29 01:13:59] No gateway process found (may already be stopped)
+[2026-03-29 01:14:05] ✅ Restart completed successfully - gateway responding
+[2026-03-29 01:14:05] 🧠 Memory preserved - Burgundy will resume with full context
+[2026-03-29 01:14:49] AUTO-RESTART TRIGGERED
+[2026-03-29 01:14:49] Memory save � check session-summary.md
+[2026-03-29 01:14:49] Sessions cleared (1 files)
+[2026-03-29 01:14:49] Restarting gateway...
+[2026-03-29 01:15:02] Restart complete
+[2026-03-29 01:31:26] COMPLETE MEMORY SAVE STARTED (All MD files)
+[2026-03-29 01:31:26] Saved session-summary.md
+[2026-03-29 01:31:26] Appended to memory\2026-03-29.md
+[2026-03-29 01:31:26] Updated claude-diagnostic-program.md
+[2026-03-29 01:31:26] Preserving: AGENTS.md (30104 bytes)
+[2026-03-29 01:31:26] Preserving: SOUL.md (2271 bytes)
+[2026-03-29 01:31:26] Preserving: USER.md (1989 bytes)
+[2026-03-29 01:31:26] Preserving: MEMORY.md (13076 bytes)
+[2026-03-29 01:31:26] Preserving: TOOLS.md (1018 bytes)
+[2026-03-29 01:31:26] Preserving: IDENTITY.md (402 bytes)
+[2026-03-29 01:31:26] Updated save-log.txt
+[2026-03-29 01:31:26] âœ… Complete memory save finished - All MD files preserved
+[2026-03-29 01:31:37] ðŸš€ COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 01:31:37] Step 1/3: Saving memory...
+[2026-03-29 01:31:37] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:31:37] Saved session-summary.md
+[2026-03-29 01:31:37] Appended to memory\2026-03-29.md
+[2026-03-29 01:31:37] Updated claude-diagnostic-program.md
+[2026-03-29 01:31:37] Updated save-log.txt
+[2026-03-29 01:31:37] Memory save completed - ready for restart
+[2026-03-29 01:31:37] âœ… Memory saved successfully
+[2026-03-29 01:31:37] Step 2/3: Clearing session files...
+[2026-03-29 01:31:37] Cleared 1 session files
+[2026-03-29 01:31:37] Step 3/3: Restarting gateway...
+[2026-03-29 01:31:37] No gateway process found (may already be stopped)
+[2026-03-29 01:31:43] âœ… Restart completed successfully - gateway responding
+[2026-03-29 01:31:43] ðŸ§  Memory preserved - Burgundy will resume with full context
+[2026-03-29 01:34:11] ðŸš€ COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 01:34:11] Step 1/3: Saving memory...
+[2026-03-29 01:34:11] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:34:11] Saved session-summary.md
+[2026-03-29 01:34:11] Appended to memory\2026-03-29.md
+[2026-03-29 01:34:11] Updated claude-diagnostic-program.md
+[2026-03-29 01:34:11] Updated save-log.txt
+[2026-03-29 01:34:11] Memory save completed - ready for restart
+[2026-03-29 01:34:11] âœ… Memory saved successfully
+[2026-03-29 01:34:11] Step 2/3: Clearing session files...
+[2026-03-29 01:34:11] Cleared 1 session files
+[2026-03-29 01:34:11] Step 3/3: Restarting gateway...
+[2026-03-29 01:34:11] No gateway process found (may already be stopped)
+[2026-03-29 01:34:17] âœ… Restart completed successfully - gateway responding
+[2026-03-29 01:34:17] ðŸ§  Memory preserved - Burgundy will resume with full context
+[2026-03-29 01:51:14] COMPLETE FIXED RESTART PROTOCOL STARTED
+[2026-03-29 01:51:14] Step 1/4: Saving memory...
+[2026-03-29 01:51:14] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:51:14] Saved session-summary.md
+[2026-03-29 01:51:14] Appended to memory\2026-03-29.md
+[2026-03-29 01:51:14] Updated claude-diagnostic-program.md
+[2026-03-29 01:51:14] Updated save-log.txt
+[2026-03-29 01:51:14] Memory save completed - ready for restart
+[2026-03-29 01:51:14] Memory saved successfully
+[2026-03-29 01:51:14] Step 2/4: Killing ALL gateway processes...
+[2026-03-29 01:51:14] No gateway processes found to kill
+[2026-03-29 01:51:14] Step 3/4: Clearing session files...
+[2026-03-29 01:51:14] Cleared 2 session files
+[2026-03-29 01:51:14] Step 4/4: Restarting gateway (no pop-ups)...
+[2026-03-29 01:51:14] Started gateway with PID: 16828
+[2026-03-29 01:51:31] Restart completed successfully - gateway responding
+[2026-03-29 01:51:31] Memory preserved - Burgundy will resume with full context
+[2026-03-29 01:52:10] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 01:52:10] Saved session-summary.md
+[2026-03-29 01:52:10] Appended to memory\2026-03-29.md
+[2026-03-29 01:52:10] Updated claude-diagnostic-program.md
+[2026-03-29 01:52:10] Updated save-log.txt
+[2026-03-29 01:52:10] Memory save completed - ready for restart
+[2026-03-29 02:28:03] ðŸ„ AUTO-RESTART TRIGGERED - context: 73%
+[2026-03-29 02:28:07] ðŸš€ COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 02:28:07] Step 1/3: Saving memory...
+[2026-03-29 02:28:08] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 02:28:08] Saved session-summary.md
+[2026-03-29 02:28:08] Appended to memory\2026-03-29.md
+[2026-03-29 02:28:08] Updated claude-diagnostic-program.md
+[2026-03-29 02:28:08] Updated save-log.txt
+[2026-03-29 02:28:08] Memory save completed - ready for restart
+[2026-03-29 02:28:07] âœ… Memory saved successfully
+[2026-03-29 02:28:07] Step 2/3: Clearing session files...
+[2026-03-29 02:28:07] Cleared 1 session files
+[2026-03-29 02:28:07] Step 3/3: Restarting gateway...
+[2026-03-29 02:28:07] No gateway process found (may already be stopped)
+[2026-03-29 02:28:14] âœ… Restart completed successfully - gateway responding
+[2026-03-29 02:28:14] ðŸ§  Memory preserved - Burgundy will resume with full context
+[2026-03-29 02:47:59] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 02:47:59] Saved session-summary.md
+[2026-03-29 02:47:59] Appended to memory\2026-03-29.md
+[2026-03-29 02:47:59] Updated claude-diagnostic-program.md
+[2026-03-29 02:47:59] Updated save-log.txt
+[2026-03-29 02:47:59] Memory save completed - ready for restart
+[2026-03-29 02:53:50] ðŸš¨ EMERGENCY RESTART - context: 399.61%
+[2026-03-29 02:53:56] ðŸš€ COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 02:53:56] Step 1/3: Saving memory...
+[2026-03-29 02:53:56] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 02:53:56] Saved session-summary.md
+[2026-03-29 02:53:56] Appended to memory\2026-03-29.md
+[2026-03-29 02:53:56] Updated claude-diagnostic-program.md
+[2026-03-29 02:53:56] Updated save-log.txt
+[2026-03-29 02:53:56] Memory save completed - ready for restart
+[2026-03-29 02:53:56] âœ… Memory saved successfully
+[2026-03-29 02:53:56] Step 2/3: Clearing session files...
+[2026-03-29 02:53:56] Cleared 2 session files
+[2026-03-29 02:53:56] Step 3/3: Restarting gateway...
+[2026-03-29 02:53:56] No gateway process found (may already be stopped)
+[2026-03-29 02:54:02] âœ… Restart completed successfully - gateway responding
+[2026-03-29 02:54:02] ðŸ§  Memory preserved - Burgundy will resume with full context
+[2026-03-29 08:08:12] AUTO-RESTART TRIGGERED
+[2026-03-29 08:08:12] Sessions cleared (5 files)
+[2026-03-29 08:08:12] Stopping gateway...
+[2026-03-29 08:08:12] Starting gateway...
+[2026-03-29 08:08:31] Restart complete
+[2026-03-29 08:10:57] AUTO-RESTART TRIGGERED
+[2026-03-29 08:10:57] Sessions cleared (1 files)
+[2026-03-29 08:10:57] Stopping gateway...
+[2026-03-29 08:26:57] RESTART SKIPPED - already in progress
+[2026-03-29 08:53:47] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 08:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 08:55:49] Context monitor error: Could not find main agent session in status output
+[2026-03-29 08:57:02] Context monitor error: Could not find main agent session in status output
+[2026-03-29 08:58:13] Context monitor error: Could not find main agent session in status output
+[2026-03-29 08:58:39] [DEBUG] Got JSON output, length: 343
+[2026-03-29 08:58:39] Context check: 59% - OK
+[2026-03-29 08:59:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 08:59:51] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:01:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:01:58] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:02:18] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:03:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:03:15] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:05:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:07:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:09:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:11:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:13:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:15:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:17:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:19:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:21:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:23:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:25:01] Context monitor error: Could not extract context percentage from status output
+[2026-03-29 09:27:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:27:38] Context check: 37% - OK
+[2026-03-29 09:29:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:31:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:33:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:35:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:37:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:39:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:41:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:43:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:45:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:47:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:49:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:51:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:53:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:55:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:57:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 09:59:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 10:01:01] Context monitor error: Could not find main agent session in status output
+[2026-03-29 10:03:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:05:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:11:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:13:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:13:16] Context monitor error: Exception calling "Substring" with "2" argument(s): "Index and length must refer to a location within the string.
+Parameter name: length"
+[2026-03-29 10:13:58] Context monitor error: openclaw status --json returned empty
+[2026-03-29 10:15:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 10:15:35] Context monitor error: No session data in API response
+[2026-03-29 10:17:01] Context monitor error: No session data in API response
+[2026-03-29 10:18:08] File-based context check: 9% (total size: 22472 bytes)
+[2026-03-29 10:18:18] File-based context check: 10% (total size: 26046 bytes)
+[2026-03-29 10:19:01] File-based context check: 20% (total size: 50016 bytes)
+[2026-03-29 10:21:01] File-based context check: 26% (total size: 64084 bytes)
+[2026-03-29 10:23:01] File-based context check: 26% (total size: 64084 bytes)
+[2026-03-29 10:25:01] File-based context check: 26% (total size: 64084 bytes)
+[2026-03-29 10:27:01] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:29:01] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:31:01] File-based context check: 1% (total size: 1871 bytes)
+[2026-03-29 10:33:01] File-based context check: 1% (total size: 1871 bytes)
+[2026-03-29 10:35:01] File-based context check: 1% (total size: 1871 bytes)
+[2026-03-29 10:37:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:39:01] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:41:01] File-based context check: 3% (total size: 7231 bytes)
+[2026-03-29 10:43:01] File-based context check: 7% (total size: 17306 bytes)
+[2026-03-29 10:45:01] File-based context check: 7% (total size: 17306 bytes)
+[2026-03-29 10:47:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:49:02] File-based context check: 22% (total size: 54300 bytes)
+[2026-03-29 10:51:02] File-based context check: 49% (total size: 123587 bytes)
+[2026-03-29 10:53:02] File-based context check: 60% (total size: 150990 bytes)
+[2026-03-29 10:55:02] File-based context check: 85% (total size: 212076 bytes)
+[2026-03-29 10:55:02] Context check: 85% - TRIGGERING RESTART
+[2026-03-29 10:55:02] Context monitor error: The term 'C:\Dev\burgundy-self-restart-complete.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+[2026-03-29 10:57:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 10:59:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:01:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:03:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:05:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:07:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:09:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:11:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:13:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:15:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:17:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:19:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:21:02] File-based context check: 21% (total size: 53566 bytes)
+[2026-03-29 11:23:02] File-based context check: 21% (total size: 53566 bytes)
+[2026-03-29 11:25:02] File-based context check: 23% (total size: 57128 bytes)
+[2026-03-29 11:27:02] File-based context check: 0% (total size:  bytes)
+[2026-03-29 11:29:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:31:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:33:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:35:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:37:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:43:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:47:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:49:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:51:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 11:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:05:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:17:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:29:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:31:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:33:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:35:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:37:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:39:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:43:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:47:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:49:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:51:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:53:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:55:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 12:59:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:01:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:03:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:05:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:09:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:11:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:13:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:15:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:17:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:21:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:25:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:27:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:29:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:31:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:33:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:35:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:37:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:39:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:41:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:43:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:45:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:47:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:49:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:51:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:57:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 13:59:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:01:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:03:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:05:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:11:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:17:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:21:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:23:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:27:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:29:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:31:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:33:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:35:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:37:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:39:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:41:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:43:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:45:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:47:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:49:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:51:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 14:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:03:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:05:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:17:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:31:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:33:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:37:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:43:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 15:47:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:10:55] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:37:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:43:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:47:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:49:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:51:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 16:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:05:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:09:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 17:54:48] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:05:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:07:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:09:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:11:13] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:13:09] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:15:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:17:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:31:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:33:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:37:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:43:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:47:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:49:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:51:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:53:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:55:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 18:59:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:01:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:53:50] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 19:59:10] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:05:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:07:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:15:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:17:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:23:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:31:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:33:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:37:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:43:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:45:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:47:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:49:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:51:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:53:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 20:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:05:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:07:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:13:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:17:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:17:39] COMPLETE MEMORY SAVE STARTED (All MD files)
+[2026-03-29 21:17:39] Saved session-summary.md
+[2026-03-29 21:17:39] Appended to memory\2026-03-29.md
+[2026-03-29 21:17:39] Updated claude-diagnostic-program.md
+[2026-03-29 21:17:39] Preserving: AGENTS.md (6302 bytes)
+[2026-03-29 21:17:39] Preserving: SOUL.md (2271 bytes)
+[2026-03-29 21:17:39] Preserving: USER.md (1989 bytes)
+[2026-03-29 21:17:39] Preserving: MEMORY.md (24874 bytes)
+[2026-03-29 21:17:39] Preserving: TOOLS.md (1018 bytes)
+[2026-03-29 21:17:39] Preserving: IDENTITY.md (402 bytes)
+[2026-03-29 21:17:39] Updated save-log.txt
+[2026-03-29 21:17:39] âœ… Complete memory save finished - All MD files preserved
+[2026-03-29 21:19:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:28:05] COMPLETE MEMORY SAVE STARTED (All MD files)
+[2026-03-29 21:28:05] Saved session-summary.md
+[2026-03-29 21:28:05] Appended to memory\2026-03-29.md
+[2026-03-29 21:28:05] Updated claude-diagnostic-program.md
+[2026-03-29 21:28:05] Preserving: AGENTS.md (6302 bytes)
+[2026-03-29 21:28:05] Preserving: SOUL.md (2271 bytes)
+[2026-03-29 21:28:05] Preserving: USER.md (1989 bytes)
+[2026-03-29 21:28:05] Preserving: MEMORY.md (26590 bytes)
+[2026-03-29 21:28:05] Preserving: TOOLS.md (1018 bytes)
+[2026-03-29 21:28:05] Preserving: IDENTITY.md (402 bytes)
+[2026-03-29 21:28:05] Updated save-log.txt
+[2026-03-29 21:28:05] âœ… Complete memory save finished - All MD files preserved
+[2026-03-29 21:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:31:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:33:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:37:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:43:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:45:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:47:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:49:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:51:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:51:15] [START] COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 21:51:15] Step 1/3: Saving memory...
+[2026-03-29 21:51:16] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 21:51:16] Saved session-summary.md
+[2026-03-29 21:51:16] Appended to memory\2026-03-29.md
+[2026-03-29 21:51:16] Updated claude-diagnostic-program.md
+[2026-03-29 21:51:16] Updated save-log.txt
+[2026-03-29 21:51:16] Memory save completed - ready for restart
+[2026-03-29 21:51:15] [OK] Memory saved successfully
+[2026-03-29 21:51:15] Step 2/3: Clearing session files...
+[2026-03-29 21:51:15] Cleared 1 session files
+[2026-03-29 21:51:15] Step 3/3: Restarting gateway...
+[2026-03-29 21:51:15] No gateway process found (may already be stopped)
+[2026-03-29 21:51:22] [OK] Restart completed successfully - gateway responding
+[2026-03-29 21:51:22] [MEMORY] Memory preserved - Burgundy will resume with full context
+[2026-03-29 21:51:22] [AUTO-WAKE] Sending wake event...
+[2026-03-29 21:51:22] [AUTO-WAKE] Wake event sent successfully
+[2026-03-29 21:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:55:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:57:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 21:57:51] COMPLETE MEMORY SAVE STARTED (All MD files)
+[2026-03-29 21:57:51] Saved session-summary.md
+[2026-03-29 21:57:51] Appended to memory\2026-03-29.md
+[2026-03-29 21:57:51] Updated claude-diagnostic-program.md
+[2026-03-29 21:57:51] Preserving: AGENTS.md (6302 bytes)
+[2026-03-29 21:57:51] Preserving: SOUL.md (2271 bytes)
+[2026-03-29 21:57:51] Preserving: USER.md (1989 bytes)
+[2026-03-29 21:57:51] Preserving: MEMORY.md (26590 bytes)
+[2026-03-29 21:57:51] Preserving: TOOLS.md (1018 bytes)
+[2026-03-29 21:57:51] Preserving: IDENTITY.md (402 bytes)
+[2026-03-29 21:57:51] Updated save-log.txt
+[2026-03-29 21:57:51] âœ… Complete memory save finished - All MD files preserved
+[2026-03-29 21:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:05:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:09:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:11:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:15:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:17:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:19:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:21:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:23:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-29 22:28:59] Context check: 27.8KB (~10.6%) - file: abc64160-5d1d-49d5-9728-f3e674a62609.jsonl
+[2026-03-29 22:39:11] Context check: 35% - OK
+[2026-03-29 23:04:24] [START] COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 23:04:24] Step 1/3: Saving memory...
+[2026-03-29 23:04:25] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 23:04:25] Saved session-summary.md
+[2026-03-29 23:04:25] Appended to memory\2026-03-29.md
+[2026-03-29 23:04:25] Updated claude-diagnostic-program.md
+[2026-03-29 23:04:25] Updated save-log.txt
+[2026-03-29 23:04:25] Memory save completed - ready for restart
+[2026-03-29 23:04:24] [OK] Memory saved successfully
+[2026-03-29 23:04:24] Step 2/3: Clearing session files...
+[2026-03-29 23:04:24] Cleared 1 session files
+[2026-03-29 23:04:24] Step 3/3: Restarting gateway...
+[2026-03-29 23:04:24] No gateway process found (may already be stopped)
+[2026-03-29 23:04:31] [OK] Restart completed successfully - gateway responding
+[2026-03-29 23:04:31] [MEMORY] Memory preserved - Burgundy will resume with full context
+[2026-03-29 23:04:31] [AUTO-WAKE] Sending wake event...
+[2026-03-29 23:04:31] [AUTO-WAKE] Wake event sent successfully
+[2026-03-29 23:05:02] [START] COMPLETE RESTART PROTOCOL STARTED
+[2026-03-29 23:05:02] Step 1/3: Saving memory...
+[2026-03-29 23:05:02] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-29 23:05:02] Saved session-summary.md
+[2026-03-29 23:05:02] Appended to memory\2026-03-29.md
+[2026-03-29 23:05:02] Updated claude-diagnostic-program.md
+[2026-03-29 23:05:02] Updated save-log.txt
+[2026-03-29 23:05:02] Memory save completed - ready for restart
+[2026-03-29 23:05:02] [OK] Memory saved successfully
+[2026-03-29 23:05:02] Step 2/3: Clearing session files...
+[2026-03-29 23:05:02] Cleared 1 session files
+[2026-03-29 23:05:02] Step 3/3: Restarting gateway...
+[2026-03-29 23:05:02] No gateway process found (may already be stopped)
+[2026-03-29 23:05:08] [OK] Restart completed successfully - gateway responding
+[2026-03-29 23:05:08] [MEMORY] Memory preserved - Burgundy will resume with full context
+[2026-03-29 23:05:08] [AUTO-WAKE] Sending wake event...
+[2026-03-29 23:05:08] [AUTO-WAKE] Wake event sent successfully
+[2026-03-30 06:58:49] [START] COMPLETE RESTART PROTOCOL STARTED
+[2026-03-30 06:58:49] Step 1/3: Saving memory...
+[2026-03-30 06:58:50] MEMORY SAVE BEFORE RESTART STARTED
+[2026-03-30 06:58:50] Saved session-summary.md
+[2026-03-30 06:58:50] Appended to memory\2026-03-30.md
+[2026-03-30 06:58:50] Updated claude-diagnostic-program.md
+[2026-03-30 06:58:50] Updated save-log.txt
+[2026-03-30 06:58:50] Memory save completed - ready for restart
+[2026-03-30 06:58:49] [OK] Memory saved successfully
+[2026-03-30 06:58:49] Step 2/3: Clearing session files...
+[2026-03-30 06:58:49] Cleared 1 session files
+[2026-03-30 06:58:49] Step 3/3: Restarting gateway...
+[2026-03-30 06:58:49] No gateway process found (may already be stopped)
+[2026-03-30 06:59:00] [OK] Restart completed successfully - gateway responding
+[2026-03-30 06:59:00] [MEMORY] Memory preserved - Burgundy will resume with full context
+[2026-03-30 06:59:00] [AUTO-WAKE] Sending wake event...
+[2026-03-30 06:59:00] [AUTO-WAKE] Wake event sent successfully
+[2026-03-30 08:47:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:49:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:51:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:53:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:55:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:57:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 08:59:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:01:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:03:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:05:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:07:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:09:24] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:11:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:13:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:15:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:17:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:19:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:21:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:23:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:27:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:31:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:33:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:35:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:37:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:39:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:41:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:43:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:45:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:47:20] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:49:13] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:51:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:53:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:55:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:57:24] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 09:59:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:01:18] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:05:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:07:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:09:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:11:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:13:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:15:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:17:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:17:31] [VERIFY] Python: Python 3.14.2
+[2026-03-30 10:17:31] [VERIFY] Script: million-simulations-runner.py (23177 bytes)
+[2026-03-30 10:17:31] [VERIFY] Script: run-million-simulations.ps1 (6236 bytes)
+[2026-03-30 10:17:31] [VERIFY] Memory: 2021/7991 MB free (25.3%)
+[2026-03-30 10:17:31] [VERIFY] OpenClaw context: %
+[2026-03-30 10:17:31] [VERIFY] Python test passed
+[2026-03-30 10:17:31] [VERIFY] System verification COMPLETE - Ready for 1M simulations
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Starting 1,000,000 simulation run...
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Python found: Python 3.14.2
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] System check - Free memory: 2014MB, CPU load: 65%
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Starting simulation engine...
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Simulation process started (PID: 12880)
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Output logs: C:\Dev\simulation-results\python-output.log
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Error logs: C:\Dev\simulation-results\python-error.log
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Simulation engine running successfully
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Initial output:
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Monitor started: C:\Dev\simulation-monitor.ps1
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] Simulation system initialized successfully
+[2026-03-30 10:17:59] [MILLION-SIMULATIONS] 1,000,000 simulations are now running...
+[2026-03-30 10:18:09] [SIM-MONITOR] Progress: 390000/1000000 (39%)
+[2026-03-30 10:18:09] [SIM-MONITOR] Avg net worth: R305,393.56
+[2026-03-30 10:19:01] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:19:10] [SIM-MONITOR] Progress: 1000000/1000000 (100%)
+[2026-03-30 10:19:10] [SIM-MONITOR] Avg net worth: R305,564.07
+[2026-03-30 10:19:10] [SIM-MONITOR] COMPLETE: 1,000,000 simulations finished!
+[2026-03-30 10:21:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:29:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:31:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:33:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:35:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:37:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:39:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:41:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:43:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:45:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:47:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:49:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:51:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:53:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:55:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:57:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 10:59:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:01:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:03:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:05:18] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:07:20] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:11:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:13:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:15:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:17:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:19:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:21:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:23:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:25:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:27:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:29:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:31:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:33:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:35:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:37:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:39:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:41:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:43:12] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:46:37] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:51:13] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:53:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 11:55:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-30 19:11:47] SIMPLE AUTO-RESTART: Context at 71% - Heartbeat triggered
+[2026-03-30 19:11:47] Calling memory save script...
+[2026-03-30 19:11:48] COMPLETE MEMORY SAVE STARTED (All MD files)
+[2026-03-30 19:11:48] Saved session-summary.md
+[2026-03-30 19:11:48] Appended to memory\2026-03-30.md
+[2026-03-30 19:11:48] Updated claude-diagnostic-program.md
+[2026-03-30 19:11:48] Preserving: AGENTS.md (6852 bytes)
+[2026-03-30 19:11:48] Preserving: SOUL.md (2196 bytes)
+[2026-03-30 19:11:48] Preserving: USER.md (1989 bytes)
+[2026-03-30 19:11:48] Preserving: MEMORY.md (41921 bytes)
+[2026-03-30 19:11:48] Preserving: TOOLS.md (1018 bytes)
+[2026-03-30 19:11:48] Preserving: IDENTITY.md (402 bytes)
+[2026-03-30 19:11:48] Updated save-log.txt
+[2026-03-30 19:11:48] âœ… Complete memory save finished - All MD files preserved
+[2026-03-30 19:11:47] Memory save completed
+[2026-03-30 19:11:47] Cleared 1 session files
+[2026-03-30 19:11:47] Stopping gateway...
+[2026-03-31 10:22:21] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:28:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:30:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:32:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:34:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:36:17] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:38:12] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:40:21] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:42:09] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:44:08] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:46:13] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:48:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:50:12] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:52:14] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:54:18] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:56:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 10:58:10] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:00:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:02:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:04:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:06:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:08:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:10:08] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:12:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:14:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:16:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:18:08] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:20:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:22:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:24:25] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:26:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:28:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:30:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:32:02] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:34:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:36:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:38:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:40:16] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:42:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:44:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:46:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:48:08] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:50:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:52:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:54:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:56:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 11:58:09] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:00:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:02:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:04:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:06:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:08:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:10:08] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:12:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:14:04] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:16:15] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:18:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:20:06] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:22:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:24:15] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:26:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:28:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:30:07] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:34:05] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:36:58] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:38:14] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:45:12] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:48:29] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:50:27] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:52:33] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:54:39] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:56:10] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 12:58:34] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:00:28] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:02:38] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:04:10] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:06:31] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:08:34] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:10:11] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:12:03] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:17:34] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:21:34] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:26:43] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 13:47:40] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 14:10:24] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 14:44:15] Context monitor error: Could not find session context percentage in status output
+[2026-03-31 15:13:36] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 06:58:56] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:00:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:02:06] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:04:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:06:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:06:20] AUTO-RESTART TRIGGERED - Context at 101%
+[2026-04-02 07:06:20] Appended to memory/2026-04-02.md
+[2026-04-02 07:06:20] Updated session-summary.md
+[2026-04-02 07:06:20] Sessions cleared (1 files)
+[2026-04-02 07:06:20] Stopping gateway...
+[2026-04-02 07:08:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:10:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:12:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:14:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:16:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:18:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:20:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:22:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:24:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:26:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:28:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:30:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:32:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:34:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:36:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:38:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:40:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:42:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:44:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 07:46:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 08:26:55] MEMORY SAVE BEFORE RESTART STARTED
+[2026-04-02 08:26:55] Saved session-summary.md
+[2026-04-02 08:26:55] Appended to memory\2026-04-02.md
+[2026-04-02 08:26:55] Updated claude-diagnostic-program.md
+[2026-04-02 08:26:55] Updated save-log.txt
+[2026-04-02 08:26:55] Memory save completed - ready for restart
+[2026-04-02 08:28:05] [START] COMPLETE RESTART PROTOCOL STARTED
+[2026-04-02 08:28:05] Step 1/3: Saving memory...
+[2026-04-02 08:28:05] MEMORY SAVE BEFORE RESTART STARTED
+[2026-04-02 08:28:05] Saved session-summary.md
+[2026-04-02 08:28:05] Appended to memory\2026-04-02.md
+[2026-04-02 08:28:05] Updated claude-diagnostic-program.md
+[2026-04-02 08:28:05] Updated save-log.txt
+[2026-04-02 08:28:05] Memory save completed - ready for restart
+[2026-04-02 08:28:05] [OK] Memory saved successfully
+[2026-04-02 08:28:05] Step 2/3: Clearing session files...
+[2026-04-02 08:28:05] Cleared 2 session files
+[2026-04-02 08:28:05] Step 3/3: Restarting gateway...
+[2026-04-02 08:28:05] No gateway process found (may already be stopped)
+[2026-04-02 08:28:11] [OK] Restart completed successfully - gateway responding
+[2026-04-02 08:28:11] [MEMORY] Memory preserved - Burgundy will resume with full context
+[2026-04-02 08:28:11] [AUTO-WAKE] Sending wake event...
+[2026-04-02 08:28:11] [AUTO-WAKE] Wake event sent successfully
+[2026-04-02 09:31:09] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:38:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:40:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:42:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:44:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:46:03] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:48:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:50:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:52:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:54:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:56:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 09:58:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:00:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:02:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:04:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:30:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:32:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:34:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:36:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:38:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:40:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:42:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:44:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:46:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:48:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:50:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:52:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:54:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:56:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 10:58:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:00:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:02:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:04:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:06:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:08:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:10:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:12:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:14:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:16:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:18:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:20:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:22:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:24:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:26:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:28:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:30:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:32:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:34:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:36:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:38:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:40:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:42:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:44:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:46:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:48:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:50:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:52:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:54:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:56:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 11:58:01] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 12:00:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 12:02:02] Context monitor error: Could not find session context percentage in status output
+[2026-04-02 12:04:02] Context monitor error: Could not find session context percentage in status output

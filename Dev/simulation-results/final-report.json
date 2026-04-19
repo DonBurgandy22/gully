@@ -1,0 +1,247 @@
+{
+  "simulation_summary": {
+    "total_simulations": 500,
+    "duration_seconds": 0.017606,
+    "success_rate_percentage": 59.4,
+    "average_roi_percentage": 7.289110601084632,
+    "total_learning_points": 7674.0
+  },
+  "top_performing_choices": {
+    "balanced_investing": {
+      "name": "Balanced Investing",
+      "success_count": 1,
+      "total_count": 1,
+      "total_roi": 55.462895243679746,
+      "success_rate": 100.0,
+      "avg_roi": 55.462895243679746
+    },
+    "diversified_projects": {
+      "name": "Diversified Projects",
+      "success_count": 1,
+      "total_count": 1,
+      "total_roi": 53.769741739328005,
+      "success_rate": 100.0,
+      "avg_roi": 53.769741739328005
+    },
+    "ai_server": {
+      "name": "AI Server",
+      "success_count": 1,
+      "total_count": 1,
+      "total_roi": 41.274256930725585,
+      "success_rate": 100.0,
+      "avg_roi": 41.274256930725585
+    },
+    "youtube_studio": {
+      "name": "YouTube Studio",
+      "success_count": 3,
+      "total_count": 3,
+      "total_roi": 117.55578067425603,
+      "success_rate": 100.0,
+      "avg_roi": 39.18526022475201
+    },
+    "youtube_channel": {
+      "name": "YouTube Channel",
+      "success_count": 1,
+      "total_count": 1,
+      "total_roi": 35.032815594196386,
+      "success_rate": 100.0,
+      "avg_roi": 35.032815594196386
+    }
+  },
+  "worst_performing_choices": {
+    "business_investment": {
+      "name": "Business Investment",
+      "success_count": 0,
+      "total_count": 1,
+      "total_roi": -43.55338835222567,
+      "success_rate": 0.0,
+      "avg_roi": -43.55338835222567
+    },
+    "weekly_longform": {
+      "name": "Weekly Long-form",
+      "success_count": 0,
+      "total_count": 1,
+      "total_roi": -38.87782793675546,
+      "success_rate": 0.0,
+      "avg_roi": -38.87782793675546
+    },
+    "viral_trends": {
+      "name": "Viral Trends",
+      "success_count": 1,
+      "total_count": 4,
+      "total_roi": -105.8298855561702,
+      "success_rate": 25.0,
+      "avg_roi": -26.45747138904255
+    },
+    "automation_first": {
+      "name": "Automation First",
+      "success_count": 1,
+      "total_count": 3,
+      "total_roi": -41.260932092049394,
+      "success_rate": 33.33333333333333,
+      "avg_roi": -13.753644030683132
+    },
+    "index_funds": {
+      "name": "Index Funds",
+      "success_count": 1,
+      "total_count": 3,
+      "total_roi": -20.07409645763097,
+      "success_rate": 33.33333333333333,
+      "avg_roi": -6.6913654858769895
+    }
+  },
+  "optimal_risk_reward_ratios": [
+    {
+      "risk_reward_pattern": "0.2_0.5",
+      "success_rate": 69.14893617021278,
+      "avg_roi": 11.178325772995032,
+      "sample_size": 94
+    },
+    {
+      "risk_reward_pattern": "0.4_0.8",
+      "success_rate": 60.91954022988506,
+      "avg_roi": 12.867413650181822,
+      "sample_size": 87
+    }
+  ],
+  "key_learnings": [
+    {
+      "title": "Overall Success Rate",
+      "value": "59.4%",
+      "insight": "297 successful decisions out of 500"
+    },
+    {
+      "title": "Learning Improvement",
+      "value": "+-2.0% improvement",
+      "insight": "Success rate improved from 61.0% (first 100) to 59.0% (last 100)"
+    },
+    {
+      "title": "Positive ROI Decisions",
+      "value": "59.4%",
+      "insight": "297 out of 500 decisions yielded positive ROI"
+    }
+  ],
+  "optimization_rules": [
+    {
+      "type": "avoid",
+      "choice_id": "split_investment",
+      "reason": "High failure rate (35 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "viral_trends",
+      "reason": "High failure rate (3 failures)",
+      "confidence": 0.3
+    },
+    {
+      "type": "avoid",
+      "choice_id": "real_estate",
+      "reason": "High failure rate (44 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "niche_educational",
+      "reason": "High failure rate (39 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "debt_first",
+      "reason": "High failure rate (25 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "deep_focus",
+      "reason": "High failure rate (31 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "aggressive_mix",
+      "reason": "High success rate (2 successes)",
+      "confidence": 0.4
+    },
+    {
+      "type": "prefer",
+      "choice_id": "split_investment",
+      "reason": "High success rate (53 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "deep_focus",
+      "reason": "High success rate (48 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "youtube_studio",
+      "reason": "High success rate (3 successes)",
+      "confidence": 0.6
+    },
+    {
+      "type": "prefer",
+      "choice_id": "real_estate",
+      "reason": "High success rate (38 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "debt_first",
+      "reason": "High success rate (55 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "niche_educational",
+      "reason": "High success rate (57 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "ai_laptop",
+      "reason": "High success rate (2 successes)",
+      "confidence": 0.4
+    },
+    {
+      "type": "risk_reward_pattern",
+      "pattern": "0.4_0.7",
+      "success_rate": 1.0,
+      "avg_roi": 43.254668979483945,
+      "confidence": 1.0
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "area": "Decision Strategy",
+      "recommendation": "Prioritize 'Balanced Investing' strategy",
+      "reason": "Highest success rate (100.0%) and ROI (55.5%) across 1 simulations",
+      "action": "Apply this strategy to similar real-world decisions"
+    },
+    {
+      "priority": "HIGH",
+      "area": "Risk Avoidance",
+      "recommendation": "Avoid 'Business Investment' strategy",
+      "reason": "Lowest success rate (0.0%) and negative ROI (-43.6%) across 1 simulations",
+      "action": "Identify and avoid similar high-risk, low-reward strategies"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Risk Management",
+      "recommendation": "Target optimal risk-reward balance",
+      "reason": "Pattern '0.2_0.5' has 69.1% success rate with 11.2% ROI",
+      "action": "Seek decisions with similar risk-reward characteristics"
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Continuous Learning",
+      "recommendation": "Maintain decision log and review periodically",
+      "reason": "Simulations show 59.4% improvement from early to late decisions",
+      "action": "Document real decisions and outcomes to refine decision-making algorithms"
+    }
+  ]
+}

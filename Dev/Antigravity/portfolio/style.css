@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --text-main: #1A1A1A;
+  --text-light: #555555;
+  --border-light: rgba(0, 0, 0, 0.1);
+  --glass-white: rgba(255, 255, 255, 0.6);
+  --glass-white-hover: rgba(255, 255, 255, 0.85);
+  --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  overscroll-behavior: none;
+  background-color: #E2E2E2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Base Gradient (BPCO Replication) */
+.back_gra {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+              linear-gradient(rgb(229, 229, 229), rgb(243, 243, 243) 79.17%, rgb(226, 226, 226));
+  z-index: -2;
+}
+
+/* 3D Spline Canvas Container */
+#main_canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: auto; /* Allow orbit controls on Spline */
+  mix-blend-mode: overlay; /* Softens 3D into gradient */
+}
+
+#canvas3d {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+/* Foreground Wrapper */
+#smooth-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none; /* Let pointer events fall down */
+}
+
+.interactive {
+  pointer-events: auto;
+}
+
+/* Windows Header */
+header.windows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.company_info_items {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.company_info {
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+}
+
+.company_info.bold {
+  font-weight: 700;
+}
+
+.menu_section {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.menu_section a {
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: background 0.3s;
+}
+
+.menu_section a:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Intro Title */
+.intro_company_info {
+  padding: 150px 2rem 50px 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro_company_info h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.intro_company_info p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Dice Section (Staggered Project Cards) */
+.m3_dice_section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  padding-bottom: 10rem;
+}
+
+.dice_item {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--glass-white);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.dice_item.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dice_item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  background: var(--glass-white-hover);
+}
+
+/* Sidebar Info Panel */
+.info_section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-light);
+}
+
+.info_header {
+  margin-bottom: 2rem;
+}
+
+.info_number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.info_title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.info_body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Barcode Simulation */
+.barcode_section {
+  display: flex;
+  height: 40px;
+  gap: 3px;
+  margin-top: 2rem;
+}
+
+.bar_item {
+  background: var(--text-main);
+  height: 100%;
+}
+.bi1 { width: 1px; }
+.bi2 { width: 2px; }
+.bi3 { width: 3px; }
+.bi5 { width: 5px; }
+
+/* Main Content Image/Graphic area */
+.img_section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img_section img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  header.windows {
+    flex-direction: column;
+    height: auto;
+  }
+  .company_info, .menu_section a {
+    border: none;
+    border-bottom: 1px solid var(--border-light);
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+  }
+  .dice_item {
+    grid-template-columns: 1fr;
+  }
+  .info_section {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+}

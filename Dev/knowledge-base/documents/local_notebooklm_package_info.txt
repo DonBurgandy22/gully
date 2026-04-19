@@ -1,0 +1,9 @@
+﻿=== local_notebooklm Package Info ===
+Module location: C:\Users\dkmac\AppData\Roaming\Python\Python314\site-packages\local_notebooklm\__init__.py
+
+=== Available submodules ===
+- make_audio (is package: False)
+- processor (is package: False)
+- server (is package: False)
+- version (is package: False)
+- web_ui (is package: False)

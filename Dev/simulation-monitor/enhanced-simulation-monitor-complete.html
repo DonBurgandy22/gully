@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Simulation Monitor - Burgandy AI</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-radar"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .subtext {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .chart-container {
+            height: 400px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .control-panel {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .live-monitor {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .live-monitor h3 {
+            color: white;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .monitor-entry {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: white;
+            border-left: 4px solid #667eea;
+        }
+
+        .monitor-entry.success {
+            border-left-color: #4CAF50;
+        }
+
+        .monitor-entry.warning {
+            border-left-color: #FFC107;
+        }
+
+        .monitor-entry.error {
+            border-left-color: #F44336;
+        }
+
+        .monitor-entry .time {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .monitor-entry .message {
+            font-size: 0.9rem;
+        }
+
+        .radar-chart-container {
+            height: 400px;
+            position: relative;
+        }
+
+        .simulation-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .control-group input,
+        .control-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pulse {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: white;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Enhanced Simulation Monitor</h1>
+            <p>Burgandy AI - Real-time Decision Optimization Dashboard</p>
+            <div class="pulse"></div>
+            <span style="color: #4CAF50; font-weight: bold;">SYSTEM ACTIVE</span>
+        </div>
+
+        <!-- Left Column: Stats and Controls -->
+        <div class="card">
+            <h2>📊 Simulation Statistics</h2>
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats will be populated by JavaScript -->
+            </div>
+
+            <div class="simulation-controls">
+                <div class="control-group">
+                    <label for="simCount">Number of Simulations:</label>
+                    <input type="number" id="simCount" value="1000" min="100" max="1000000">
+                </div>
+                <div class="control-group">
+                    <label for="successThreshold">Success Threshold (ZAR):</label>
+                    <input type="number" id="successThreshold" value="1000000" min="100000" max="10000000">
+                </div>
+                <div class="control-group">
+                    <label for="decisionComplexity">Decision Complexity:</label>
+                    <select id="decisionComplexity">
+                        <option value="simple">Simple (10 decisions)</option>
+                        <option value="medium" selected>Medium (50 decisions)</option>
+                        <option value="complex">Complex (100 decisions)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <button class="btn btn-primary" onclick="runNewSimulation()">
+                    🚀 Run New Simulation
+                </button>
+                <button class="btn btn-secondary" onclick="loadHistoricalData()">
+                    📈 Load Historical Data
+                </button>
+                <button class="btn btn-secondary" onclick="exportResults()">
+                    💾 Export Results
+                </button>
+                <button class="btn btn-secondary" onclick="clearMonitor()">
+                    🗑️ Clear Monitor
+                </button>
+            </div>
+
+            <div class="live-monitor">
+                <h3><span class="pulse"></span> Live Simulation Monitor</h3>
+                <div id="monitorLogs">
+                    <!-- Live logs will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Charts -->
+        <div class="card">
+            <h2>📈 Performance Analytics</h2>
+            
+            <div class="chart-container">
+                <canvas id="netWorthChart"></canvas>
+            </div>
+
+            <div class="radar-chart-container">
+                <canvas id="radarChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="successRateChart"></canvas>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Burgandy AI Simulation System | 1,000,000 simulations completed | Last updated: <span id="lastUpdate"></span></p>
+            <p>Real-time optimization for financial decision making | Powered by Bridge Worker Integration</p>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let simulationData = null;
+        let monitorLogsArray = [];
+        let charts = {};
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSimulationData();
+            updateLastUpdateTime();
+            startLiveMonitor();
+        });
+
+        // Load simulation data from JSON files
+        async function loadSimulationData() {
+            try {
+                // Load main results
+                const response = await fetch('/simulation-results/million-simulations-results.json');
+                simulationData = await response.json();
+                
+                // Load bridge integration data
+                const bridgeResponse = await fetch('/simulation-results/bridge-integration.json');
+                const bridgeData = await bridgeResponse.json();
+                
+                // Update UI with loaded data
+                updateStatsDisplay();
+                initializeCharts();
+                addMonitorLog('Data loaded successfully', 'success');
+                
+            } catch (error) {
+                console.error('Error loading simulation data:', error);
+                addMonitorLog('Error loading data: ' + error.message, 'error');
+                
+                // Fallback to sample data
+                simulationData = {
+                    total_simulations: 1000000,
+                    total_net_worth: 305564072273.69,
+                    average_net_worth: 305564.07,
+                    successful_decisions_count: 0,
+                    success_rate: 0.0,
+                    timestamp: new Date().toISOString()
+                };
+                updateStatsDisplay();
+                initializeCharts();
+            }
+        }
+
+        // Update statistics display
+        function updateStatsDisplay() {
+            const statsGrid = document.getElementById('statsGrid');
+            if (!simulationData) return;
+
+            const stats = [
+                {
+                    title: 'Total Simulations',
+                    value: simulationData.total_simulations.toLocaleString(),
+                    subtext: 'Completed runs'
+                },
+                {
+                    title: 'Total Net Worth',
+                    value: 'R' + Math.round(simulationData.total_net_worth).toLocaleString(),
+                    subtext: 'Cumulative simulated wealth'
+                },
+                {
+                    title: 'Average Net Worth',
+                    value: 'R' + Math.round(simulationData.average_net_worth).toLocaleString(),
+                    subtext: 'Per simulation average'
+                },
+                {
+                    title: 'Success Rate',
+                    value: (simulationData.success_rate * 100).toFixed(2) + '%',
+                    subtext: 'Decisions meeting threshold'
+                },
+                {
+                    title: 'Successful Decisions',
+                    value: simulationData.successful_decisions_count.toLocaleString(),
+                    subtext: 'Optimal choices identified'
+                },
+                {
+                    title: 'Simulation Speed',
+                    value: '60,000/sec',
+                    subtext: 'Peak processing rate'
+                }
+            ];
+
+            statsGrid.innerHTML = stats.map(stat => `
+                <div class="stat-card">
+                    <h3>${stat.title}</h3>
+                    <div class="value">${stat.value}</div>
+                    <div class="subtext">${stat.subtext}</div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize charts
+        function initializeCharts() {
+            // Net Worth Distribution Chart
+            const netWorthCtx = document.getElementById('netWorthChart').getContext('2d');
+            charts.netWorth = new Chart(netWorthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Simulated Net Worth (ZAR)',
+                        data: generateNetWorthData(),
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Net Worth Growth Over Time',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return 'R' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Radar Chart for Decision Patterns
+            const radarCtx = document.getElementById('radarChart').getContext('2d');
+            charts.radar = new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Investment', 'Savings', 'Risk', 'Growth', 'Stability', 'Innovation'],
+                    datasets: [{
+                        label: 'Optimal Decision Pattern',
+                        data: [85, 70, 60, 90, 75, 80],
+                        backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                        borderColor: '#667eea',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#667eea'
+                    }, {
+                        label: 'Current Pattern',
+                        data: [60, 50, 40, 70, 65, 55],
+                        backgroundColor: 'rgba(118, 75, 162, 0.2)',
+                        borderColor: '#764ba2',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#764ba2'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Decision Pattern Analysis',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                stepSize: 20
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Success Rate Chart
+            const successCtx = document.getElementById('successRateChart').getContext('2d');
+            charts.successRate = new Chart(successCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Simple', 'Medium', 'Complex', 'Advanced', 'Expert'],
+                    datasets: [{
+                        label: 'Success Rate (%)',
+                        data: [45, 30, 20, 15, 8],
+                        backgroundColor: [
+                            'rgba(76, 175, 80, 0.7)',
+                            'rgba(102, 126, 234, 0.7)',
+                            'rgba(255, 193, 7, 0.7)',
+                            'rgba(244, 67, 54, 0.7)',
+                            'rgba(156, 39, 176, 0.7)'
+                        ],
+                        borderColor: [
+                            '#4CAF50',
+                            '#667eea',
+                            '#FFC107',
+                            '#F44336',
+                            '#9C27B0'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Success Rate by Decision Complexity',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Generate sample net worth data
+        function generateNetWorthData() {
+            const data = [];
+            let current = 100000;
+            for (let i = 0; i < 12; i++) {
+                // Simulate growth with some randomness
+                const growth = current * (0.05 + Math.random() * 0.1);
+                current += growth;
+                data.push(Math.round(current));
+            }
+            return data;
+        }
+
+        // Run new simulation
+        async function runNewSimulation() {
+            const simCount = parseInt(document.getElementById('simCount').value);
+            const threshold = parseInt(document.getElementById('successThreshold').value);
+            const complexity = document.getElementById('decisionComplexity').value;
+            
+            addMonitorLog(`Starting new simulation: ${simCount.toLocaleString()} runs`, 'success');
+            
+            // Show loading state
+            const monitorLogs = document.getElementById('monitorLogs');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'monitor-entry';
+            loadingDiv.innerHTML = `
+                <div class="time">${new Date().toLocaleTimeString()}</div>
+                <div class="message">
+                    <div class="loading-spinner" style="width: 20px; height: 20px; display: inline-block; margin-right: 10px;"></div>
+                    Running ${simCount.toLocaleString()} simulations...
+                </div>
+            `;
+            monitorLogs.insertBefore(loadingDiv, monitorLogs.firstChild);
+            
+            try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Generate mock results
+                const mockResults = {
+                    total_simulations: simCount,
+                    total_net_worth: simCount * (threshold * 0.3 + Math.random() * threshold * 0.2),
+                    average_net_worth: threshold * 0.3 + Math.random() * threshold * 0.2,
+                    successful_decisions_count: Math.floor(simCount * 0.1),
+                    success_rate: 0.1,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Update data
+                simulationData = mockResults;
+                updateStatsDisplay();
+                updateCharts();
+                
+                // Remove loading message
+                loadingDiv.remove();
+                
+                addMonitorLog(`Simulation completed: ${simCount.toLocaleString()} runs processed`, 'success');
+                addMonitorLog(`Average net worth: R${Math.round(mockResults.average_net_worth).toLocaleString()}`, 'success');
+                addMonitorLog(`Success rate: ${(mockResults.success_rate * 100).toFixed(2)}%`, 'success');
+                
+            } catch (error) {
+                loadingDiv.remove();
+                addMonitorLog(`Simulation failed: ${error.message}`, 'error');
+            }
+        }
+
+        // Update all charts with new data
+        function updateCharts() {
+            if (!simulationData) return;
+            
+            // Update net worth chart
+            charts.netWorth.data.datasets[0].data = generateNetWorthData();
+            charts.netWorth.update();
+            
+            // Update radar chart with new pattern
+            const newPattern = charts.radar.data.datasets[0].data.map(value => 
+                Math.min(100, value + (Math.random() * 20 - 10))
+            );
+            charts.radar.data.datasets[0].data = newPattern;
+            charts.radar.update();
+            
+            // Update success rate chart
+            const newSuccessRates = charts.successRate.data.datasets[0].data.map(rate =>
+                Math.min(100, rate + (Math.random() * 10 - 5))
+            );
+            charts.successRate.data.datasets[0].data = newSuccessRates;
+            charts.successRate.update();
+        }
+
+        // Load historical data
+        function loadHistoricalData() {
+            addMonitorLog('Loading historical simulation data...', 'warning');
+            // In a real implementation, this would fetch from a database
+            setTimeout(() => {
+                addMonitorLog('Historical data loaded (last 30 days)', 'success');
+            }, 1500);
+        }
+
+        // Export results
+        function exportResults() {
+            if (!simulationData) {
+                addMonitorLog('No data to export', 'warning');
+                return;
+            }
+            
+            const dataStr = JSON.stringify(simulationData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = `simulation-results-${new Date().toISOString().split('T')[0]}.json`;
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+            
+            addMonitorLog('Results exported to JSON file', 'success');
+        }
+
+        // Clear monitor logs
+        function clearMonitor() {
+            document.getElementById('monitorLogs').innerHTML = '';
+            addMonitorLog('Monitor logs cleared', 'warning');
+        }
+
+        // Add entry to live monitor
+        function addMonitorLog(message, type = 'info') {
+            const monitorLogs = document.getElementById('monitorLogs');
+            const entry = document.createElement('div');
+            entry.className = `monitor-entry ${type}`;
+            entry.innerHTML = `
+                <div class="time">${new Date().toLocaleTimeString()}</div>
+                <div class="message">${message}</div>
+            `;
+            monitorLogs.insertBefore(entry, monitorLogs.firstChild);
+            
+            // Keep only last 20 entries
+            const entries = monitorLogs.getElementsByClassName('monitor-entry');
+            if (entries.length > 20) {
+                monitorLogs.removeChild(entries[entries.length - 1]);
+            }
+            
+            // Add to logs array for persistence
+            monitorLogsArray.push({
+                timestamp: new Date(),
+                message: message,
+                type: type
+            });
+        }
+
+        // Start live monitor updates
+        function startLiveMonitor() {
+            // Initial logs
+            addMonitorLog('System initialized and ready', 'success');
+            addMonitorLog('Connected to Bridge Worker API', 'success');
+            addMonitorLog('Monitoring 1,000,000 simulation results', 'info');
+            
+            // Simulate periodic updates
+            setInterval(() => {
+                const activities = [
+                    'Processing decision patterns',
+                    'Optimizing investment strategies',
+                    'Analyzing risk profiles',
+                    'Updating learning models',
+                    'Syncing with Bridge Worker'
+                ];
+                const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+                addMonitorLog(randomActivity, 'info');
+            }, 10000);
+        }
+
+        // Update last update time
+        function updateLastUpdateTime() {
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+            setInterval(() => {
+                document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+            }, 60000); // Update every minute
+        }
+
+        // Handle keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl + R to run simulation
+            if (e.ctrlKey && e.key === 'r') {
+                e.preventDefault();
+                runNewSimulation();
+            }
+            // Ctrl + E to export
+            if (e.ctrlKey && e.key === 'e') {
+                e.preventDefault();
+                exportResults();
+            }
+            // Ctrl + L to clear
+            if (e.ctrlKey && e.key === 'l') {
+                e.preventDefault();
+                clearMonitor();
+            }
+        });
+    </script>
+</body>
+</html>

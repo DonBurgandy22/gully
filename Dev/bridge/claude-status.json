@@ -1,0 +1,9 @@
+{
+  "last_success": "2026-03-29T15:30:00",
+  "error_count": 0,
+  "status": "available",
+  "credits_estimated": 100,
+  "last_checked": "2026-03-29T15:47:03.468825",
+  "detection_method": "file_based",
+  "notes": "Phase 1 - Assuming available based on recent successful usage"
+}

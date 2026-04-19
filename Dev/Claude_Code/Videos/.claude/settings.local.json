@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(remotion-best-practices)",
+      "Skill(remotion-best-practices:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npx create-video@latest:*)",
+      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" install remotion @remotion/cli @remotion/transitions react react-dom typescript @types/react)",
+      "Bash(cmd.exe /c \"C:\\\\Dev\\\\Claude_Code\\\\Videos\\\\goku-ssj-god\\\\install.bat\")",
+      "Bash(cmd.exe /c \"C:\\\\Dev\\\\Claude_Code\\\\Videos\\\\setup-remotion.bat\")",
+      "Bash(powershell -Command \"& {$env:PATH = ''C:\\\\Program Files\\\\nodejs;'' + $env:PATH; Set-Location ''C:\\\\Dev\\\\Claude_Code\\\\Videos''; New-Item -ItemType Directory -Force -Path goku-ssj-god; Set-Location goku-ssj-god; npm init -y}\")",
+      "Bash(powershell -Command \"& {Set-Location ''C:\\\\Dev\\\\Claude_Code\\\\Videos\\\\goku-ssj-god''; & ''C:\\\\Program Files\\\\nodejs\\\\npm.cmd'' init -y}\")",
+      "Bash(powershell -Command \"& {Set-Location ''C:\\\\Dev\\\\Claude_Code\\\\Videos\\\\goku-ssj-god''; $env:PATH = ''C:\\\\Program Files\\\\nodejs;'' + $env:PATH; & ''C:\\\\Program Files\\\\nodejs\\\\npm.cmd'' install remotion @remotion/cli @remotion/transitions react react-dom typescript @types/react @types/react-dom}\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Dev\\\\Claude_Code\\\\Videos\\\\goku-ssj-god\\\\setup.ps1\")",
+      "Bash(powershell:*)"
+    ]
+  }
+}

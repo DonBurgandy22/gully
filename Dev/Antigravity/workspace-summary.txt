@@ -1,0 +1,26 @@
+﻿C:\dev\antigravity Workspace Summary
+====================================
+
+Primary Directories:
+- About Daryl/           - Personal info, CV, profile markdown for portfolio content
+- Pictures/              - Site inspection photos for portfolio gallery
+- portfolio/             - Main portfolio site (original) with 3D bridge, magnetic cursor, Spline 3D
+- portfolio-hub/         - Navigation hub linking to all four portfolio options
+- portfolio-option-1/    - Portfolio variant 1 (identical antigravity/spline version)
+- portfolio-option-2/    - Portfolio variant 2 (original antigravity/spline reference)
+- portfolio-option-3/    - Portfolio variant 3 (identical antigravity/spline version)
+- portfolio-option-4/    - Portfolio variant 4 (identical antigravity/spline version)
+- Skills/                - Custom skills (SPline SKILL.md)
+- Website Templates/     - Downloaded templates from godly.website for inspiration
+- daryl-portfolio-custom/ - Custom personal site with anti‑gravity spline background, dark/light theme
+- _skill_temp/           - Temporary skill development folder
+
+Key Files:
+- anti-gravity-spline.skill - Skill definition for generating anti-gravity spline visualizations
+- project-burgundy.md      - Project Burgundy vision document
+- folder-structure.txt    - Full recursive directory listing
+
+Current Active Servers:
+- Daryl Personal Site: http://localhost:8006 (tunnel: https://curly-laws-yawn.loca.lt, password: 197.86.222.24)
+
+Portfolio tunnels closed. All four portfolio options serve identical antigravity/spline portfolio (option-2) but not currently exposed.

@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryl Mack - Civil Engineer & Software Developer</title>
+    <meta name="description" content="Civil Engineer transitioning to Software Developer. Building structures and building code.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Animation Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Custom Magnetic Cursor -->
+    <div class="cursor"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo magnetic" data-strength="20">Daryl Mack</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="magnetic" data-strength="20">Home</a></li>
+                <li><a href="#about" class="magnetic" data-strength="20">About</a></li>
+                <li><a href="#engineering" class="magnetic" data-strength="20">Engineering</a></li>
+                <li><a href="#python" class="magnetic" data-strength="20">Python</a></li>
+                <li><a href="#skills" class="magnetic" data-strength="20">Skills</a></li>
+                <li><a href="#contact" class="magnetic" data-strength="20">Contact</a></li>
+                <li><a href="Daryl_Mack_CV.pdf" class="btn-nav" download>Download CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Civil Engineer â†’ Software Developer</h1>
+                <p class="hero-subtitle">Building structures & building code</p>
+                <p class="hero-text">With two years of experience in civil engineering and a growing passion for software development, I bridge the gap between physical construction and digital creation. Currently completing the Udemy 100-day Python challenge to expand my coding capabilities.</p>
+                <a href="#engineering" class="magnetic" data-strength="20" class="btn-primary magnetic" data-strength="40">View My Projects</a>
+            </div>
+            <div class="hero-image">
+                <div id="bridgeCanvas"></div>
+                <div class="hero-3d-label">
+                    <i class="fas fa-cube"></i> Interactive 3D Bridge
+                </div>
+            </div>
+        </div>
+        <div class="hero-background-particles" id="particles-js"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-text="About Me">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a Civil/Structural Engineer with two years of professional experience, currently transitioning into software development. My background includes project management, structural design, and site supervision across various construction projects.</p>
+                    <p>My engineering philosophy centers on <strong>efficient and sustainable design</strong>â€”principles I now apply to software development. I believe in creating solutions that are both practical and environmentally conscious, whether designing a building or writing code.</p>
+                    <p>I'm currently expanding my skills through the Udemy 100-day Python challenge, with plans to learn web development frameworks and contribute to meaningful software projects.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Education</h3>
+                        <p>BSc Hons Civil Engineering<br>University of Cape Town</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Current Role</h3>
+                        <p>Structural Engineer<br>L&S Consulting<br>March 2025 - Present</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Learning Path</h3>
+                        <p>Udemy 100-day<br>Python Challenge<br>In Progress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Scroll Gallery - Inspired by Antigravity -->
+    <section class="horizontal-scroll-section">
+        <div class="horizontal-scroll-container">
+            <div class="horizontal-scroll-title">
+                <h2 class="magnetic" data-strength="10">Engineering Portfolio 2025</h2>
+                <p>Site inspections & structural analysis</p>
+            </div>
+            <div class="horizontal-scroll-gallery">
+                <div class="horizontal-scroll-item">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Structural Steel Design">
+                    <div class="scroll-item-overlay">
+                        <h3>Structural Steel</h3>
+                        <p>Commercial building framework</p>
+                    </div>
+                </div>
+                <div class="horizontal-scroll-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Concrete Reinforcement">
+                    <div class="scroll-item-overlay">
+                        <h3>Concrete Design</h3>
+                        <p>Multi-storey reinforcement</p>
+                    </div>
+                </div>
+                <div class="horizontal-scroll-item">
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Site Inspection">
+                    <div class="scroll-item-overlay">
+                        <h3>Site Inspection</h3>
+                        <p>Quality control & safety</p>
+                    </div>
+                </div>
+                <div class="horizontal-scroll-item">
+                    <img src="https://images.unsplash.com/photo-1503386435952-d7918b99d4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="CAD Design">
+                    <div class="scroll-item-overlay">
+                        <h3>CAD Design</h3>
+                        <p>AutoCAD & Revit models</p>
+                    </div>
+                </div>
+                <div class="horizontal-scroll-item">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Project Management">
+                    <div class="scroll-item-overlay">
+                        <h3>Project Management</h3>
+                        <p>Timeline & resource planning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Projects -->
+    <section id="engineering" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-text="Engineering Projects">Engineering Projects</h2>
+            <p class="section-subtitle">Professional structural and civil engineering work</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Structural Steel Design</h3>
+                    <p>Designed steel connections and frameworks for commercial buildings, ensuring compliance with SANS 10162 standards.</p>
+                    <div class="project-tech">
+                        <span>AutoCAD</span>
+                        <span>Prokon</span>
+                        <span>Revit</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-concrete"></i>
+                    </div>
+                    <h3>Reinforced Concrete Design</h3>
+                    <p>Created detailed reinforcement designs for multi-storey buildings, focusing on efficiency and constructability.</p>
+                    <div class="project-tech">
+                        <span>Prokon</span>
+                        <span>AutoCAD</span>
+                        <span>Civil 3D</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Stormwater Systems</h3>
+                    <p>Designed and managed stormwater drainage systems for residential developments, adhering to municipal regulations.</p>
+                    <div class="project-tech">
+                        <span>Civil 3D</span>
+                        <span>EPANET</span>
+                        <span>AutoCAD</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Site Management</h3>
+                    <p>Oversaw construction projects, conducted site inspections, and ensured compliance with design specifications.</p>
+                    <div class="project-tech">
+                        <span>Project Mgmt</span>
+                        <span>Site Inspections</span>
+                        <span>Quality Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Projects -->
+    <section id="python" class="projects python-projects">
+        <div class="container">
+            <h2 class="section-title" data-text="Python Projects">Python Projects</h2>
+            <p class="section-subtitle">Learning journey through Udemy 100-day Python challenge</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Fundamentals</h3>
+                    <p>Completed core Python concepts including data structures, functions, OOP, and error handling through daily coding exercises.</p>
+                    <div class="project-tech">
+                        <span>Python 3</span>
+                        <span>OOP</span>
+                        <span>Algorithms</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development Basics</h3>
+                    <p>Learning HTML, CSS, and JavaScript integration with Python, building toward full-stack web applications.</p>
+                    <div class="project-tech">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>Flask</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Automation Scripts</h3>
+                    <p>Creating practical Python scripts for file management, data processing, and workflow automation.</p>
+                    <div class="project-tech">
+                        <span>Automation</span>
+                        <span>Scripting</span>
+                        <span>File I/O</span>
+                    </div>
+                </div>
+            </div>
+            <div class="learning-progress">
+                <h3>Learning Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%">
+                        <span>45% Complete</span>
+                    </div>
+                </div>
+                <p class="progress-text">Currently on Day 45 of the 100-day Python challenge</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-text="Skills Matrix">Skills Matrix</h2>
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h3 class="skills-title">
+                        <i class="fas fa-drafting-compass"></i>
+                        Engineering Skills
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">AutoCAD</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Revit</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Civil 3D</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Prokon</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">EPANET</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Microsoft Office</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-column">
+                    <h3 class="skills-title">
+                        <i class="fas fa-code"></i>
+                        Software Skills
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">VS Code</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PowerShell</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-text="Get In Touch">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+27 61 423 6040</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>dkmack22@outlook.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-file-pdf"></i>
+                        <div>
+                            <h4>CV Download</h4>
+                            <p><a href="Daryl_Mack_CV.pdf" download>Download my CV (PDF)</a></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo magnetic" data-strength="20">Daryl Mack</a>
+                    <p>Civil Engineer & Software Developer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" class="magnetic" data-strength="20">Home</a></li>
+                        <li><a href="#about" class="magnetic" data-strength="20">About</a></li>
+                        <li><a href="#engineering" class="magnetic" data-strength="20">Engineering</a></li>
+                        <li><a href="#python" class="magnetic" data-strength="20">Python</a></li>
+                        <li><a href="#contact" class="magnetic" data-strength="20">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> dkmack22@outlook.com</p>
+                    <p><i class="fas fa-phone"></i> +27 61 423 6040</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daryl Mack. All rights reserved.</p>
+                <button id="backToTop" class="back-to-top" aria-label="Back to top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,95 @@
+Read C:\Burgandy\architecture\input\BURGUNDY-COGNITIVE-FRAMEWORK-SPEC.md
+
+You are building Burgandy's first cognitive framework prototype exactly as specified in that file.
+
+WORKING DIRECTORY: C:\Burgandy\burgandy-cognitive-framework\
+
+EXECUTION RULES:
+- Create all folders and files as specified in Section 6
+- Save each file to disk before moving to the next
+- Never put everything in one file — follow the modular structure exactly
+- All output paths must be absolute: C:\Burgandy\burgandy-cognitive-framework\outputs\
+- Install dependencies before writing any src files: pip install networkx pyvis matplotlib pydantic
+- After all files are created, run: python run_demo.py
+- If run_demo.py fails, fix the error and re-run — do not stop at first failure
+
+BUILD ORDER — follow this exactly:
+1. Create folder structure
+2. Write config/framework_config.json
+3. Write data/starter_nodes.json — all nodes from Section 10, with full schema from Section 8
+4. Write data/starter_edges.json — all edges from Section 10 + loops from Section 11, with full schema from Section 9
+5. Write data/starter_clusters.json — Layer 6 domain stubs from Section 7
+6. Write src/models.py — Pydantic dataclasses for Node, Edge, Cluster
+7. Write src/graph_builder.py — loads JSON data, builds networkx DiGraph
+8. Write src/activation_engine.py — propagation with damping cap 0.95, decay 0.1 per iteration, max 20 iterations
+9. Write src/loop_engine.py — detects cycles, tracks loop traversal count, enforces saturation
+10. Write src/scoring.py — centrality, influence score, path cost calculation
+11. Write src/cluster_manager.py — manages domain cluster attachment
+12. Write src/simulation.py — implements Demo 1, Demo 2, Demo 3 from Section 19
+13. Write src/visualization.py — pyvis HTML + matplotlib PNG, node size from weight, edge thickness from weight, color by layer
+14. Write src/utils.py — file I/O helpers, path resolution, report writer
+15. Write src/__init__.py
+16. Write run_demo.py — runs all 3 demos, generates all outputs, prints summary
+17. Write requirements.txt
+18. Write docs/architecture.md
+19. Write docs/node-taxonomy.md
+20. Write docs/edge-rules.md
+21. Write docs/loop-behaviour.md
+22. Write README.md
+
+NODE WEIGHT ASSIGNMENTS:
+- language_comprehension: 0.95
+- working_memory: 0.92
+- logic: 0.90
+- abstraction: 0.88
+- pattern_recognition: 0.85
+- mathematics: 0.82
+- first_principles_reasoning: 0.80
+- systems_thinking: 0.78
+- decision_making: 0.75
+- planning: 0.73
+- self_monitoring: 0.72
+- error_detection: 0.70
+- error_correction: 0.68
+- reflection: 0.67
+- self_optimization: 0.65
+- symbolic_reasoning: 0.63
+- synthesis: 0.62
+- causal_reasoning: 0.60
+- analogical_reasoning: 0.58
+- variable_mapping: 0.55
+- probabilistic_reasoning: 0.53
+- sequence_reasoning: 0.50
+- associative_linking: 0.48
+- attention_control: 0.45
+- long_term_retrieval: 0.43
+- categorisation: 0.40
+- rule_application: 0.38
+- task_decomposition: 0.35
+- confidence_calibration: 0.33
+- transfer_learning: 0.30
+- strategy_adaptation: 0.28
+- prioritisation: 0.25
+- Domain cluster stubs: 0.10 each
+
+ACTIVATION ENGINE SPEC:
+- Activation spreads from seed nodes outward along edges
+- Each step: new_activation = current_activation * edge_weight * (1 - decay)
+- Decay per step: 0.1
+- Max activation cap: 0.95
+- Loop detection: if a node is visited more than 3 times in one propagation, stop that path
+- Report: for each demo, output ordered list of activated nodes with final activation levels
+
+VISUALIZATION SPEC:
+- Node size: node_weight * 40 (pyvis pixels)
+- Edge width: edge_weight * 5
+- Layer colors: Layer 1=#4A90D9, Layer 2=#E67E22, Layer 3=#9B59B6, Layer 4=#27AE60, Layer 5=#E74C3C, Layer 6=#95A5A6
+- HTML output: C:\Burgandy\burgandy-cognitive-framework\outputs\burgandy_network.html
+- PNG output: C:\Burgandy\burgandy-cognitive-framework\outputs\burgandy_network.png
+- Activation report: C:\Burgandy\burgandy-cognitive-framework\outputs\sample_activation_report.md
+
+After run_demo.py completes successfully, print:
+BUILD COMPLETE
+Files: [list all created files with sizes]
+Run: python run_demo.py
+Outputs: outputs/burgandy_network.html (open in browser for interactive view)

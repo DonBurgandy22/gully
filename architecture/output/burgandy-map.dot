@@ -1,0 +1,131 @@
+digraph burgandy {
+  rankdir=LR;
+  node [fontsize=10];
+  subgraph cluster_model {
+    label="MODEL";
+    style=filled; color="lightblue";
+    qwen3.5:4b [label="Primary local model" fillcolor="lightblue" style=filled];
+    phi3.5 [label="Fallback local — no tools" fillcolor="lightblue" style=filled];
+    deepseek_coder:6.7b [label="Coding tasks" fillcolor="lightblue" style=filled];
+    llama3.2:3b [label="Chat only — not suitable for agent" fillcolor="lightblue" style=filled];
+    deepseek_chat [label="Cloud primary (legacy)" fillcolor="lightblue" style=filled];
+    deepseek_reasoner [label="Cloud reasoning — Deep think trigge" fillcolor="lightblue" style=filled];
+    gemini_2.0_flash [label="Free cloud fallback" fillcolor="lightblue" style=filled];
+    claude_code [label="Production coding — separate key" fillcolor="lightblue" style=filled];
+    ollama_qwen3_5_4b [label="ollama/qwen3.5:4b" fillcolor="lightblue" style=filled];
+  }
+  subgraph cluster_channel {
+    label="CHANNEL";
+    style=filled; color="lightyellow";
+    whatsapp [label="Primary — +27602678740" fillcolor="lightyellow" style=filled];
+    telegram [label="Secondary — disabled" fillcolor="lightyellow" style=filled];
+  }
+  subgraph cluster_tool {
+    label="TOOL";
+    style=filled; color="lightgreen";
+    youtube_skill [label="YouTube pipeline" fillcolor="lightgreen" style=filled];
+    finance_skill [label="Finance tracking" fillcolor="lightgreen" style=filled];
+    security_skill [label="8-step security scan" fillcolor="lightgreen" style=filled];
+    coding_agent_skill [label="Code task queue" fillcolor="lightgreen" style=filled];
+    websiteautomation_skill [label="Client website pipeline" fillcolor="lightgreen" style=filled];
+    antigravity_skill [label="GSAP physics animations" fillcolor="lightgreen" style=filled];
+    spline_skill [label="3D Spline integration" fillcolor="lightgreen" style=filled];
+    himalaya_skill [label="Email via Outlook COM" fillcolor="lightgreen" style=filled];
+    organisation_skill [label="File organisation" fillcolor="lightgreen" style=filled];
+    productivity_skill [label="Morning/evening routines" fillcolor="lightgreen" style=filled];
+    weather_skill [label="Weather lookup" fillcolor="lightgreen" style=filled];
+    skill_creator_skill [label="Create/refine skills" fillcolor="lightgreen" style=filled];
+  }
+  subgraph cluster_file {
+    label="FILE";
+    style=filled; color="lightsalmon";
+    agents_md [label="Startup rules and behaviour" fillcolor="lightsalmon" style=filled];
+    soul_md [label="Identity and tone" fillcolor="lightsalmon" style=filled];
+    memory_md [label="Long-term durable memory" fillcolor="lightsalmon" style=filled];
+    user_md [label="User profile" fillcolor="lightsalmon" style=filled];
+    session_summary_md [label="Cross-session continuity" fillcolor="lightsalmon" style=filled];
+    daily_memory [label="memory/YYYY-MM-DD.md" fillcolor="lightsalmon" style=filled];
+    openclaw_json [label="Config — models, channels, gateway" fillcolor="lightsalmon" style=filled];
+    checkpoint_json [label="Pipeline step tracking" fillcolor="lightsalmon" style=filled];
+  }
+  subgraph cluster_process {
+    label="PROCESS";
+    style=filled; color="plum";
+    gateway [label="OpenClaw gateway ws://127.0.0.1:187" fillcolor="plum" style=filled];
+    auto_restart_loop [label="70% context threshold trigger" fillcolor="plum" style=filled];
+    context_monitor [label="BurgandyContextMonitor2Min task" fillcolor="plum" style=filled];
+    memory_save [label="Save before restart" fillcolor="plum" style=filled];
+    model_router [label="Routes tasks to cheapest viable mod" fillcolor="plum" style=filled];
+    compaction [label="safeguard mode — context management" fillcolor="plum" style=filled];
+    openclaw_config [label="OpenClaw Config (bootstrap:40000)" fillcolor="plum" style=filled];
+  }
+  subgraph cluster_hardware {
+    label="HARDWARE";
+    style=filled; color="lightgray";
+    rtx_3060 [label="12GB VRAM — runs local models" fillcolor="lightgray" style=filled];
+    ryzen_5600 [label="AMD Ryzen 5 5600 — 16GB RAM" fillcolor="lightgray" style=filled];
+  }
+  subgraph cluster_service {
+    label="SERVICE";
+    style=filled; color="peachpuff";
+    deepseek_api [label="Cloud API — $25/mo max" fillcolor="peachpuff" style=filled];
+    google_cloud [label="TTS + NotebookLM" fillcolor="peachpuff" style=filled];
+    elevenlabs_api [label="YouTube voiceover — pending" fillcolor="peachpuff" style=filled];
+    reddit_praw [label="Story scraping — pending" fillcolor="peachpuff" style=filled];
+    youtube_data_api [label="Upload automation — pending" fillcolor="peachpuff" style=filled];
+    ollama [label="Local model runtime — port 11434" fillcolor="peachpuff" style=filled];
+  }
+  subgraph cluster_unknown {
+    label="UNKNOWN";
+    style=filled; color="white";
+    qwen3_5_4b [label="qwen3_5_4b" fillcolor="white" style=filled];
+    deepseek_reasoner [label="deepseek_reasoner" fillcolor="white" style=filled];
+    gemini_2_0_flash [label="gemini_2_0_flash" fillcolor="white" style=filled];
+    phi3_5 [label="phi3_5" fillcolor="white" style=filled];
+    deepseek_chat [label="deepseek_chat" fillcolor="white" style=filled];
+    deepseek_coder_6_7b [label="deepseek_coder_6_7b" fillcolor="white" style=filled];
+    claude_code [label="claude_code" fillcolor="white" style=filled];
+  }
+  whatsapp -> model_router [label="WhatsApp input" style=solid];
+  telegram -> model_router [label="Telegram input " style=solid];
+  model_router -> qwen3_5_4b [label="primary local" style=solid];
+  model_router -> deepseek_reasoner [label="deep think trig" style=solid];
+  model_router -> gemini_2_0_flash [label="cloud fallback" style=solid];
+  qwen3_5_4b -> phi3_5 [label="no tools" style=dashed];
+  phi3_5 -> gemini_2_0_flash [label="cloud" style=dashed];
+  deepseek_chat -> gemini_2_0_flash [label="budget limit" style=dashed];
+  qwen3_5_4b -> rtx_3060 [label="GPU inference" style=dotted];
+  phi3_5 -> rtx_3060 [label="GPU inference" style=dotted];
+  deepseek_coder_6_7b -> rtx_3060 [label="GPU inference" style=dotted];
+  ollama -> qwen3_5_4b [label="serves" style=solid];
+  ollama -> phi3_5 [label="serves" style=solid];
+  ollama -> deepseek_coder_6_7b [label="serves" style=solid];
+  gateway -> model_router [label="message dispatc" style=dotted];
+  gateway -> whatsapp [label="channel input" style=dashed];
+  gateway -> agents_md [label="bootstrap" style=dashed];
+  gateway -> soul_md [label="bootstrap" style=dashed];
+  gateway -> user_md [label="bootstrap" style=dashed];
+  gateway -> memory_md [label="bootstrap" style=dashed];
+  gateway -> session_summary_md [label="on reconnect" style=dashed];
+  context_monitor -> auto_restart_loop [label="70% threshold" style=dotted];
+  auto_restart_loop -> memory_save [label="save before res" style=dotted];
+  memory_save -> session_summary_md [label="state preservat" style=bold];
+  memory_save -> daily_memory [label="daily log" style=bold];
+  auto_restart_loop -> gateway [label="restart via gat" style=dotted];
+  compaction -> context_monitor [label="session size pr" style=dashed];
+  qwen3_5_4b -> youtube_skill [label="" style=solid];
+  qwen3_5_4b -> finance_skill [label="" style=solid];
+  qwen3_5_4b -> security_skill [label="" style=solid];
+  qwen3_5_4b -> coding_agent_skill [label="" style=solid];
+  qwen3_5_4b -> websiteautomation_skill [label="" style=solid];
+  qwen3_5_4b -> antigravity_skill [label="" style=solid];
+  deepseek_coder_6_7b -> coding_agent_skill [label="" style=solid];
+  youtube_skill -> youtube_data_api [label="upload" style=solid];
+  youtube_skill -> elevenlabs_api [label="voiceover" style=solid];
+  youtube_skill -> reddit_praw [label="scrape" style=solid];
+  coding_agent_skill -> claude_code [label="heavy coding" style=solid];
+  deepseek_reasoner -> deepseek_api [label="cloud inference" style=solid];
+  gemini_2_0_flash -> google_cloud [label="cloud inference" style=solid];
+  openclaw_config -> gateway [label="runtime config" style=dashed];
+  openclaw_config -> openclaw_json [label="disk config" style=dashed];
+}

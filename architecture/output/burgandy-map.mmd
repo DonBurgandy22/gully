@@ -1,0 +1,112 @@
+graph TD
+  subgraph MODELS
+    qwen3.5:4b[["Primary local model"]]
+    phi3.5[["Fallback local — no tools"]]
+    deepseek_coder:6.7b[["Coding tasks"]]
+    llama3.2:3b[["Chat only — not suitable for agent"]]
+    deepseek_chat[["Cloud primary (legacy)"]]
+    deepseek_reasoner[["Cloud reasoning — Deep think trigger"]]
+    gemini_2.0_flash[["Free cloud fallback"]]
+    claude_code[["Production coding — separate key"]]
+    ollama_qwen3_5_4b[["ollama/qwen3.5:4b"]]
+  end
+  subgraph CHANNELS
+    whatsapp(["Primary — +27602678740"])
+    telegram(["Secondary — disabled"])
+  end
+  subgraph SKILLS
+    youtube_skill{{"YouTube pipeline"}}
+    finance_skill{{"Finance tracking"}}
+    security_skill{{"8-step security scan"}}
+    coding_agent_skill{{"Code task queue"}}
+    websiteautomation_skill{{"Client website pipeline"}}
+    antigravity_skill{{"GSAP physics animations"}}
+    spline_skill{{"3D Spline integration"}}
+    himalaya_skill{{"Email via Outlook COM"}}
+    organisation_skill{{"File organisation"}}
+    productivity_skill{{"Morning/evening routines"}}
+    weather_skill{{"Weather lookup"}}
+    skill_creator_skill{{"Create/refine skills"}}
+  end
+  subgraph FILES
+    agents_md[("Startup rules and behaviour")]
+    soul_md[("Identity and tone")]
+    memory_md[("Long-term durable memory")]
+    user_md[("User profile")]
+    session_summary_md[("Cross-session continuity")]
+    daily_memory[("memory/YYYY-MM-DD.md")]
+    openclaw_json[("Config — models, channels, gateway")]
+    checkpoint_json[("Pipeline step tracking")]
+  end
+  subgraph PROCESSES
+    gateway[/"OpenClaw gateway ws://127.0.0.1:18789"/]
+    auto_restart_loop[/"70% context threshold trigger"/]
+    context_monitor[/"BurgandyContextMonitor2Min task"/]
+    memory_save[/"Save before restart"/]
+    model_router[/"Routes tasks to cheapest viable model"/]
+    compaction[/"safeguard mode — context management"/]
+    openclaw_config[/"OpenClaw Config (bootstrap:40000)"/]
+  end
+  subgraph HARDWARE
+    rtx_3060[\"12GB VRAM — runs local models"\]
+    ryzen_5600[\"AMD Ryzen 5 5600 — 16GB RAM"\]
+  end
+  subgraph SERVICES
+    deepseek_api>"Cloud API — $25/mo max"]
+    google_cloud>"TTS + NotebookLM"]
+    elevenlabs_api>"YouTube voiceover — pending"]
+    reddit_praw>"Story scraping — pending"]
+    youtube_data_api>"Upload automation — pending"]
+    ollama>"Local model runtime — port 11434"]
+  end
+  subgraph OTHER
+    qwen3_5_4b["qwen3_5_4b"]
+    deepseek_reasoner["deepseek_reasoner"]
+    gemini_2_0_flash["gemini_2_0_flash"]
+    phi3_5["phi3_5"]
+    deepseek_chat["deepseek_chat"]
+    deepseek_coder_6_7b["deepseek_coder_6_7b"]
+    claude_code["claude_code"]
+  end
+  whatsapp -->|WhatsApp input| model_router
+  telegram -->|Telegram input (disa| model_router
+  model_router -->|primary local| qwen3_5_4b
+  model_router -->|deep think trigger| deepseek_reasoner
+  model_router -->|cloud fallback| gemini_2_0_flash
+  qwen3_5_4b -.->|no tools| phi3_5
+  phi3_5 -.->|cloud| gemini_2_0_flash
+  deepseek_chat -.->|budget limit| gemini_2_0_flash
+  qwen3_5_4b -.->|GPU inference| rtx_3060
+  phi3_5 -.->|GPU inference| rtx_3060
+  deepseek_coder_6_7b -.->|GPU inference| rtx_3060
+  ollama -->|serves| qwen3_5_4b
+  ollama -->|serves| phi3_5
+  ollama -->|serves| deepseek_coder_6_7b
+  gateway -->|message dispatch| model_router
+  gateway -.->|channel input| whatsapp
+  gateway -.->|bootstrap| agents_md
+  gateway -.->|bootstrap| soul_md
+  gateway -.->|bootstrap| user_md
+  gateway -.->|bootstrap| memory_md
+  gateway -.->|on reconnect| session_summary_md
+  context_monitor -->|70% threshold| auto_restart_loop
+  auto_restart_loop -->|save before restart| memory_save
+  memory_save -.->|state preservation| session_summary_md
+  memory_save -.->|daily log| daily_memory
+  auto_restart_loop -->|restart via gateway.| gateway
+  compaction -.->|session size proxy| context_monitor
+  qwen3_5_4b -->|| youtube_skill
+  qwen3_5_4b -->|| finance_skill
+  qwen3_5_4b -->|| security_skill
+  qwen3_5_4b -->|| coding_agent_skill
+  qwen3_5_4b -->|| websiteautomation_skill
+  qwen3_5_4b -->|| antigravity_skill
+  deepseek_coder_6_7b -->|| coding_agent_skill
+  youtube_skill -->|upload| youtube_data_api
+  youtube_skill -->|voiceover| elevenlabs_api
+  youtube_skill -->|scrape| reddit_praw
+  coding_agent_skill -->|heavy coding| claude_code
+  deepseek_reasoner -->|cloud inference| deepseek_api
+  gemini_2_0_flash -->|cloud inference| google_cloud
+  openclaw_config -.->|runtime config| gateway
+  openclaw_config -.->|disk config| openclaw_json

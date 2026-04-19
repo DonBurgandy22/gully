@@ -1,0 +1,28 @@
+Audit and fix Burgandy’s post-cognitive-framework stall.
+
+Context:
+- The cognitive framework, live network API, and 3D visualization already exist and work in code.
+- The remaining suspected failure is runtime wiring between real OpenClaw/Burgandy task execution and src/live_network.py.
+- live_state.json has been observed idle during real use.
+- The local runtime is fragile and context-sensitive, so prefer the smallest safe fix.
+
+Your job:
+1. Find the real task lifecycle entry and exit points in the current Burgandy/OpenClaw runtime.
+2. Verify whether activate(...) and deactivate_all() are actually called during ordinary real tasks.
+3. Verify file/path correctness for live_state.json and confirm the browser/server reads the same file being written.
+4. Detect blocking subprocess/file I/O behavior, swallowed exceptions, or path mismatches.
+5. Add explicit logging around task start, activation call, state write, deactivation call, and failures.
+6. Implement the smallest safe patch that makes one real task visibly activate nodes, update live_state.json, and cool down correctly on completion.
+7. Keep all existing working framework code intact unless a change is necessary.
+8. Output:
+   - root cause
+   - exact file/function causing it
+   - patch summary
+   - verification steps
+   - rollback steps
+
+Important constraints:
+- Do not rebuild the framework.
+- Do not redesign the whole architecture.
+- Fix runtime wiring first.
+- Favor a narrow proven path over broad refactors.

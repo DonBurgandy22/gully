@@ -1,0 +1,63 @@
+# Build Interactive Website with Mobile Access for Daryl
+
+## Objective
+Build a modern, interactive website that Daryl can access on his phone. The website should showcase Daryl's skills and projects, with a focus on mobile responsiveness and fast loading.
+
+## Requirements
+
+### 1. Mobile-First Design
+- **Responsive layout** - Works perfectly on iPhone/Android
+- **Touch-friendly** - Large buttons, swipe gestures
+- **Fast loading** - Under 3 seconds on mobile data
+- **Offline capability** - Basic functionality without internet
+
+### 2. Interactive Features
+- **Portfolio showcase** - Display Daryl's projects (YouTube channels, websites, etc.)
+- **Live updates** - Real-time status of Burgundy system
+- **Contact form** - Easy way to message from phone
+- **Dark/light mode** - Automatic based on phone settings
+
+### 3. Technical Stack
+- **HTML/CSS/JavaScript** - No frameworks for maximum compatibility
+- **Local storage** - Save preferences on phone
+- **Service Worker** - Offline capability
+- **WebSocket** - Real-time updates (optional)
+
+### 4. Content to Include
+1. **About Daryl** - Brief bio, skills, goals
+2. **YouTube Channels** - Reddit's Best, Tech/AI, Personal Development, Clipping
+3. **Web Development** - Portfolio sites, client work
+4. **Burgundy System** - Status, capabilities, live metrics
+5. **Contact** - WhatsApp, Telegram, email
+
+## Implementation Plan
+
+### Step 1: Basic Structure
+Create index.html with mobile-first structure
+
+### Step 2: Mobile-Optimized CSS
+Create styles.css with responsive design
+
+### Step 3: Interactive JavaScript
+Create script.js with mobile interactions
+
+### Step 4: Service Worker for Offline
+Create sw.js for offline capability
+
+### Step 5: Web App Manifest
+Create manifest.json for PWA features
+
+## Output Path
+C:\dev\antigravity\daryl-mobile-portfolio\
+
+## Notes
+- Use vanilla JavaScript - no frameworks for maximum compatibility
+- Focus on mobile performance - optimize images, minimize JS
+- Include progressive web app features for app-like experience
+- Test on actual mobile devices during development
+- Provide clear deployment instructions for Daryl
+
+## Context Files
+- C:\Users\dkmac\.openclaw\workspace\USER.md (for Daryl's info)
+- C:\Users\dkmac\.openclaw\workspace\MEMORY.md (for project context)
+- Any existing portfolio files in C:\dev\antigravity\

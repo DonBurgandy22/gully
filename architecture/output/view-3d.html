@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Burgandy 3D Architecture</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0f; font-family: monospace; overflow: hidden; }
+
+    #3d-graph { position: absolute; top: 0; left: 0; }
+
+    #legend {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: rgba(10,10,20,0.85);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: #ccc;
+      font-size: 12px;
+      z-index: 10;
+      min-width: 160px;
+    }
+    #legend h3 { color: #fff; font-size: 13px; margin-bottom: 10px; letter-spacing: 1px; }
+    .leg-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .leg-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+
+    #info {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(10,10,20,0.85);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #888;
+      font-size: 11px;
+      z-index: 10;
+      max-width: 340px;
+    }
+    #info strong { color: #fff; display: block; font-size: 13px; margin-bottom: 4px; }
+    #info span { color: #aaa; }
+
+    #title {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      z-index: 10;
+      text-shadow: 0 0 20px rgba(150,100,255,0.6);
+    }
+    #title small { display: block; color: #666; font-size: 10px; letter-spacing: 1px; margin-top: 2px; }
+
+    #controls {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      color: #555;
+      font-size: 10px;
+      z-index: 10;
+      text-align: right;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="title">
+    BURGANDY
+    <small>ARCHITECTURE MAP — V1</small>
+  </div>
+
+  <div id="legend">
+    <h3>NODE TYPES</h3>
+    <div class="leg-row"><div class="leg-dot" style="background:#c084fc"></div>Process</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#60a5fa"></div>Model</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#fde047"></div>Channel</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#4ade80"></div>Tool / Skill</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#fb923c"></div>File</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#94a3b8"></div>Hardware</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#fdba74"></div>Service</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#f1f5f9"></div>Other</div>
+  </div>
+
+  <div id="info">
+    <strong>Click a node to inspect it</strong>
+    <span>Hover to see labels. Scroll to zoom.</span>
+  </div>
+
+  <div id="controls">
+    drag · rotate<br>
+    right-drag · pan<br>
+    scroll · zoom<br>
+    click · inspect
+  </div>
+
+  <div id="3d-graph"></div>
+
+  <script src="https://unpkg.com/3d-force-graph@1/dist/3d-force-graph.min.js"></script>
+  <script>
+    const TYPE_COLOR = {
+      process:  '#c084fc',
+      model:    '#60a5fa',
+      channel:  '#fde047',
+      tool:     '#4ade80',
+      file:     '#fb923c',
+      hardware: '#94a3b8',
+      service:  '#fdba74',
+      unknown:  '#f1f5f9'
+    };
+
+    const LINK_COLOR = {
+      calls:         '#60a5fa',
+      routes_to:     '#4ade80',
+      triggers:      '#f87171',
+      reads:         '#94a3b8',
+      writes:        '#fb923c',
+      falls_back_to: '#fde047',
+      runs_on:       '#c084fc'
+    };
+
+    fetch('burgandy-3d.json')
+      .then(r => r.json())
+      .then(data => {
+        const infoBox = document.getElementById('info');
+
+        const Graph = ForceGraph3D()(document.getElementById('3d-graph'))
+          .width(window.innerWidth)
+          .height(window.innerHeight)
+          .backgroundColor('#0a0a0f')
+          .graphData({ nodes: data.nodes, links: data.links })
+
+          // Nodes
+          .nodeLabel(n => `${n.label}\n[${n.type}]`)
+          .nodeColor(n => TYPE_COLOR[n.type] || '#f1f5f9')
+          .nodeRelSize(5)
+          .nodeOpacity(0.9)
+
+          // Links
+          .linkLabel(l => l.label || l.type)
+          .linkColor(l => LINK_COLOR[l.type] || '#555')
+          .linkWidth(1.2)
+          .linkOpacity(0.5)
+          .linkDirectionalArrowLength(4)
+          .linkDirectionalArrowRelPos(1)
+          .linkDirectionalParticles(l => ['calls','triggers','routes_to'].includes(l.type) ? 2 : 0)
+          .linkDirectionalParticleSpeed(0.005)
+          .linkDirectionalParticleColor(l => LINK_COLOR[l.type] || '#555')
+
+          // Click handler
+          .onNodeClick(node => {
+            infoBox.innerHTML = `
+              <strong>${node.label}</strong>
+              <span>Type: ${node.type}</span><br>
+              <span>ID: ${node.id}</span><br>
+              <span>Group: ${data.groups[node.group] || node.group}</span>
+            `;
+            Graph.centerAt(node.x, node.y, 800);
+            Graph.cameraPosition({ x: node.x, y: node.y, z: node.z + 120 }, node, 800);
+          })
+
+          // Hover
+          .onNodeHover(node => {
+            document.body.style.cursor = node ? 'pointer' : 'default';
+          });
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+          Graph.width(window.innerWidth).height(window.innerHeight);
+        });
+      })
+      .catch(err => {
+        document.getElementById('info').innerHTML =
+          `<strong style="color:#f87171">Load error</strong><span>${err.message}</span>`;
+      });
+  </script>
+</body>
+</html>
+```

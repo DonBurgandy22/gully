@@ -1,0 +1,9 @@
+Current Simulation Monitor Tunnel URL:
+https://eighty-jeans-win.loca.lt
+
+Local URL:
+http://localhost:8006
+
+Last updated: 2026-03-31 08:40 AM SAST
+
+Note: Tunnel URLs change when restarted. This file will be updated with the latest URL.

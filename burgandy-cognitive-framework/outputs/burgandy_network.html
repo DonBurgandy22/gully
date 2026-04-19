@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #1a1a2e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"borderWidth": 3, "color": {"background": "#4A90D9", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "language_comprehension", "label": "Language Comprehension", "shape": "dot", "size": 38.0, "title": "Language Comprehension\nLayer 1\nWeight: 0.95\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "working_memory", "label": "Working Memory", "shape": "dot", "size": 36.800000000000004, "title": "Working Memory\nLayer 1\nWeight: 0.92"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "long_term_retrieval", "label": "Long-Term Retrieval", "shape": "dot", "size": 17.2, "title": "Long-Term Retrieval\nLayer 1\nWeight: 0.43"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "attention_control", "label": "Attention Control", "shape": "dot", "size": 18.0, "title": "Attention Control\nLayer 1\nWeight: 0.45"}, {"borderWidth": 3, "color": {"background": "#4A90D9", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "abstraction", "label": "Abstraction", "shape": "dot", "size": 35.2, "title": "Abstraction\nLayer 1\nWeight: 0.88\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "categorisation", "label": "Categorisation", "shape": "dot", "size": 16.0, "title": "Categorisation\nLayer 1\nWeight: 0.40"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "pattern_recognition", "label": "Pattern Recognition", "shape": "dot", "size": 34.0, "title": "Pattern Recognition\nLayer 1\nWeight: 0.85"}, {"borderWidth": 1, "color": {"background": "#4A90D9", "border": "#4A90D9"}, "font": {"color": "white"}, "id": "associative_linking", "label": "Associative Linking", "shape": "dot", "size": 19.2, "title": "Associative Linking\nLayer 1\nWeight: 0.48"}, {"borderWidth": 3, "color": {"background": "#E67E22", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "logic", "label": "Logic", "shape": "dot", "size": 36.0, "title": "Logic\nLayer 2\nWeight: 0.90\nActivation: 0.9500"}, {"borderWidth": 3, "color": {"background": "#E67E22", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "first_principles_reasoning", "label": "First-Principles Reasoning", "shape": "dot", "size": 32.0, "title": "First-Principles Reasoning\nLayer 2\nWeight: 0.80\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#E67E22", "border": "#E67E22"}, "font": {"color": "white"}, "id": "causal_reasoning", "label": "Causal Reasoning", "shape": "dot", "size": 24.0, "title": "Causal Reasoning\nLayer 2\nWeight: 0.60"}, {"borderWidth": 1, "color": {"background": "#E67E22", "border": "#E67E22"}, "font": {"color": "white"}, "id": "analogical_reasoning", "label": "Analogical Reasoning", "shape": "dot", "size": 23.2, "title": "Analogical Reasoning\nLayer 2\nWeight: 0.58"}, {"borderWidth": 3, "color": {"background": "#E67E22", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "systems_thinking", "label": "Systems Thinking", "shape": "dot", "size": 31.200000000000003, "title": "Systems Thinking\nLayer 2\nWeight: 0.78\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#E67E22", "border": "#E67E22"}, "font": {"color": "white"}, "id": "probabilistic_reasoning", "label": "Probabilistic Reasoning", "shape": "dot", "size": 21.200000000000003, "title": "Probabilistic Reasoning\nLayer 2\nWeight: 0.53"}, {"borderWidth": 3, "color": {"background": "#9B59B6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "symbolic_reasoning", "label": "Symbolic Reasoning", "shape": "dot", "size": 25.2, "title": "Symbolic Reasoning\nLayer 3\nWeight: 0.63\nActivation: 0.9500"}, {"borderWidth": 3, "color": {"background": "#9B59B6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "mathematics", "label": "Mathematics", "shape": "dot", "size": 32.8, "title": "Mathematics\nLayer 3\nWeight: 0.82\nActivation: 0.9500"}, {"borderWidth": 3, "color": {"background": "#9B59B6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "variable_mapping", "label": "Variable Mapping", "shape": "dot", "size": 22.0, "title": "Variable Mapping\nLayer 3\nWeight: 0.55\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#9B59B6", "border": "#9B59B6"}, "font": {"color": "white"}, "id": "rule_application", "label": "Rule Application", "shape": "dot", "size": 15.2, "title": "Rule Application\nLayer 3\nWeight: 0.38"}, {"borderWidth": 1, "color": {"background": "#9B59B6", "border": "#9B59B6"}, "font": {"color": "white"}, "id": "sequence_reasoning", "label": "Sequence Reasoning", "shape": "dot", "size": 20.0, "title": "Sequence Reasoning\nLayer 3\nWeight: 0.50"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "planning", "label": "Planning", "shape": "dot", "size": 29.2, "title": "Planning\nLayer 4\nWeight: 0.73\nActivation: 0.9500"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "prioritisation", "label": "Prioritisation", "shape": "dot", "size": 10, "title": "Prioritisation\nLayer 4\nWeight: 0.25\nActivation: 0.1883"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "decision_making", "label": "Decision Making", "shape": "dot", "size": 30.0, "title": "Decision Making\nLayer 4\nWeight: 0.75\nActivation: 0.9500"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "task_decomposition", "label": "Task Decomposition", "shape": "dot", "size": 14.0, "title": "Task Decomposition\nLayer 4\nWeight: 0.35\nActivation: 0.7564"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "error_detection", "label": "Error Detection", "shape": "dot", "size": 28.0, "title": "Error Detection\nLayer 4\nWeight: 0.70\nActivation: 0.0371"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "error_correction", "label": "Error Correction", "shape": "dot", "size": 27.200000000000003, "title": "Error Correction\nLayer 4\nWeight: 0.68\nActivation: 0.0241"}, {"borderWidth": 3, "color": {"background": "#27AE60", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "self_monitoring", "label": "Self Monitoring", "shape": "dot", "size": 28.799999999999997, "title": "Self Monitoring\nLayer 4\nWeight: 0.72\nActivation: 0.0508"}, {"borderWidth": 1, "color": {"background": "#E74C3C", "border": "#E74C3C"}, "font": {"color": "white"}, "id": "reflection", "label": "Reflection", "shape": "dot", "size": 26.8, "title": "Reflection\nLayer 5\nWeight: 0.67"}, {"borderWidth": 3, "color": {"background": "#E74C3C", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "self_optimization", "label": "Self Optimization", "shape": "dot", "size": 26.0, "title": "Self Optimization\nLayer 5\nWeight: 0.65\nActivation: 0.1262"}, {"borderWidth": 3, "color": {"background": "#E74C3C", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "confidence_calibration", "label": "Confidence Calibration", "shape": "dot", "size": 13.200000000000001, "title": "Confidence Calibration\nLayer 5\nWeight: 0.33\nActivation: 0.0139"}, {"borderWidth": 3, "color": {"background": "#E74C3C", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "strategy_adaptation", "label": "Strategy Adaptation", "shape": "dot", "size": 11.200000000000001, "title": "Strategy Adaptation\nLayer 5\nWeight: 0.28\nActivation: 0.7017"}, {"borderWidth": 3, "color": {"background": "#E74C3C", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "synthesis", "label": "Synthesis", "shape": "dot", "size": 24.8, "title": "Synthesis\nLayer 5\nWeight: 0.62\nActivation: 0.9500"}, {"borderWidth": 1, "color": {"background": "#E74C3C", "border": "#E74C3C"}, "font": {"color": "white"}, "id": "transfer_learning", "label": "Transfer Learning", "shape": "dot", "size": 12.0, "title": "Transfer Learning\nLayer 5\nWeight: 0.30"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "engineering_cluster", "label": "Engineering Cluster", "shape": "dot", "size": 10, "title": "Engineering Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.2595"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "legal_cluster", "label": "Legal Cluster", "shape": "dot", "size": 10, "title": "Legal Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.3424"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "finance_cluster", "label": "Finance Cluster", "shape": "dot", "size": 10, "title": "Finance Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.3424"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "content_cluster", "label": "Content Cluster", "shape": "dot", "size": 10, "title": "Content Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.2269"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "coding_cluster", "label": "Coding Cluster", "shape": "dot", "size": 10, "title": "Coding Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.2595"}, {"borderWidth": 1, "color": {"background": "#95A5A6", "border": "#95A5A6"}, "font": {"color": "white"}, "id": "web_design_cluster", "label": "Web Design Cluster", "shape": "dot", "size": 10, "title": "Web Design Cluster\nLayer 6\nWeight: 0.10"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "research_cluster", "label": "Research Cluster", "shape": "dot", "size": 10, "title": "Research Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.2269"}, {"borderWidth": 3, "color": {"background": "#95A5A6", "border": "#FFFF00"}, "font": {"color": "white"}, "id": "operations_cluster", "label": "Operations Cluster", "shape": "dot", "size": 10, "title": "Operations Cluster\nLayer 6\nWeight: 0.10\nActivation: 0.3966"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "language_comprehension", "title": "dependency (0.92)", "to": "logic", "width": 4.6000000000000005}, {"arrows": "to", "from": "language_comprehension", "title": "dependency (0.90)", "to": "abstraction", "width": 4.5}, {"arrows": "to", "from": "language_comprehension", "title": "translation (0.85)", "to": "symbolic_reasoning", "width": 4.25}, {"arrows": "to", "from": "language_comprehension", "title": "translation (0.80)", "to": "variable_mapping", "width": 4.0}, {"arrows": "to", "from": "language_comprehension", "title": "dependency (0.70)", "to": "mathematics", "width": 3.5}, {"arrows": "to", "from": "working_memory", "title": "dependency (0.80)", "to": "logic", "width": 4.0}, {"arrows": "to", "from": "working_memory", "title": "dependency (0.82)", "to": "planning", "width": 4.1}, {"arrows": "to", "from": "working_memory", "title": "dependency (0.78)", "to": "decision_making", "width": 3.9000000000000004}, {"arrows": "to", "from": "long_term_retrieval", "title": "amplification (0.72)", "to": "associative_linking", "width": 3.5999999999999996}, {"arrows": "to", "from": "long_term_retrieval", "title": "amplification (0.70)", "to": "pattern_recognition", "width": 3.5}, {"arrows": "to", "from": "attention_control", "title": "dependency (0.85)", "to": "working_memory", "width": 4.25}, {"arrows": "to", "from": "abstraction", "title": "dependency (0.88)", "to": "first_principles_reasoning", "width": 4.4}, {"arrows": "to", "from": "abstraction", "title": "amplification (0.85)", "to": "systems_thinking", "width": 4.25}, {"arrows": "to", "from": "categorisation", "title": "dependency (0.65)", "to": "rule_application", "width": 3.25}, {"arrows": "to", "from": "pattern_recognition", "title": "amplification (0.75)", "to": "analogical_reasoning", "width": 3.75}, {"arrows": "to", "from": "pattern_recognition", "title": "amplification (0.68)", "to": "categorisation", "width": 3.4000000000000004}, {"arrows": "to", "from": "pattern_recognition", "title": "co_activation (0.50)", "to": "web_design_cluster", "width": 2.5}, {"arrows": "to", "from": "associative_linking", "title": "amplification (0.65)", "to": "synthesis", "width": 3.25}, {"arrows": "to", "from": "logic", "title": "amplification (0.88)", "to": "mathematics", "width": 4.4}, {"arrows": "to", "from": "logic", "title": "dependency (0.85)", "to": "first_principles_reasoning", "width": 4.25}, {"arrows": "to", "from": "logic", "title": "dependency (0.85)", "to": "decision_making", "width": 4.25}, {"arrows": "to", "from": "first_principles_reasoning", "title": "amplification (0.82)", "to": "mathematics", "width": 4.1}, {"arrows": "to", "from": "first_principles_reasoning", "title": "amplification (0.78)", "to": "systems_thinking", "width": 3.9000000000000004}, {"arrows": "to", "from": "causal_reasoning", "title": "amplification (0.72)", "to": "systems_thinking", "width": 3.5999999999999996}, {"arrows": "to", "from": "causal_reasoning", "title": "amplification (0.70)", "to": "decision_making", "width": 3.5}, {"arrows": "to", "from": "analogical_reasoning", "title": "amplification (0.65)", "to": "abstraction", "width": 3.25}, {"arrows": "to", "from": "systems_thinking", "title": "amplification (0.80)", "to": "synthesis", "width": 4.0}, {"arrows": "to", "from": "systems_thinking", "title": "co_activation (0.50)", "to": "operations_cluster", "width": 2.5}, {"arrows": "to", "from": "probabilistic_reasoning", "title": "amplification (0.68)", "to": "decision_making", "width": 3.4000000000000004}, {"arrows": "to", "from": "probabilistic_reasoning", "title": "amplification (0.65)", "to": "confidence_calibration", "width": 3.25}, {"arrows": "to", "from": "symbolic_reasoning", "title": "feedback (0.65)", "to": "language_comprehension", "width": 3.25}, {"arrows": "to", "from": "symbolic_reasoning", "title": "dependency (0.80)", "to": "mathematics", "width": 4.0}, {"arrows": "to", "from": "mathematics", "title": "amplification (0.82)", "to": "symbolic_reasoning", "width": 4.1}, {"arrows": "to", "from": "mathematics", "title": "feedback (0.75)", "to": "logic", "width": 3.75}, {"arrows": "to", "from": "mathematics", "title": "amplification (0.75)", "to": "planning", "width": 3.75}, {"arrows": "to", "from": "variable_mapping", "title": "dependency (0.78)", "to": "mathematics", "width": 3.9000000000000004}, {"arrows": "to", "from": "rule_application", "title": "amplification (0.72)", "to": "logic", "width": 3.5999999999999996}, {"arrows": "to", "from": "sequence_reasoning", "title": "amplification (0.68)", "to": "planning", "width": 3.4000000000000004}, {"arrows": "to", "from": "sequence_reasoning", "title": "amplification (0.65)", "to": "rule_application", "width": 3.25}, {"arrows": "to", "from": "planning", "title": "dependency (0.80)", "to": "task_decomposition", "width": 4.0}, {"arrows": "to", "from": "planning", "title": "co_activation (0.50)", "to": "engineering_cluster", "width": 2.5}, {"arrows": "to", "from": "planning", "title": "co_activation (0.50)", "to": "coding_cluster", "width": 2.5}, {"arrows": "to", "from": "decision_making", "title": "dependency (0.72)", "to": "planning", "width": 3.5999999999999996}, {"arrows": "to", "from": "decision_making", "title": "co_activation (0.50)", "to": "finance_cluster", "width": 2.5}, {"arrows": "to", "from": "decision_making", "title": "co_activation (0.50)", "to": "legal_cluster", "width": 2.5}, {"arrows": "to", "from": "task_decomposition", "title": "dependency (0.72)", "to": "prioritisation", "width": 3.5999999999999996}, {"arrows": "to", "from": "error_detection", "title": "dependency (0.88)", "to": "error_correction", "width": 4.4}, {"arrows": "to", "from": "error_correction", "title": "amplification (0.82)", "to": "self_optimization", "width": 4.1}, {"arrows": "to", "from": "error_correction", "title": "feedback (0.65)", "to": "confidence_calibration", "width": 3.25}, {"arrows": "to", "from": "self_monitoring", "title": "dependency (0.90)", "to": "error_detection", "width": 4.5}, {"arrows": "to", "from": "self_monitoring", "title": "amplification (0.68)", "to": "planning", "width": 3.4000000000000004}, {"arrows": "to", "from": "reflection", "title": "amplification (0.80)", "to": "self_optimization", "width": 4.0}, {"arrows": "to", "from": "reflection", "title": "feedback (0.72)", "to": "decision_making", "width": 3.5999999999999996}, {"arrows": "to", "from": "reflection", "title": "amplification (0.75)", "to": "strategy_adaptation", "width": 3.75}, {"arrows": "to", "from": "self_optimization", "title": "feedback (0.70)", "to": "self_monitoring", "width": 3.5}, {"arrows": "to", "from": "confidence_calibration", "title": "dependency (0.70)", "to": "decision_making", "width": 3.5}, {"arrows": "to", "from": "strategy_adaptation", "title": "dependency (0.78)", "to": "planning", "width": 3.9000000000000004}, {"arrows": "to", "from": "strategy_adaptation", "title": "amplification (0.68)", "to": "self_optimization", "width": 3.4000000000000004}, {"arrows": "to", "from": "synthesis", "title": "amplification (0.82)", "to": "strategy_adaptation", "width": 4.1}, {"arrows": "to", "from": "synthesis", "title": "feedback (0.68)", "to": "abstraction", "width": 3.4000000000000004}, {"arrows": "to", "from": "synthesis", "title": "co_activation (0.50)", "to": "content_cluster", "width": 2.5}, {"arrows": "to", "from": "synthesis", "title": "co_activation (0.50)", "to": "research_cluster", "width": 2.5}, {"arrows": "to", "from": "transfer_learning", "title": "amplification (0.70)", "to": "synthesis", "width": 3.5}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -80, "centralGravity": 0.01, "springLength": 120, "springConstant": 0.05}, "solver": "forceAtlas2Based", "stabilization": {"iterations": 100}}, "edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "smooth": {"type": "curvedCW", "roundness": 0.1}}, "nodes": {"font": {"size": 12}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

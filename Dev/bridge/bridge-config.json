@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "phase": 1,
+  "last_updated": "2026-03-29T15:38:00",
+  
+  "routing_rules": {
+    "antigravity": {
+      "description": "Website design, visual structure, premium page creation, motion site work",
+      "workspace": "C:/dev/antigravity",
+      "priority": 1,
+      "fallback": "deepseek"
+    },
+    "spline": {
+      "description": "Interactive 3D web scenes within website workflow",
+      "workspace": "C:/dev/antigravity",
+      "priority": 2,
+      "fallback": "antigravity"
+    },
+    "claude_code": {
+      "description": "Heavy coding, large code generation, complex debugging, difficult refactors",
+      "queue_file": "C:/Dev/claude-code-queue.md",
+      "priority": 1,
+      "requires_availability": true,
+      "fallback": "deepseek"
+    },
+    "deepseek": {
+      "description": "General reasoning, summaries, planning, orchestration, lightweight coding",
+      "models": ["deepseek-chat", "deepseek-reasoner"],
+      "priority": 3,
+      "fallback": "gemini"
+    },
+    "youtube": {
+      "description": "YouTube pipeline tasks - planning, scripting, editing workflows",
+      "skill": "youtube",
+      "priority": 2,
+      "fallback": "deepseek"
+    }
+  },
+  
+  "claude_detection": {
+    "method": "file_based",
+    "check_interval_minutes": 5,
+    "success_window_hours": 1,
+    "error_threshold": 3,
+    "status_file": "C:/Dev/bridge/claude-status.json"
+  },
+  
+  "logging": {
+    "decision_log": "C:/Dev/bridge/logs/bridge-decisions.log",
+    "retention_days": 7,
+    "log_level": "INFO"
+  },
+  
+  "integration": {
+    "openclaw_config": "C:/Users/User/.openclaw/openclaw.json",
+    "agents_md": "C:/Users/User/.openclaw/workspace/AGENTS.md",
+    "workspace": "C:/Users/User/.openclaw/workspace"
+  },
+  
+  "whatsapp_monitoring": {
+    "enabled": true,
+    "check_interval_seconds": 60,
+    "timeout_seconds": 10,
+    "reconnect_attempts": 3,
+    "alert_after_failures": 3
+  },
+  
+  "fallback_chains": {
+    "primary": ["claude_code", "deepseek", "antigravity"],
+    "secondary": ["antigravity", "deepseek"],
+    "tertiary": ["spline", "antigravity", "deepseek"]
+  }
+}

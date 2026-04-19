@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgundy Simulation Monitor - 1 Million Simulations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+        }
+        
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .chart-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        
+        .chart-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chart-title i {
+            color: #60a5fa;
+        }
+        
+        .chart-container {
+            height: 250px;
+            position: relative;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .insight-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        
+        .insight-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+        
+        .insight-list {
+            list-style: none;
+        }
+        
+        .insight-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .insight-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+        
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+        }
+        
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(148, 163, 184, 0.2);
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(148, 163, 184, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .timestamp {
+            text-align: center;
+            margin-top: 30px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+        
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(148, 163, 184, 0.2);
+            border-top-color: #60a5fa;
+            border-radius: 50%;
+            margin-left: 10px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stat-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Burgundy Simulation Monitor</h1>
+            <p class="subtitle">Tracking 1 Million Decision-Making Simulations for AI Training</p>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progressText">0% Complete</span>
+                    <span id="remainingText">1,000,000 simulations remaining</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Simulations</div>
+                <div class="stat-value" id="totalSimulations">0</div>
+                <div class="stat-label">Accumulated Count</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Successful Simulations</div>
+                <div class="stat-value" id="successfulSimulations">0</div>
+                <div class="stat-label">ZAR 75M+ Net Worth</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Processing Time</div>
+                <div class="stat-value" id="processingTime">0s</div>
+                <div class="stat-label">Total Runtime</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Avg Time/Sim</div>
+                <div class="stat-value" id="avgTimePerSim">0ms</div>
+                <div class="stat-label">Efficiency Metric</div>
+            </div>
+        </div>
+        
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-title">
+                    <i>[CHART]</i> Success Rate Over Time
+                </div>
+                <div class="chart-container">
+                    <canvas id="successChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <div class="chart-title">
+                    <i>[TARGET]</i> Decision Category Performance
+                </div>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-title">Top Performing Skills</div>
+                <ul class="insight-list" id="skillsList">
+                    <li>Loading skills data...</li>
+                </ul>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-title">Optimization Rules</div>
+                <ul class="insight-list" id="rulesList">
+                    <li>Loading optimization rules...</li>
+                </ul>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-title">Risk-Reward Analysis</div>
+                <ul class="insight-list" id="riskList">
+                    <li>Loading risk analysis...</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-primary" onclick="refreshData()">
+                <span>[REFRESH]</span> Refresh Data
+            </button>
+            <button class="btn btn-secondary" onclick="exportData()">
+                <span>📥</span> Export Results
+            </button>
+            <button class="btn btn-secondary" onclick="viewLogs()">
+                <span>📋</span> View Simulation Logs
+            </button>
+        </div>
+        
+        <div class="timestamp" id="lastUpdated">
+            Last updated: Loading...
+        </div>
+    </div>
+    
+    <script>
+        // Charts
+        let successChart, categoryChart;
+        
+        // Initialize charts
+        function initCharts() {
+            const successCtx = document.getElementById('successChart').getContext('2d');
+            successChart = new Chart(successCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Success Rate %',
+                        data: [],
+                        borderColor: '#60a5fa',
+                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e2e8f0'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            },
+                            ticks: {
+                                color: '#94a3b8'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            },
+                            ticks: {
+                                color: '#94a3b8',
+                                callback: value => value + '%'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            categoryChart = new Chart(categoryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Business', 'Investment', 'Skills', 'Time', 'Risk'],
+                    datasets: [{
+                        label: 'Success Count',
+                        data: [0, 0, 0, 0, 0],
+                        backgroundColor: [
+                            'rgba(96, 165, 250, 0.7)',
+                            'rgba(167, 139, 250, 0.7)',
+                            'rgba(52, 211, 153, 0.7)',
+                            'rgba(251, 191, 36, 0.7)',
+                            'rgba(248, 113, 113, 0.7)'
+                        ],
+                        borderColor: [
+                            '#60a5fa',
+                            '#a78bfa',
+                            '#34d399',
+                            '#fbbf24',
+                            '#f87171'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e2e8f0'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            },
+                            ticks: {
+                                color: '#94a3b8'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(148, 163, 184, 0.1)'
+                            },
+                            ticks: {
+                                color: '#94a3b8'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Load simulation data
+        async function loadData() {
+            try {
+                // Load progress data
+                const progressResponse = await fetch('/api/simulation/progress');
+                const progressData = await progressResponse.json();
+                
+                // Update progress
+                const completed = progressData.completed || 0;
+                const total = progressData.total || 1000000;
+                const percentage = (completed / total * 100).toFixed(1);
+                
+                document.getElementById('progressFill').style.width = percentage + '%';
+                document.getElementById('progressText').textContent = `${percentage}% Complete`;
+                document.getElementById('remainingText').textContent = `${(total - completed).toLocaleString()} simulations remaining`;
+                document.getElementById('totalSimulations').textContent = completed.toLocaleString();
+                
+                // Load results data
+                const resultsResponse = await fetch('/api/simulation/results');
+                const resultsData = await resultsResponse.json();
+                
+                // Calculate statistics
+                const successful = resultsData.successful_sim

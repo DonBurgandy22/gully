@@ -1,0 +1,11 @@
+{
+  "simulation_results": {
+    "total_simulations": 1000000,
+    "successful_decisions": 0,
+    "success_rate": 0.0,
+    "average_net_worth": 305564.07227369
+  },
+  "optimal_patterns": [],
+  "decision_rules": [],
+  "integration_timestamp": "2026-03-30T11:27:55.970587"
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "engineering_cluster",
+    "name": "Engineering Cluster",
+    "description": "Structural, mechanical, and systems engineering reasoning domain. Attaches to core planning, logic, and mathematics nodes.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "engineering",
+    "attachment_nodes": ["planning", "logic", "mathematics", "systems_thinking", "first_principles_reasoning"],
+    "future_nodes": ["loads_reasoning", "structural_modelling", "code_compliance", "detailing_logic"],
+    "tags": ["engineering", "structural", "mechanical", "domain_stub"]
+  },
+  {
+    "id": "legal_cluster",
+    "name": "Legal Cluster",
+    "description": "Legal reasoning, document analysis, and procedural argument domain. Attaches to logic, causal_reasoning, and decision_making.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "legal",
+    "attachment_nodes": ["logic", "causal_reasoning", "decision_making", "language_comprehension", "symbolic_reasoning"],
+    "future_nodes": ["document_extraction", "argument_mapping", "procedural_reasoning", "evidence_linking"],
+    "tags": ["legal", "argument", "procedural", "domain_stub"]
+  },
+  {
+    "id": "finance_cluster",
+    "name": "Finance Cluster",
+    "description": "Financial modeling, risk assessment, and cashflow reasoning domain. Attaches to mathematics, probabilistic_reasoning, and decision_making.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "finance",
+    "attachment_nodes": ["mathematics", "probabilistic_reasoning", "decision_making", "planning", "systems_thinking"],
+    "future_nodes": ["budgeting_logic", "risk_reasoning", "cashflow_projection"],
+    "tags": ["finance", "risk", "modeling", "domain_stub"]
+  },
+  {
+    "id": "content_cluster",
+    "name": "Content Cluster",
+    "description": "Content creation, narrative reasoning, and audience modeling domain. Attaches to synthesis, language_comprehension, and abstraction.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "content",
+    "attachment_nodes": ["synthesis", "language_comprehension", "abstraction", "associative_linking", "transfer_learning"],
+    "future_nodes": ["narrative_reasoning", "audience_modeling", "tone_control", "idea_synthesis"],
+    "tags": ["content", "narrative", "creative", "domain_stub"]
+  },
+  {
+    "id": "coding_cluster",
+    "name": "Coding Cluster",
+    "description": "Software engineering, debugging, and architecture reasoning domain. Attaches to logic, planning, and error_detection.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "coding",
+    "attachment_nodes": ["logic", "planning", "error_detection", "error_correction", "systems_thinking", "first_principles_reasoning"],
+    "future_nodes": ["code_planning", "debugging_reasoning", "architecture_reasoning", "refactoring_logic"],
+    "tags": ["coding", "software", "debugging", "domain_stub"]
+  },
+  {
+    "id": "web_design_cluster",
+    "name": "Web Design Cluster",
+    "description": "UI/UX, layout, and interactive design reasoning domain. Attaches to pattern_recognition, synthesis, and planning.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "web_design",
+    "attachment_nodes": ["pattern_recognition", "synthesis", "planning", "analogical_reasoning", "categorisation"],
+    "future_nodes": ["layout_reasoning", "ux_modeling", "visual_hierarchy", "interaction_design"],
+    "tags": ["web_design", "ui_ux", "visual", "domain_stub"]
+  },
+  {
+    "id": "research_cluster",
+    "name": "Research Cluster",
+    "description": "Evidence gathering, hypothesis formation, and academic reasoning domain. Attaches to causal_reasoning, synthesis, and probabilistic_reasoning.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "research",
+    "attachment_nodes": ["causal_reasoning", "synthesis", "probabilistic_reasoning", "first_principles_reasoning", "pattern_recognition"],
+    "future_nodes": ["hypothesis_formation", "evidence_evaluation", "literature_synthesis", "methodology_reasoning"],
+    "tags": ["research", "evidence", "hypothesis", "domain_stub"]
+  },
+  {
+    "id": "operations_cluster",
+    "name": "Operations Cluster",
+    "description": "Operational planning, logistics, and process management domain. Attaches to systems_thinking, planning, and decision_making.",
+    "layer": 6,
+    "node_weight": 0.10,
+    "domain": "operations",
+    "attachment_nodes": ["systems_thinking", "planning", "decision_making", "prioritisation", "task_decomposition"],
+    "future_nodes": ["process_optimization", "resource_scheduling", "bottleneck_analysis", "workflow_design"],
+    "tags": ["operations", "logistics", "process", "domain_stub"]
+  }
+]

@@ -1,0 +1,54 @@
+# simple-context-monitor.ps1
+# Simple, robust context monitor
+# Runs every 2 minutes via Task Scheduler
+# Checks OpenClaw context and triggers restart if over 70%
+
+$logFile = "C:\Dev\restart-log.txt"
+$openclawPath = "C:\Users\dkmac\AppData\Roaming\npm\openclaw.cmd"
+$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+
+try {
+    # Get status using CLI (more reliable than JSON parsing)
+    $statusOutput = & $openclawPath status 2>&1
+    
+    # Extract context percentage from status output
+    # Look for pattern like "39k/66k (59%)" in the output
+    $contextMatch = [regex]::Match($statusOutput, '\d+k/\d+k\s*\((\d+)%\)')
+    
+    if ($contextMatch.Success) {
+        $contextPct = [int]$contextMatch.Groups[1].Value
+        
+        if ($contextPct -ge 80) {
+            "[$timestamp] [EMERGENCY] EMERGENCY RESTART - context: $contextPct%" | Out-File $logFile -Encoding UTF8 -Append
+            # Run silently with -WindowStyle Hidden
+            Start-Process powershell -ArgumentList "-NonInteractive -WindowStyle Hidden -File C:\Dev\current-self-restart.ps1" -WindowStyle Hidden
+        }
+        elseif ($contextPct -ge 70) {
+            "[$timestamp] [RESTART] AUTO-RESTART TRIGGERED - context: $contextPct%" | Out-File $logFile -Encoding UTF8 -Append
+            # Run silently with -WindowStyle Hidden
+            Start-Process powershell -ArgumentList "-NonInteractive -WindowStyle Hidden -File C:\Dev\current-self-restart.ps1" -WindowStyle Hidden
+        }
+        else {
+            # Only log every 10th check to reduce log spam
+            $random = Get-Random -Minimum 1 -Maximum 11
+            if ($random -eq 1) {
+                "[$timestamp] Context check: $contextPct% - OK" | Out-File $logFile -Encoding UTF8 -Append
+            }
+        }
+    }
+    else {
+        # Try alternative pattern
+        $altMatch = [regex]::Match($statusOutput, 'percentUsed.*?(\d+)')
+        if ($altMatch.Success) {
+            $contextPct = [int]$altMatch.Groups[1].Value
+            "[$timestamp] Context check (alt): $contextPct% - OK" | Out-File $logFile -Encoding UTF8 -Append
+        }
+        else {
+            throw "Could not extract context percentage from status output"
+        }
+    }
+}
+catch {
+    Add-Content $logFile "[$timestamp] Context monitor error: $($_.Exception.Message)"
+    exit 0
+}

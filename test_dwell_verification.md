@@ -1,0 +1,1 @@
+# Test file for dwell verification\n# Nodes should remain visible for 10 seconds\n# Date: 2026-04-17

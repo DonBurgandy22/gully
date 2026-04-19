@@ -1,0 +1,1157 @@
+{
+  "task": "",
+  "timestamp": "2026-04-17T22:37:36.752062",
+  "active_nodes": [],
+  "active_edges": [],
+  "all_edges": [
+    {
+      "source": "mathematics",
+      "target": "working_memory",
+      "weight": 0.95,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 19 times, formed 2026-04-17"
+    },
+    {
+      "source": "logic",
+      "target": "working_memory",
+      "weight": 0.44999999999999996,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 6 times, formed 2026-04-17"
+    },
+    {
+      "source": "variable_mapping",
+      "target": "working_memory",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "probabilistic_reasoning",
+      "weight": 0.6,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 9 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "symbolic_reasoning",
+      "weight": 0.35,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 4 times, formed 2026-04-17"
+    },
+    {
+      "source": "probabilistic_reasoning",
+      "target": "symbolic_reasoning",
+      "weight": 0.3,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 3 times, formed 2026-04-17"
+    },
+    {
+      "source": "logic",
+      "target": "systems_thinking",
+      "weight": 0.44999999999999996,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 6 times, formed 2026-04-17"
+    },
+    {
+      "source": "mathematics",
+      "target": "systems_thinking",
+      "weight": 0.44999999999999996,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 6 times, formed 2026-04-17"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "working_memory",
+      "weight": 0.3,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 3 times, formed 2026-04-17"
+    },
+    {
+      "source": "working_memory",
+      "target": "working_memory",
+      "weight": 0.3,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 3 times, formed 2026-04-17"
+    },
+    {
+      "source": "logic",
+      "target": "logic",
+      "weight": 0.3,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 3 times, formed 2026-04-17"
+    },
+    {
+      "source": "mathematics",
+      "target": "structural_analysis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "engineering_decisions",
+      "target": "structural_analysis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "comprehension",
+      "target": "structural_analysis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "engineering_decisions",
+      "target": "mathematics",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "comprehension",
+      "target": "engineering_decisions",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "comprehension",
+      "target": "mathematics",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_detection",
+      "target": "symbolic_reasoning",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "logic",
+      "target": "symbolic_reasoning",
+      "weight": 0.3,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 3 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_detection",
+      "target": "logic",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "logic",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "language_comprehension",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "logic",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "mathematics",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "self_monitoring",
+      "target": "self_optimization",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_correction",
+      "target": "self_monitoring",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_detection",
+      "target": "self_optimization",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_correction",
+      "target": "error_detection",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "error_detection",
+      "target": "self_monitoring",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "strategy_adaptation",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "synthesis",
+      "target": "systems_thinking",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "synthesis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "synthesis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "planning",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "systems_thinking",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "planning",
+      "target": "synthesis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "planning",
+      "target": "strategy_adaptation",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "synthesis",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "planning",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "planning",
+      "target": "systems_thinking",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "abstraction",
+      "target": "strategy_adaptation",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "prioritisation",
+      "target": "task_decomposition",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "planning",
+      "target": "working_memory",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "decision_making",
+      "target": "working_memory",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "task_decomposition",
+      "target": "working_memory",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "decision_making",
+      "target": "prioritisation",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "prioritisation",
+      "target": "working_memory",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "planning",
+      "target": "prioritisation",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "decision_making",
+      "target": "task_decomposition",
+      "weight": 0.25,
+      "relation_type": "adaptive",
+      "path_cost": 1.0,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adaptive edge: used 2 times, formed 2026-04-17"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "logic",
+      "weight": 0.92,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.95,
+      "feedback_enabled": false,
+      "notes": "Language is the primary vehicle for logical structure; Loop A entry point"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "abstraction",
+      "weight": 0.9,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.93,
+      "feedback_enabled": false,
+      "notes": "Language comprehension enables abstract concept formation"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "symbolic_reasoning",
+      "weight": 0.85,
+      "relation_type": "translation",
+      "path_cost": 1.2,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Language tokens map to symbolic representations"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "variable_mapping",
+      "weight": 0.8,
+      "relation_type": "translation",
+      "path_cost": 1.2,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Words and phrases are assigned to formal variables"
+    },
+    {
+      "source": "language_comprehension",
+      "target": "mathematics",
+      "weight": 0.7,
+      "relation_type": "dependency",
+      "path_cost": 1.5,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Language comprehension enables parsing and solving math word problems"
+    },
+    {
+      "source": "logic",
+      "target": "mathematics",
+      "weight": 0.88,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.92,
+      "feedback_enabled": true,
+      "notes": "Logic structures formal mathematical reasoning; Loop A"
+    },
+    {
+      "source": "mathematics",
+      "target": "symbolic_reasoning",
+      "weight": 0.82,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.9,
+      "feedback_enabled": true,
+      "notes": "Mathematics reinforces symbolic precision; Loop A"
+    },
+    {
+      "source": "symbolic_reasoning",
+      "target": "language_comprehension",
+      "weight": 0.65,
+      "relation_type": "feedback",
+      "path_cost": 1.3,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Symbolic precision feeds back to improve language use; Loop A closes"
+    },
+    {
+      "source": "abstraction",
+      "target": "first_principles_reasoning",
+      "weight": 0.88,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Abstraction is prerequisite for first-principles decomposition; Loop C entry"
+    },
+    {
+      "source": "abstraction",
+      "target": "systems_thinking",
+      "weight": 0.85,
+      "relation_type": "amplification",
+      "path_cost": 1.0,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Abstract models scale naturally into systems-level thinking"
+    },
+    {
+      "source": "logic",
+      "target": "first_principles_reasoning",
+      "weight": 0.85,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Logic is the engine of first-principles derivation"
+    },
+    {
+      "source": "symbolic_reasoning",
+      "target": "mathematics",
+      "weight": 0.8,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Symbols are the language of mathematics"
+    },
+    {
+      "source": "variable_mapping",
+      "target": "mathematics",
+      "weight": 0.78,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Variable mapping enables formal mathematical operations"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "mathematics",
+      "weight": 0.82,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "First-principles reasoning derives and validates mathematical structures"
+    },
+    {
+      "source": "logic",
+      "target": "decision_making",
+      "weight": 0.85,
+      "relation_type": "dependency",
+      "path_cost": 1.2,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Logical inference structures decisions"
+    },
+    {
+      "source": "mathematics",
+      "target": "logic",
+      "weight": 0.75,
+      "relation_type": "feedback",
+      "path_cost": 1.2,
+      "reliability": 0.85,
+      "feedback_enabled": true,
+      "notes": "Mathematical rigor feeds back to strengthen logical reasoning"
+    },
+    {
+      "source": "mathematics",
+      "target": "planning",
+      "weight": 0.75,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Mathematical models sharpen planning precision"
+    },
+    {
+      "source": "self_monitoring",
+      "target": "error_detection",
+      "weight": 0.9,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.92,
+      "feedback_enabled": false,
+      "notes": "Monitoring is the prerequisite for detecting errors; Loop B entry"
+    },
+    {
+      "source": "error_detection",
+      "target": "error_correction",
+      "weight": 0.88,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Detection triggers correction; Loop B"
+    },
+    {
+      "source": "error_correction",
+      "target": "self_optimization",
+      "weight": 0.82,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.88,
+      "feedback_enabled": true,
+      "notes": "Corrections accumulate into optimization; Loop B"
+    },
+    {
+      "source": "self_optimization",
+      "target": "self_monitoring",
+      "weight": 0.7,
+      "relation_type": "feedback",
+      "path_cost": 1.2,
+      "reliability": 0.82,
+      "feedback_enabled": true,
+      "notes": "Optimization recalibrates monitoring sensitivity; Loop B closes"
+    },
+    {
+      "source": "reflection",
+      "target": "self_optimization",
+      "weight": 0.8,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.85,
+      "feedback_enabled": true,
+      "notes": "Reflection identifies improvement targets for self-optimization"
+    },
+    {
+      "source": "synthesis",
+      "target": "strategy_adaptation",
+      "weight": 0.82,
+      "relation_type": "amplification",
+      "path_cost": 1.0,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Synthesized understanding enables adaptive strategy"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "planning",
+      "weight": 0.78,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Adapted strategy becomes the new planning baseline"
+    },
+    {
+      "source": "first_principles_reasoning",
+      "target": "systems_thinking",
+      "weight": 0.78,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "First-principles extends into systems-level analysis; Loop C"
+    },
+    {
+      "source": "systems_thinking",
+      "target": "synthesis",
+      "weight": 0.8,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Systems-level understanding enables integrative synthesis; Loop C"
+    },
+    {
+      "source": "synthesis",
+      "target": "abstraction",
+      "weight": 0.68,
+      "relation_type": "feedback",
+      "path_cost": 1.3,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Synthesis feeds back refined abstractions; Loop C closes"
+    },
+    {
+      "source": "pattern_recognition",
+      "target": "analogical_reasoning",
+      "weight": 0.75,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.82,
+      "feedback_enabled": false,
+      "notes": "Recognized patterns ground analogical transfers across domains"
+    },
+    {
+      "source": "associative_linking",
+      "target": "synthesis",
+      "weight": 0.65,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.78,
+      "feedback_enabled": false,
+      "notes": "Associative connections feed integrative synthesis"
+    },
+    {
+      "source": "reflection",
+      "target": "decision_making",
+      "weight": 0.72,
+      "relation_type": "feedback",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Retrospective reflection improves future decisions"
+    },
+    {
+      "source": "self_monitoring",
+      "target": "planning",
+      "weight": 0.68,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Real-time monitoring informs and updates ongoing plans"
+    },
+    {
+      "source": "working_memory",
+      "target": "logic",
+      "weight": 0.8,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Working memory holds the logical structures being operated on"
+    },
+    {
+      "source": "working_memory",
+      "target": "planning",
+      "weight": 0.82,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Working memory holds the current plan state and sub-goals"
+    },
+    {
+      "source": "working_memory",
+      "target": "decision_making",
+      "weight": 0.78,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.88,
+      "feedback_enabled": false,
+      "notes": "Working memory holds the competing options under consideration"
+    },
+    {
+      "source": "attention_control",
+      "target": "working_memory",
+      "weight": 0.85,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.9,
+      "feedback_enabled": false,
+      "notes": "Attention gates what enters and stays in working memory"
+    },
+    {
+      "source": "long_term_retrieval",
+      "target": "associative_linking",
+      "weight": 0.72,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Long-term memory provides the raw material for associations"
+    },
+    {
+      "source": "long_term_retrieval",
+      "target": "pattern_recognition",
+      "weight": 0.7,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.82,
+      "feedback_enabled": false,
+      "notes": "Retrieved experiences prime pattern detection"
+    },
+    {
+      "source": "pattern_recognition",
+      "target": "categorisation",
+      "weight": 0.68,
+      "relation_type": "amplification",
+      "path_cost": 1.0,
+      "reliability": 0.82,
+      "feedback_enabled": false,
+      "notes": "Recognized patterns form the basis of categories"
+    },
+    {
+      "source": "categorisation",
+      "target": "rule_application",
+      "weight": 0.65,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.78,
+      "feedback_enabled": false,
+      "notes": "Categories define the scope of applicable rules"
+    },
+    {
+      "source": "rule_application",
+      "target": "logic",
+      "weight": 0.72,
+      "relation_type": "amplification",
+      "path_cost": 1.0,
+      "reliability": 0.82,
+      "feedback_enabled": true,
+      "notes": "Applied rules reinforce logical inference patterns"
+    },
+    {
+      "source": "analogical_reasoning",
+      "target": "abstraction",
+      "weight": 0.65,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Analogies lift specific instances to abstract principles"
+    },
+    {
+      "source": "causal_reasoning",
+      "target": "systems_thinking",
+      "weight": 0.72,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.82,
+      "feedback_enabled": false,
+      "notes": "Causal maps are the building blocks of systems models"
+    },
+    {
+      "source": "causal_reasoning",
+      "target": "decision_making",
+      "weight": 0.7,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Causal chains inform consequence-aware decisions"
+    },
+    {
+      "source": "probabilistic_reasoning",
+      "target": "decision_making",
+      "weight": 0.68,
+      "relation_type": "amplification",
+      "path_cost": 1.3,
+      "reliability": 0.78,
+      "feedback_enabled": false,
+      "notes": "Probability-weighted outcomes improve decision quality under uncertainty"
+    },
+    {
+      "source": "probabilistic_reasoning",
+      "target": "confidence_calibration",
+      "weight": 0.65,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.78,
+      "feedback_enabled": false,
+      "notes": "Probabilistic reasoning grounds confidence estimates"
+    },
+    {
+      "source": "sequence_reasoning",
+      "target": "planning",
+      "weight": 0.68,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Sequential step structures form the backbone of plans"
+    },
+    {
+      "source": "sequence_reasoning",
+      "target": "rule_application",
+      "weight": 0.65,
+      "relation_type": "amplification",
+      "path_cost": 1.0,
+      "reliability": 0.78,
+      "feedback_enabled": false,
+      "notes": "Sequences define the order in which rules are applied"
+    },
+    {
+      "source": "planning",
+      "target": "task_decomposition",
+      "weight": 0.8,
+      "relation_type": "dependency",
+      "path_cost": 1.0,
+      "reliability": 0.85,
+      "feedback_enabled": false,
+      "notes": "Plans require decomposition into executable sub-tasks"
+    },
+    {
+      "source": "task_decomposition",
+      "target": "prioritisation",
+      "weight": 0.72,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Decomposed tasks must be prioritized for execution"
+    },
+    {
+      "source": "error_correction",
+      "target": "confidence_calibration",
+      "weight": 0.65,
+      "relation_type": "feedback",
+      "path_cost": 1.2,
+      "reliability": 0.78,
+      "feedback_enabled": true,
+      "notes": "Correcting errors recalibrates confidence in affected domains"
+    },
+    {
+      "source": "reflection",
+      "target": "strategy_adaptation",
+      "weight": 0.75,
+      "relation_type": "amplification",
+      "path_cost": 1.1,
+      "reliability": 0.82,
+      "feedback_enabled": true,
+      "notes": "Reflection identifies strategy mismatches and triggers adaptation"
+    },
+    {
+      "source": "transfer_learning",
+      "target": "synthesis",
+      "weight": 0.7,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Cross-domain knowledge transfer feeds multi-source synthesis"
+    },
+    {
+      "source": "confidence_calibration",
+      "target": "decision_making",
+      "weight": 0.7,
+      "relation_type": "dependency",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": false,
+      "notes": "Calibrated confidence directly improves decision quality"
+    },
+    {
+      "source": "strategy_adaptation",
+      "target": "self_optimization",
+      "weight": 0.68,
+      "relation_type": "amplification",
+      "path_cost": 1.2,
+      "reliability": 0.8,
+      "feedback_enabled": true,
+      "notes": "Adapted strategies feed back into the self-optimization cycle"
+    },
+    {
+      "source": "decision_making",
+      "target": "planning",
+      "weight": 0.72,
+      "relation_type": "dependency",
+      "path_cost": 1.1,
+      "reliability": 0.82,
+      "feedback_enabled": false,
+      "notes": "Decisions are translated into executable plans"
+    },
+    {
+      "source": "planning",
+      "target": "engineering_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Planning activates the engineering domain cluster"
+    },
+    {
+      "source": "planning",
+      "target": "coding_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Planning activates the coding domain cluster"
+    },
+    {
+      "source": "decision_making",
+      "target": "finance_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Decision-making activates the finance domain cluster"
+    },
+    {
+      "source": "decision_making",
+      "target": "legal_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Decision-making activates the legal domain cluster"
+    },
+    {
+      "source": "synthesis",
+      "target": "content_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Synthesis activates the content domain cluster"
+    },
+    {
+      "source": "synthesis",
+      "target": "research_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Synthesis activates the research domain cluster"
+    },
+    {
+      "source": "systems_thinking",
+      "target": "operations_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Systems thinking activates the operations domain cluster"
+    },
+    {
+      "source": "pattern_recognition",
+      "target": "web_design_cluster",
+      "weight": 0.5,
+      "relation_type": "co_activation",
+      "path_cost": 1.5,
+      "reliability": 0.7,
+      "feedback_enabled": false,
+      "notes": "Pattern recognition activates the web design domain cluster"
+    }
+  ],
+  "thought_trains": [
+    {
+      "id": "tt_fresh_now_1776434664",
+      "timestamp": "2026-04-17T16:04:24.126185",
+      "activated_nodes": [
+        "logic",
+        "mathematics",
+        "systems_thinking",
+        "first_principles_reasoning"
+      ],
+      "traversed_edges": [
+        [
+          "logic",
+          "mathematics"
+        ],
+        [
+          "mathematics",
+          "systems_thinking"
+        ],
+        [
+          "systems_thinking",
+          "first_principles_reasoning"
+        ]
+      ],
+      "task": "Immediate visual truth test"
+    }
+  ],
+  "pending_nodes": [],
+  "pending_edges": []
+}

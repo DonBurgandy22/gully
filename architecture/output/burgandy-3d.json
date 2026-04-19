@@ -1,0 +1,750 @@
+{
+  "nodes": [
+    {
+      "id": "qwen3.5:4b",
+      "label": "Primary local model",
+      "group": 2,
+      "type": "model",
+      "x": 80.0,
+      "y": -40,
+      "z": 0.0
+    },
+    {
+      "id": "phi3.5",
+      "label": "Fallback local \u2014 no tools",
+      "group": 2,
+      "type": "model",
+      "x": 61.28,
+      "y": -40,
+      "z": 51.42
+    },
+    {
+      "id": "deepseek-coder:6.7b",
+      "label": "Coding tasks",
+      "group": 2,
+      "type": "model",
+      "x": 13.89,
+      "y": -40,
+      "z": 78.78
+    },
+    {
+      "id": "llama3.2:3b",
+      "label": "Chat only \u2014 not suitable for agent",
+      "group": 2,
+      "type": "model",
+      "x": -40.0,
+      "y": -40,
+      "z": 69.28
+    },
+    {
+      "id": "deepseek-chat",
+      "label": "Cloud primary (legacy)",
+      "group": 2,
+      "type": "model",
+      "x": -75.18,
+      "y": -40,
+      "z": 27.36
+    },
+    {
+      "id": "deepseek-reasoner",
+      "label": "Cloud reasoning \u2014 Deep think trigger",
+      "group": 2,
+      "type": "model",
+      "x": -75.18,
+      "y": -40,
+      "z": -27.36
+    },
+    {
+      "id": "gemini-2.0-flash",
+      "label": "Free cloud fallback",
+      "group": 2,
+      "type": "model",
+      "x": -40.0,
+      "y": -40,
+      "z": -69.28
+    },
+    {
+      "id": "claude-code",
+      "label": "Production coding \u2014 separate key",
+      "group": 2,
+      "type": "model",
+      "x": 13.89,
+      "y": -40,
+      "z": -78.78
+    },
+    {
+      "id": "whatsapp",
+      "label": "Primary \u2014 +27602678740",
+      "group": 1,
+      "type": "channel",
+      "x": 55.0,
+      "y": -80,
+      "z": 0.0
+    },
+    {
+      "id": "telegram",
+      "label": "Secondary \u2014 disabled",
+      "group": 1,
+      "type": "channel",
+      "x": -55.0,
+      "y": -80,
+      "z": 0.0
+    },
+    {
+      "id": "youtube_skill",
+      "label": "YouTube pipeline",
+      "group": 3,
+      "type": "tool",
+      "x": 105.0,
+      "y": 0,
+      "z": 0.0
+    },
+    {
+      "id": "finance_skill",
+      "label": "Finance tracking",
+      "group": 3,
+      "type": "tool",
+      "x": 90.93,
+      "y": 0,
+      "z": 52.5
+    },
+    {
+      "id": "security_skill",
+      "label": "8-step security scan",
+      "group": 3,
+      "type": "tool",
+      "x": 52.5,
+      "y": 0,
+      "z": 90.93
+    },
+    {
+      "id": "coding_agent_skill",
+      "label": "Code task queue",
+      "group": 3,
+      "type": "tool",
+      "x": 0.0,
+      "y": 0,
+      "z": 105.0
+    },
+    {
+      "id": "websiteautomation_skill",
+      "label": "Client website pipeline",
+      "group": 3,
+      "type": "tool",
+      "x": -52.5,
+      "y": 0,
+      "z": 90.93
+    },
+    {
+      "id": "antigravity_skill",
+      "label": "GSAP physics animations",
+      "group": 3,
+      "type": "tool",
+      "x": -90.93,
+      "y": 0,
+      "z": 52.5
+    },
+    {
+      "id": "spline_skill",
+      "label": "3D Spline integration",
+      "group": 3,
+      "type": "tool",
+      "x": -105.0,
+      "y": 0,
+      "z": 0.0
+    },
+    {
+      "id": "himalaya_skill",
+      "label": "Email via Outlook COM",
+      "group": 3,
+      "type": "tool",
+      "x": -90.93,
+      "y": 0,
+      "z": -52.5
+    },
+    {
+      "id": "organisation_skill",
+      "label": "File organisation",
+      "group": 3,
+      "type": "tool",
+      "x": -52.5,
+      "y": 0,
+      "z": -90.93
+    },
+    {
+      "id": "productivity_skill",
+      "label": "Morning/evening routines",
+      "group": 3,
+      "type": "tool",
+      "x": -0.0,
+      "y": 0,
+      "z": -105.0
+    },
+    {
+      "id": "weather_skill",
+      "label": "Weather lookup",
+      "group": 3,
+      "type": "tool",
+      "x": 52.5,
+      "y": 0,
+      "z": -90.93
+    },
+    {
+      "id": "skill_creator_skill",
+      "label": "Create/refine skills",
+      "group": 3,
+      "type": "tool",
+      "x": 90.93,
+      "y": 0,
+      "z": -52.5
+    },
+    {
+      "id": "agents_md",
+      "label": "Startup rules and behaviour",
+      "group": 4,
+      "type": "file",
+      "x": 130.0,
+      "y": 40,
+      "z": 0.0
+    },
+    {
+      "id": "soul_md",
+      "label": "Identity and tone",
+      "group": 4,
+      "type": "file",
+      "x": 91.92,
+      "y": 40,
+      "z": 91.92
+    },
+    {
+      "id": "memory_md",
+      "label": "Long-term durable memory",
+      "group": 4,
+      "type": "file",
+      "x": 0.0,
+      "y": 40,
+      "z": 130.0
+    },
+    {
+      "id": "user_md",
+      "label": "User profile",
+      "group": 4,
+      "type": "file",
+      "x": -91.92,
+      "y": 40,
+      "z": 91.92
+    },
+    {
+      "id": "session_summary_md",
+      "label": "Cross-session continuity",
+      "group": 4,
+      "type": "file",
+      "x": -130.0,
+      "y": 40,
+      "z": 0.0
+    },
+    {
+      "id": "daily_memory",
+      "label": "memory/YYYY-MM-DD.md",
+      "group": 4,
+      "type": "file",
+      "x": -91.92,
+      "y": 40,
+      "z": -91.92
+    },
+    {
+      "id": "openclaw_json",
+      "label": "Config \u2014 models, channels, gateway",
+      "group": 4,
+      "type": "file",
+      "x": -0.0,
+      "y": 40,
+      "z": -130.0
+    },
+    {
+      "id": "checkpoint_json",
+      "label": "Pipeline step tracking",
+      "group": 4,
+      "type": "file",
+      "x": 91.92,
+      "y": 40,
+      "z": -91.92
+    },
+    {
+      "id": "gateway",
+      "label": "OpenClaw gateway ws://127.0.0.1:18789",
+      "group": 0,
+      "type": "process",
+      "x": 30.0,
+      "y": -120,
+      "z": 0.0
+    },
+    {
+      "id": "auto_restart_loop",
+      "label": "70% context threshold trigger",
+      "group": 0,
+      "type": "process",
+      "x": 18.7,
+      "y": -120,
+      "z": 23.45
+    },
+    {
+      "id": "context_monitor",
+      "label": "BurgandyContextMonitor2Min task",
+      "group": 0,
+      "type": "process",
+      "x": -6.68,
+      "y": -120,
+      "z": 29.25
+    },
+    {
+      "id": "memory_save",
+      "label": "Save before restart",
+      "group": 0,
+      "type": "process",
+      "x": -27.03,
+      "y": -120,
+      "z": 13.02
+    },
+    {
+      "id": "model_router",
+      "label": "Routes tasks to cheapest viable model",
+      "group": 0,
+      "type": "process",
+      "x": -27.03,
+      "y": -120,
+      "z": -13.02
+    },
+    {
+      "id": "compaction",
+      "label": "safeguard mode \u2014 context management",
+      "group": 0,
+      "type": "process",
+      "x": -6.68,
+      "y": -120,
+      "z": -29.25
+    },
+    {
+      "id": "rtx_3060",
+      "label": "12GB VRAM \u2014 runs local models",
+      "group": 5,
+      "type": "hardware",
+      "x": 155.0,
+      "y": 80,
+      "z": 0.0
+    },
+    {
+      "id": "ryzen_5600",
+      "label": "AMD Ryzen 5 5600 \u2014 16GB RAM",
+      "group": 5,
+      "type": "hardware",
+      "x": -155.0,
+      "y": 80,
+      "z": 0.0
+    },
+    {
+      "id": "deepseek_api",
+      "label": "Cloud API \u2014 $25/mo max",
+      "group": 6,
+      "type": "service",
+      "x": 180.0,
+      "y": 120,
+      "z": 0.0
+    },
+    {
+      "id": "google_cloud",
+      "label": "TTS + NotebookLM",
+      "group": 6,
+      "type": "service",
+      "x": 90.0,
+      "y": 120,
+      "z": 155.88
+    },
+    {
+      "id": "elevenlabs_api",
+      "label": "YouTube voiceover \u2014 pending",
+      "group": 6,
+      "type": "service",
+      "x": -90.0,
+      "y": 120,
+      "z": 155.88
+    },
+    {
+      "id": "reddit_praw",
+      "label": "Story scraping \u2014 pending",
+      "group": 6,
+      "type": "service",
+      "x": -180.0,
+      "y": 120,
+      "z": 0.0
+    },
+    {
+      "id": "youtube_data_api",
+      "label": "Upload automation \u2014 pending",
+      "group": 6,
+      "type": "service",
+      "x": -90.0,
+      "y": 120,
+      "z": -155.88
+    },
+    {
+      "id": "ollama",
+      "label": "Local model runtime \u2014 port 11434",
+      "group": 6,
+      "type": "service",
+      "x": 90.0,
+      "y": 120,
+      "z": -155.88
+    },
+    {
+      "id": "ollama_qwen3_5_4b",
+      "label": "ollama/qwen3.5:4b",
+      "group": 2,
+      "type": "model",
+      "x": 61.28,
+      "y": -40,
+      "z": -51.42
+    },
+    {
+      "id": "openclaw_config",
+      "label": "OpenClaw Config (bootstrap:40000)",
+      "group": 0,
+      "type": "process",
+      "x": 18.7,
+      "y": -120,
+      "z": -23.45
+    },
+    {
+      "id": "qwen3_5_4b",
+      "label": "qwen3_5_4b",
+      "group": 7,
+      "type": "unknown",
+      "x": 205.0,
+      "y": 160,
+      "z": 0.0
+    },
+    {
+      "id": "deepseek_reasoner",
+      "label": "deepseek_reasoner",
+      "group": 7,
+      "type": "unknown",
+      "x": 127.82,
+      "y": 160,
+      "z": 160.28
+    },
+    {
+      "id": "gemini_2_0_flash",
+      "label": "gemini_2_0_flash",
+      "group": 7,
+      "type": "unknown",
+      "x": -45.62,
+      "y": 160,
+      "z": 199.86
+    },
+    {
+      "id": "phi3_5",
+      "label": "phi3_5",
+      "group": 7,
+      "type": "unknown",
+      "x": -184.7,
+      "y": 160,
+      "z": 88.95
+    },
+    {
+      "id": "deepseek_chat",
+      "label": "deepseek_chat",
+      "group": 7,
+      "type": "unknown",
+      "x": -184.7,
+      "y": 160,
+      "z": -88.95
+    },
+    {
+      "id": "deepseek_coder_6_7b",
+      "label": "deepseek_coder_6_7b",
+      "group": 7,
+      "type": "unknown",
+      "x": -45.62,
+      "y": 160,
+      "z": -199.86
+    },
+    {
+      "id": "claude_code",
+      "label": "claude_code",
+      "group": 7,
+      "type": "unknown",
+      "x": 127.82,
+      "y": 160,
+      "z": -160.28
+    }
+  ],
+  "links": [
+    {
+      "source": "whatsapp",
+      "target": "model_router",
+      "type": "routes_to",
+      "label": "WhatsApp input"
+    },
+    {
+      "source": "telegram",
+      "target": "model_router",
+      "type": "routes_to",
+      "label": "Telegram input (disa"
+    },
+    {
+      "source": "model_router",
+      "target": "qwen3_5_4b",
+      "type": "routes_to",
+      "label": "primary local"
+    },
+    {
+      "source": "model_router",
+      "target": "deepseek_reasoner",
+      "type": "routes_to",
+      "label": "deep think trigger"
+    },
+    {
+      "source": "model_router",
+      "target": "gemini_2_0_flash",
+      "type": "routes_to",
+      "label": "cloud fallback"
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "phi3_5",
+      "type": "falls_back_to",
+      "label": "no tools"
+    },
+    {
+      "source": "phi3_5",
+      "target": "gemini_2_0_flash",
+      "type": "falls_back_to",
+      "label": "cloud"
+    },
+    {
+      "source": "deepseek_chat",
+      "target": "gemini_2_0_flash",
+      "type": "falls_back_to",
+      "label": "budget limit"
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "rtx_3060",
+      "type": "runs_on",
+      "label": "GPU inference"
+    },
+    {
+      "source": "phi3_5",
+      "target": "rtx_3060",
+      "type": "runs_on",
+      "label": "GPU inference"
+    },
+    {
+      "source": "deepseek_coder_6_7b",
+      "target": "rtx_3060",
+      "type": "runs_on",
+      "label": "GPU inference"
+    },
+    {
+      "source": "ollama",
+      "target": "qwen3_5_4b",
+      "type": "calls",
+      "label": "serves"
+    },
+    {
+      "source": "ollama",
+      "target": "phi3_5",
+      "type": "calls",
+      "label": "serves"
+    },
+    {
+      "source": "ollama",
+      "target": "deepseek_coder_6_7b",
+      "type": "calls",
+      "label": "serves"
+    },
+    {
+      "source": "gateway",
+      "target": "model_router",
+      "type": "triggers",
+      "label": "message dispatch"
+    },
+    {
+      "source": "gateway",
+      "target": "whatsapp",
+      "type": "reads",
+      "label": "channel input"
+    },
+    {
+      "source": "gateway",
+      "target": "agents_md",
+      "type": "reads",
+      "label": "bootstrap"
+    },
+    {
+      "source": "gateway",
+      "target": "soul_md",
+      "type": "reads",
+      "label": "bootstrap"
+    },
+    {
+      "source": "gateway",
+      "target": "user_md",
+      "type": "reads",
+      "label": "bootstrap"
+    },
+    {
+      "source": "gateway",
+      "target": "memory_md",
+      "type": "reads",
+      "label": "bootstrap"
+    },
+    {
+      "source": "gateway",
+      "target": "session_summary_md",
+      "type": "reads",
+      "label": "on reconnect"
+    },
+    {
+      "source": "context_monitor",
+      "target": "auto_restart_loop",
+      "type": "triggers",
+      "label": "70% threshold"
+    },
+    {
+      "source": "auto_restart_loop",
+      "target": "memory_save",
+      "type": "triggers",
+      "label": "save before restart"
+    },
+    {
+      "source": "memory_save",
+      "target": "session_summary_md",
+      "type": "writes",
+      "label": "state preservation"
+    },
+    {
+      "source": "memory_save",
+      "target": "daily_memory",
+      "type": "writes",
+      "label": "daily log"
+    },
+    {
+      "source": "auto_restart_loop",
+      "target": "gateway",
+      "type": "triggers",
+      "label": "restart via gateway."
+    },
+    {
+      "source": "compaction",
+      "target": "context_monitor",
+      "type": "reads",
+      "label": "session size proxy"
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "youtube_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "finance_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "security_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "coding_agent_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "websiteautomation_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "qwen3_5_4b",
+      "target": "antigravity_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "deepseek_coder_6_7b",
+      "target": "coding_agent_skill",
+      "type": "calls",
+      "label": ""
+    },
+    {
+      "source": "youtube_skill",
+      "target": "youtube_data_api",
+      "type": "calls",
+      "label": "upload"
+    },
+    {
+      "source": "youtube_skill",
+      "target": "elevenlabs_api",
+      "type": "calls",
+      "label": "voiceover"
+    },
+    {
+      "source": "youtube_skill",
+      "target": "reddit_praw",
+      "type": "calls",
+      "label": "scrape"
+    },
+    {
+      "source": "coding_agent_skill",
+      "target": "claude_code",
+      "type": "calls",
+      "label": "heavy coding"
+    },
+    {
+      "source": "deepseek_reasoner",
+      "target": "deepseek_api",
+      "type": "calls",
+      "label": "cloud inference"
+    },
+    {
+      "source": "gemini_2_0_flash",
+      "target": "google_cloud",
+      "type": "calls",
+      "label": "cloud inference"
+    },
+    {
+      "source": "openclaw_config",
+      "target": "gateway",
+      "type": "reads",
+      "label": "runtime config"
+    },
+    {
+      "source": "openclaw_config",
+      "target": "openclaw_json",
+      "type": "reads",
+      "label": "disk config"
+    }
+  ],
+  "groups": {
+    "0": "core_processes",
+    "1": "routing_channels",
+    "2": "models",
+    "3": "execution_tools",
+    "4": "memory_files",
+    "5": "hardware_constraints",
+    "6": "external_services",
+    "7": "other"
+  },
+  "meta": {
+    "node_count": 53,
+    "link_count": 42,
+    "format": "three-js-force-graph compatible"
+  }
+}

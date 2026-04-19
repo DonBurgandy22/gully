@@ -1,0 +1,26 @@
+{
+  "name": "goku-ssj-god",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render GokuSSJGod out/goku-ssj-god.mp4",
+    "build:landscape": "remotion render GokuSSJGod-Landscape out/goku-ssj-god-landscape.mp4",
+    "build:square": "remotion render GokuSSJGod-Square out/goku-ssj-god-square.mp4",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@remotion/cli": "^4.0.409",
+    "@remotion/transitions": "^4.0.409",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remotion": "^4.0.409",
+    "typescript": "^5.9.3"
+  }
+}

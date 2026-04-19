@@ -1,0 +1,278 @@
+{
+  "successful_choices": {
+    "aggressive_mix": 2,
+    "split_investment": 61,
+    "deep_focus": 53,
+    "youtube_channel": 1,
+    "ai_server": 1,
+    "youtube_studio": 3,
+    "viral_trends": 1,
+    "real_estate": 41,
+    "index_funds": 1,
+    "balanced_investing": 1,
+    "diversified_projects": 1,
+    "daily_shorts": 1,
+    "debt_first": 65,
+    "automation_first": 1,
+    "niche_educational": 62,
+    "ai_laptop": 2
+  },
+  "failed_choices": {
+    "business_investment": 1,
+    "split_investment": 38,
+    "weekly_longform": 1,
+    "aggressive_mix": 1,
+    "automation_first": 2,
+    "viral_trends": 3,
+    "ai_laptop": 1,
+    "real_estate": 48,
+    "index_funds": 2,
+    "niche_educational": 44,
+    "debt_first": 29,
+    "deep_focus": 33
+  },
+  "risk_reward_ratios": {
+    "0.7_0.9": {
+      "success_count": 4,
+      "total_count": 8,
+      "avg_roi": -2.426118639913013
+    },
+    "0.3_0.6": {
+      "success_count": 123,
+      "total_count": 205,
+      "avg_roi": 8.608905043876964
+    },
+    "0.6_0.8": {
+      "success_count": 0,
+      "total_count": 1,
+      "avg_roi": -43.55338835222567
+    },
+    "0.4_0.8": {
+      "success_count": 53,
+      "total_count": 87,
+      "avg_roi": 12.867413650181822
+    },
+    "0.7_0.8": {
+      "success_count": 1,
+      "total_count": 1,
+      "avg_roi": 35.032815594196386
+    },
+    "0.4_0.7": {
+      "success_count": 4,
+      "total_count": 4,
+      "avg_roi": 43.254668979483945
+    },
+    "0.5_0.6": {
+      "success_count": 41,
+      "total_count": 89,
+      "avg_roi": -5.995024499736931
+    },
+    "0.2_0.4": {
+      "success_count": 1,
+      "total_count": 3,
+      "avg_roi": -6.6913654858769895
+    },
+    "0.6_0.9": {
+      "success_count": 1,
+      "total_count": 3,
+      "avg_roi": -13.753644030683132
+    },
+    "0.5_0.7": {
+      "success_count": 1,
+      "total_count": 1,
+      "avg_roi": 53.769741739328005
+    },
+    "0.6_0.7": {
+      "success_count": 1,
+      "total_count": 1,
+      "avg_roi": 33.03258526449705
+    },
+    "0.2_0.5": {
+      "success_count": 65,
+      "total_count": 94,
+      "avg_roi": 11.178325772995032
+    },
+    "0.5_0.8": {
+      "success_count": 2,
+      "total_count": 3,
+      "avg_roi": 24.167628100675373
+    }
+  },
+  "scenario_patterns": {
+    "financial_decision": {
+      "aggressive_mix": {
+        "success_count": 2,
+        "total_count": 3
+      },
+      "business_investment": {
+        "success_count": 0,
+        "total_count": 1
+      },
+      "balanced_investing": {
+        "success_count": 1,
+        "total_count": 1
+      },
+      "debt_first": {
+        "success_count": 65,
+        "total_count": 94
+      }
+    },
+    "tech_upgrade": {
+      "split_investment": {
+        "success_count": 61,
+        "total_count": 99
+      },
+      "ai_server": {
+        "success_count": 1,
+        "total_count": 1
+      },
+      "youtube_studio": {
+        "success_count": 3,
+        "total_count": 3
+      },
+      "ai_laptop": {
+        "success_count": 2,
+        "total_count": 3
+      }
+    },
+    "time_management": {
+      "deep_focus": {
+        "success_count": 53,
+        "total_count": 86
+      },
+      "automation_first": {
+        "success_count": 1,
+        "total_count": 3
+      },
+      "diversified_projects": {
+        "success_count": 1,
+        "total_count": 1
+      }
+    },
+    "business_investment": {
+      "youtube_channel": {
+        "success_count": 1,
+        "total_count": 1
+      },
+      "real_estate": {
+        "success_count": 41,
+        "total_count": 89
+      },
+      "index_funds": {
+        "success_count": 1,
+        "total_count": 3
+      }
+    },
+    "content_strategy": {
+      "viral_trends": {
+        "success_count": 1,
+        "total_count": 4
+      },
+      "weekly_longform": {
+        "success_count": 0,
+        "total_count": 1
+      },
+      "daily_shorts": {
+        "success_count": 1,
+        "total_count": 1
+      },
+      "niche_educational": {
+        "success_count": 62,
+        "total_count": 106
+      }
+    }
+  },
+  "optimization_rules": [
+    {
+      "type": "avoid",
+      "choice_id": "split_investment",
+      "reason": "High failure rate (35 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "viral_trends",
+      "reason": "High failure rate (3 failures)",
+      "confidence": 0.3
+    },
+    {
+      "type": "avoid",
+      "choice_id": "real_estate",
+      "reason": "High failure rate (44 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "niche_educational",
+      "reason": "High failure rate (39 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "debt_first",
+      "reason": "High failure rate (25 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "avoid",
+      "choice_id": "deep_focus",
+      "reason": "High failure rate (31 failures)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "aggressive_mix",
+      "reason": "High success rate (2 successes)",
+      "confidence": 0.4
+    },
+    {
+      "type": "prefer",
+      "choice_id": "split_investment",
+      "reason": "High success rate (53 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "deep_focus",
+      "reason": "High success rate (48 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "youtube_studio",
+      "reason": "High success rate (3 successes)",
+      "confidence": 0.6
+    },
+    {
+      "type": "prefer",
+      "choice_id": "real_estate",
+      "reason": "High success rate (38 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "debt_first",
+      "reason": "High success rate (55 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "niche_educational",
+      "reason": "High success rate (57 successes)",
+      "confidence": 0.9
+    },
+    {
+      "type": "prefer",
+      "choice_id": "ai_laptop",
+      "reason": "High success rate (2 successes)",
+      "confidence": 0.4
+    },
+    {
+      "type": "risk_reward_pattern",
+      "pattern": "0.4_0.7",
+      "success_rate": 1.0,
+      "avg_roi": 43.254668979483945,
+      "confidence": 1.0
+    }
+  ]
+}

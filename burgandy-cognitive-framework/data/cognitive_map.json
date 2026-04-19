@@ -1,0 +1,85 @@
+{
+  "_comment": "Maps skill names and task keywords to cognitive node sets. Edges are sequential pairs by default.",
+  "skills": {
+    "productivity": {
+      "nodes": ["attention_control", "working_memory", "planning", "task_decomposition", "prioritisation", "self_monitoring"],
+      "edges": [["attention_control","working_memory"],["working_memory","planning"],["planning","task_decomposition"],["task_decomposition","prioritisation"]]
+    },
+    "finance": {
+      "nodes": ["working_memory", "mathematics", "pattern_recognition", "logic", "probabilistic_reasoning"],
+      "edges": [["working_memory","mathematics"],["mathematics","pattern_recognition"],["pattern_recognition","logic"]]
+    },
+    "coding-agent": {
+      "nodes": ["logic", "working_memory", "symbolic_reasoning", "error_detection", "error_correction", "mathematics", "self_monitoring"],
+      "edges": [["logic","symbolic_reasoning"],["symbolic_reasoning","error_detection"],["error_detection","error_correction"],["error_correction","self_monitoring"]]
+    },
+    "weather": {
+      "nodes": ["language_comprehension", "pattern_recognition", "working_memory"],
+      "edges": [["language_comprehension","pattern_recognition"]]
+    },
+    "organisation": {
+      "nodes": ["working_memory", "task_decomposition", "planning", "prioritisation", "decision_making"],
+      "edges": [["working_memory","task_decomposition"],["task_decomposition","planning"],["planning","prioritisation"],["prioritisation","decision_making"]]
+    },
+    "security": {
+      "nodes": ["logic", "pattern_recognition", "error_detection", "self_monitoring", "first_principles_reasoning", "systems_thinking"],
+      "edges": [["logic","pattern_recognition"],["pattern_recognition","error_detection"],["error_detection","self_monitoring"]]
+    },
+    "himalaya": {
+      "nodes": ["language_comprehension", "working_memory", "planning", "long_term_retrieval"],
+      "edges": [["language_comprehension","working_memory"],["working_memory","planning"]]
+    },
+    "youtube": {
+      "nodes": ["language_comprehension", "planning", "strategy_adaptation", "synthesis", "working_memory"],
+      "edges": [["language_comprehension","synthesis"],["synthesis","strategy_adaptation"],["strategy_adaptation","planning"]]
+    },
+    "websiteautomation": {
+      "nodes": ["logic", "working_memory", "error_detection", "error_correction", "rule_application"],
+      "edges": [["logic","rule_application"],["rule_application","error_detection"],["error_detection","error_correction"]]
+    },
+    "spline": {
+      "nodes": ["abstraction", "synthesis", "associative_linking", "pattern_recognition"],
+      "edges": [["abstraction","synthesis"],["synthesis","associative_linking"]]
+    },
+    "skill-creator": {
+      "nodes": ["abstraction", "systems_thinking", "synthesis", "self_optimization", "transfer_learning"],
+      "edges": [["abstraction","systems_thinking"],["systems_thinking","synthesis"],["synthesis","self_optimization"]]
+    },
+    "antigravity": {
+      "nodes": ["first_principles_reasoning", "abstraction", "systems_thinking", "causal_reasoning"],
+      "edges": [["first_principles_reasoning","abstraction"],["abstraction","systems_thinking"]]
+    }
+  },
+  "keywords": {
+    "code": "coding-agent",
+    "script": "coding-agent",
+    "debug": "coding-agent",
+    "fix": "coding-agent",
+    "error": "coding-agent",
+    "weather": "weather",
+    "finance": "finance",
+    "money": "finance",
+    "budget": "finance",
+    "expense": "finance",
+    "habit": "productivity",
+    "morning": "productivity",
+    "evening": "productivity",
+    "plan": "productivity",
+    "goal": "productivity",
+    "youtube": "youtube",
+    "video": "youtube",
+    "security": "security",
+    "organis": "organisation",
+    "calendar": "organisation",
+    "schedule": "organisation",
+    "skill": "skill-creator",
+    "website": "websiteautomation",
+    "spline": "spline",
+    "himalaya": "himalaya",
+    "email": "himalaya"
+  },
+  "default": {
+    "nodes": ["language_comprehension", "working_memory", "logic", "decision_making"],
+    "edges": [["language_comprehension","working_memory"],["working_memory","logic"],["logic","decision_making"]]
+  }
+}

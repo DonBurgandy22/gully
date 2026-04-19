@@ -1,0 +1,12 @@
+﻿Help on module local_notebooklm.make_audio in local_notebooklm:
+
+NAME
+    local_notebooklm.make_audio
+
+FUNCTIONS
+    main()
+
+FILE
+    c:\users\dkmac\appdata\roaming\python\python314\site-packages\local_notebooklm\make_audio.py
+
+

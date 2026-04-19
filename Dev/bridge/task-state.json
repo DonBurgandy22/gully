@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-03-29T18:06:04.605777",
+  "active_tasks": [
+    {
+      "task_id": "task-state-persistence-test-001",
+      "task_text": "Implement task state persistence system for bridge worker",
+      "status": "in_progress",
+      "started_at": "2026-03-29T17:55:00Z",
+      "last_checkpoint": "2026-03-29T17:55:00Z",
+      "checkpoint_data": {
+        "step": "analyzing_bridge_worker_structure",
+        "progress": 20,
+        "next_steps": [
+          "Add TaskStateManager class",
+          "Implement save_state() method",
+          "Implement load_state() method",
+          "Add checkpoint system",
+          "Integrate with BridgeWorker",
+          "Test with manual restart"
+        ],
+        "completed_steps": [
+          "Identified forgetting issue",
+          "Analyzed bridge worker logs",
+          "Created task-state.json structure"
+        ]
+      },
+      "created_by": "burgundy",
+      "session_id": "135962b7-ca5f-45d7-ab6b-719fda28f8db"
+    },
+    {
+      "task_id": "test-180535",
+      "task_text": "Test task state persistence with manual restart",
+      "status": "in_progress",
+      "created_at": "2026-03-29T18:05:35.941851",
+      "started_at": "2026-03-29T18:05:35.941861",
+      "last_checkpoint": "2026-03-29T18:05:35.941863",
+      "checkpoint_data": {
+        "step": "testing_persistence",
+        "progress": 40,
+        "next_steps": [
+          "manual_restart",
+          "verify_state",
+          "resume_task"
+        ],
+        "completed_steps": [
+          "created_test_task",
+          "saved_state"
+        ]
+      }
+    },
+    {
+      "task_id": "test-180604",
+      "task_text": "Test task state persistence with manual restart",
+      "status": "in_progress",
+      "created_at": "2026-03-29T18:06:04.605186",
+      "started_at": "2026-03-29T18:06:04.605206",
+      "last_checkpoint": "2026-03-29T18:06:04.605210",
+      "checkpoint_data": {
+        "step": "testing_persistence",
+        "progress": 40,
+        "next_steps": [
+          "manual_restart",
+          "verify_state",
+          "resume_task"
+        ],
+        "completed_steps": [
+          "created_test_task",
+          "saved_state"
+        ]
+      }
+    }
+  ],
+  "completed_tasks": [],
+  "failed_tasks": [],
+  "system_state": {
+    "bridge_worker_version": "phase1",
+    "context_usage_percent": 37,
+    "claude_status": "available",
+    "whatsapp_connected": true,
+    "last_restart": "2026-03-29T17:55:49+02:00"
+  },
+  "metadata": {
+    "purpose": "Persist task state across OpenClaw restarts to prevent forgetting issue",
+    "checkpoint_frequency": "every_significant_step",
+    "auto_save": true,
+    "recovery_mode": "resume_from_last_checkpoint"
+  }
+}
