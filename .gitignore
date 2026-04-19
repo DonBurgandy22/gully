@@ -53,3 +53,24 @@ temp/
 *.tmp
 *.bak
 *.old
+
+Dev/Antigravity/Website Templates/
+
+Obsidian/Burgandy Information Vault/.obsidian/plugins/
+
+# Obsidian plugins (may contain secrets)
+Obsidian/**/.obsidian/plugins/
+
+# Embedded git repos
+Dev/claude-code/
+Dev/firecrawl/
+Dev/gully/
+Dev/public-apis/
+
+# Binary/media files
+*.mp4
+*.exe
+*.pdf
+*.jpg
+*.png
+*.zip
