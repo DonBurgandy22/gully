@@ -1,0 +1,32 @@
+{
+  "type": "test_proposal",
+  "timestamp": "2026-04-20T09:34:00Z",
+  "title": "Simple Test Proposal",
+  "description": "This is a test proposal created by Hermes Agent to verify the inbox functionality.",
+  "test_cases": [
+    {
+      "id": "TC001",
+      "name": "File Creation Test",
+      "description": "Verify that Hermes Agent can create files in the inbox directory",
+      "expected_result": "test.json file is created with correct content"
+    },
+    {
+      "id": "TC002",
+      "name": "JSON Format Test",
+      "description": "Verify that the created file contains valid JSON",
+      "expected_result": "test.json passes JSON validation"
+    },
+    {
+      "id": "TC003",
+      "name": "Content Verification Test",
+      "description": "Verify that the file contains all required fields",
+      "expected_result": "File contains type, timestamp, title, description, and test_cases fields"
+    }
+  ],
+  "metadata": {
+    "created_by": "Hermes Agent",
+    "purpose": "Testing inbox functionality",
+    "priority": "low",
+    "estimated_duration": "5 minutes"
+  }
+}

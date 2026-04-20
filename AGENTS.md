@@ -100,3 +100,12 @@ Use these tools to execute tasks. Do not narrate what you would do — use the too
 - Hermes is proposal-only.
 - Hermes must not directly edit core files.
 - Do not run Hermes in parallel with another heavy repair/debug thread.
+
+## Hermes Auto-Learning Rule
+- After EVERY significant task completion, failure, or postmortem run:
+ powershell -File C:\Burgandy\hermes\auto-learn.ps1 -TaskSummary 'brief description' -TaskType 'coding|github|memory|visualizer|general' -Result 'success|failure'
+- This is NON-OPTIONAL. Hermes must be called after meaningful work.
+- Do not call Hermes after routine single-line queries.
+- Call Hermes after: GitHub commits, tool calling fixes, new skill creation, incident resolution, multi-step task completion.
+- Hermes proposals land in C:\Burgandy\hermes\inbox\
+- Review proposals before applying to core files.
