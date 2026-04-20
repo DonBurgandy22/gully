@@ -1,0 +1,110 @@
+/**
+ * Bun View: Archive
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#archive {}
+
+#archive-inner {}
+
+
+
+#archive__header {
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	display: flex;
+	justify-content: space-between;
+
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: sticky;
+	top: var( --mobile-header-height, 0px );
+
+	z-index: 20;
+	background: var( --background-color );
+}
+
+
+
+#archive__projects {
+	position: relative;
+	z-index: 10;
+}
+
+
+
+/* ------- @grid sm ------- */
+@media ( max-width: 599px ) {
+	#archive__header {
+		flex-direction: column;
+	}
+
+		#archive__header > h1 {
+			display: none;
+		}
+}
+
+
+
+/* ------- @grid md ------- */
+@media ( min-width: 600px ) {
+	#archive__projects {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+		#archive__projects .project {
+			flex: 1;
+			min-width: 50%;
+			max-width: 50%;
+		}
+
+		#archive__projects .project:nth-child( odd ) {
+			border-right: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+		}
+
+		#archive__projects .project:nth-child( even ) {
+			border-left: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+		}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#archive__header {
+		top: 0;
+	}
+}
+
+
+
+/* ------- @grid lg ------- */
+@media ( min-width: 1400px ) {
+	#archive__projects .project {
+		flex: 1;
+		min-width: 33.3333333333%;
+		max-width: 33.3333333333%;
+	}
+
+	#archive__projects .project:nth-child( odd ),
+	#archive__projects .project:nth-child( even ) {
+		border-right: none;
+		border-left: none;
+	}
+
+	#archive__projects .project:nth-child( 3n + 1 ),
+	#archive__projects .project:nth-child( 3n + 2 ) {
+		border-right: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+
+	#archive__projects .project:nth-child( 3n + 2 ),
+	#archive__projects .project:nth-child( 3n + 3 ) {
+		border-left: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+}

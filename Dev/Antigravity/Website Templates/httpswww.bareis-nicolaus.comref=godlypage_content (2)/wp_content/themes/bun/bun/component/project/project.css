@@ -1,0 +1,58 @@
+/**
+ * Bun: Component: Project
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+.project {}
+
+.project:not( :last-child ) {
+	border-bottom: var( --border-width ) solid var( --border-color );
+}
+
+.project-inner {
+	display: block;
+	position: relative;
+}
+
+a.project-inner:hover,
+a.project-inner:active {
+	--button-background-color: var( --background-color--inverted );
+	--button-color: var( --background-color );
+}
+
+
+
+.project__title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	pointer-events: none;
+	z-index: 20;
+}
+
+
+
+.project__thumbnail {
+	position: relative;
+	z-index: 10;
+}
+
+
+
+/* ------- @grid md ------- */
+@media ( max-width: 999px ) {
+	.project__title {
+		bottom: 0;
+		top: auto;
+		text-align: center;
+	}
+}

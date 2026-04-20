@@ -1,0 +1,165 @@
+/**
+ * Bun View: Project
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#project {
+	position: relative;
+}
+
+#project-inner {}
+
+
+
+#project__title {
+	pointer-events: none;
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	position: fixed;
+	z-index: 20;
+}
+
+#project__tags {
+	position: fixed;
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	bottom: calc( var( --marquee-height, 0px ) - 1px );
+	width: 100%;
+	z-index: 20;
+	pointer-events: none;
+	overflow: visible;
+}
+
+#project__tags::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: calc( 100% + var( --accordion-gradient-size ) );
+	background: var( --accordion-gradient );
+	width: 100%;
+	z-index: 10;
+	pointer-events: none;
+}
+
+	#project__tags .button-group-inner {
+		position: relative;
+		z-index: 20;
+	}
+
+
+
+#project__media {
+	position: relative;
+	z-index: 10;
+}
+
+.project-media:not( :last-child ) {
+	border-bottom: var( --border-width ) solid var( --border-color );
+}
+
+
+
+/* ------- @grid md ------- */
+@media ( max-width: 999px ) {
+	#project__title {
+		top: var( --mobile-header-height, 0px );
+		width: 100%;
+		text-align: center;
+	}
+
+	#project__media-overlay {
+		display: none;
+	}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#project {
+		border-left: var( --border-width ) solid var( --border-color );
+	}
+
+	#project__title {
+		top: 0;
+		left: 50%;
+		width: 50%;
+	}
+
+	#project__tags {
+		display: none;
+	}
+
+
+
+	.project-media {
+		cursor: pointer;
+		pointer-events: all;
+	}
+
+	#project__media-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		overflow: hidden;
+		background-color: var( --background-color );
+
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	#project__media-overlay.is-active {
+		pointer-events: all;
+		opacity: 1;
+	}
+
+		#project__media-overlay slider-wrap,
+		#project__media-overlay slider-slides,
+		#project__media-overlay slider-slide,
+
+		#project__media-overlay .video,
+		#project__media-overlay .video-inner,
+		#project__media-overlay .video__markup,
+
+		#project__media-overlay .image,
+		#project__media-overlay .image-inner,
+		#project__media-overlay .image__markup {
+			width: 100%;
+			height: 100%;
+			padding-top: 0;
+		}
+
+		#project__media-overlay video,
+		#project__media-overlay img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		#project__media-overlay slider-controls {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+		}
+
+		.button[data-id="project__media-overlay__closer"] {
+			position: absolute;
+			top: var( --grid-column-gap-vertical );
+			right: var( --grid-column-gap-horizontal );
+			z-index: 30;
+		}
+}

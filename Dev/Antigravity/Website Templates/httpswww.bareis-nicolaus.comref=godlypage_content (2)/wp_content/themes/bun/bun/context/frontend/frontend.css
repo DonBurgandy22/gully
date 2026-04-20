@@ -1,0 +1,159 @@
+/**
+ * BuN: Context: Frontend
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+html,
+body {
+	min-height: 100vh;
+	min-height: -moz-available;
+	min-height: -webkit-fill-available;
+	min-height: fill-available;
+}
+
+body {
+	--black: black;
+	--white: white;
+
+	--border-width: 2px;
+
+	background-color: var( --background-color );
+	display: flex;
+	flex-direction: column;
+}
+
+#body-inner {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+	#body-inner > footer {
+		flex-shrink: 0;
+	}
+
+
+
+.is-ready main,
+.is-ready main > *:first-child {
+	transition: opacity 0.4s cubic-bezier( 0.76, 0, 0.24, 1 );
+}
+
+.is-ready main.is-out > *:first-child {
+	opacity: 0;
+}
+
+
+
+.is-inverted,
+.view-archive {
+	--background-color: var( --white );
+	--background-color--inverted: var( --black );
+	--border-color: var( --background-color--inverted );
+}
+
+body,
+.is-not-inverted {
+	--background-color: var( --black );
+	--background-color--inverted: var( --white );
+	--border-color: var( --background-color--inverted );
+}
+
+
+
+.button-group {
+	--button-spacing-vertical: calc( var( --grid-column-gap-vertical ) / 3 * 2 );
+	--button-spacing-horizontal: calc( var( --grid-column-gap-horizontal ) / 3 );
+
+	overflow: hidden;
+}
+
+.button-group-inner {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 calc( var( --button-spacing-horizontal ) * -1 ) calc( var( --button-spacing-vertical ) * -1 ) 0;
+}
+
+	.button-group-inner > * {
+		margin: 0 var( --button-spacing-horizontal ) var( --button-spacing-vertical ) 0
+	}
+
+
+
+/* ------- @grid md ------- */
+@media ( min-width: 600px ) {
+
+}
+
+
+
+/* ------- @grid md ------- */
+@media ( max-width: 999px ) {
+	.button-group-inner {
+		justify-content: center;
+	}
+
+	/*main,*/
+	.view-frontpage #body-inner {
+		overflow: hidden;
+	}
+
+	.view-frontpage #body-inner > main {
+		/*flex-basis: 0;*/
+		visibility: hidden;
+	}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	html,
+	body {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	body #body-inner {
+		overflow: hidden;
+		flex-direction: row;
+	}
+
+	body.view-archive #body-inner {
+		flex-direction: column;
+	}
+
+		body:not( .view-archive ) #body-inner > header {
+			flex: 1;
+			overflow: hidden;
+		}
+
+		body #body-inner > main {
+			flex: 1;
+			overflow-x: hidden;
+			overflow-y: scroll;
+
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+		}
+
+		body #body-inner > main::-webkit-scrollbar {
+			display: none;
+		}
+}
+
+
+
+/* ------- @grid lg ------- */
+@media ( min-width: 1400px ) {
+
+}

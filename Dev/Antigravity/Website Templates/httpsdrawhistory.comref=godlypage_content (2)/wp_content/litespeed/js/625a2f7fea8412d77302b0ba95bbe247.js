@@ -1,0 +1,2 @@
+(()=>{var r;(r=jQuery)(document).on("gform_post_render",(function(t,n){var o=r("#gform_"+n);o&&o.attr("target")&&window.hCaptchaBindEvents()}))})()
+;

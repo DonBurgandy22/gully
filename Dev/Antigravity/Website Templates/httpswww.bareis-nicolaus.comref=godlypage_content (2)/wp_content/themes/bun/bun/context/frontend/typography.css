@@ -1,0 +1,148 @@
+/**
+ * BuN: Typography
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	--font-size--regular: 14px;
+	--line-height--regular: 1.2;
+	--font-size--huge: calc( var( --font-size--regular ) * 3 );
+	--line-height--huge: 1;
+
+	--font-family: 'Lausanne', sans-serif;
+	--font-size: var( --font-size--regular );
+	--line-height: var( --line-height--regular );
+}
+
+* {
+	font-family: var( --font-family );
+	font-weight: 400;
+	font-size: var( --font-size );
+	line-height: var( --line-height );
+	color: var( --color ) !important;
+}
+
+body,
+.is-not-inverted {
+	--color: var( --white );
+}
+
+.is-inverted,
+.view-archive {
+	--color: var( --black );
+}
+
+
+
+.ta--l {
+	text-align: left;
+}
+
+.ta--c {
+	text-align: center;
+}
+
+.ta--r {
+	text-align: right;
+}
+
+.tt--u {
+	text-transform: uppercase;
+}
+
+.tt--l {
+	text-transform: lowercase;
+}
+
+.tt--n {
+	text-transform: none;
+}
+
+
+
+.ff--lausanne {
+	--font-family: 'Lausanne', sans-serif;
+}
+
+
+
+.fs--rg {
+	--font-size: var( --font-size--regular );
+	--line-height: var( --line-height--regular );
+}
+
+.fs--hg {
+	--font-size: var( --font-size--huge );
+	--line-height: var( --line-height--huge );
+	
+	margin-top: -0.06em;
+	margin-bottom: -0.18em;
+	display: inline-block;
+}
+
+
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+p:not( :last-child ) {
+	margin-bottom: calc( 1em * var( --line-height ) );
+}
+
+i:not( [class*="btr"] ),
+em {
+	--color: darkgray;
+	font-style: normal;
+}
+
+strong {
+	font-weight: normal;
+}
+
+
+
+/* ------- @grid md ------- */
+@media ( min-width: 600px ) {
+	body {
+		--font-size--regular: 16px;
+	}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	body {
+		--font-size--regular: 21px;
+	}
+
+	.ff--victor {
+		--font-family: 'Victor Serif', serif;
+	}
+}
+
+
+
+/* ------- @grid lg ------- */
+@media ( min-width: 1400px ) {
+	body {
+		--font-size--regular: 24px;
+	}
+}
+
+
+
+/* ------- @grid xl ------- */
+@media ( min-width: 1600px ) {
+	body {
+		--font-size--regular: 28px;
+	}	
+}

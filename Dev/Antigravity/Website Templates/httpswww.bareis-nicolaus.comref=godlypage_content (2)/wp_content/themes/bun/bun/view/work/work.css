@@ -1,0 +1,54 @@
+/**
+ * Bun View: Work
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#work {
+	position: relative;
+}
+
+#work-inner {}
+
+
+
+#work[data-display-as-grid="1"] #work-inner,
+#work[data-display-as-grid="true"] #work-inner {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+	#work[data-display-as-grid="1"] #work-inner > *,
+	#work[data-display-as-grid="true"] #work-inner > * {
+		flex: 1;
+		min-width: 50%;
+	}
+
+	#work[data-display-as-grid="1"] #work-inner > *:nth-child( odd ),
+	#work[data-display-as-grid="true"] #work-inner > *:nth-child( odd ) {
+		border-right: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+
+	#work[data-display-as-grid="1"] #work-inner > *:nth-child( even ),
+	#work[data-display-as-grid="true"] #work-inner > *:nth-child( even ) {
+		border-left: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+
+	#work[data-display-as-grid="1"] #work-inner > *:nth-last-child( 2 ),
+	#work[data-display-as-grid="true"] #work-inner > *:nth-last-child( 2 ) {
+		border-bottom: none;
+	}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#work {
+		border-left: var( --border-width ) solid var( --border-color );
+	}
+}

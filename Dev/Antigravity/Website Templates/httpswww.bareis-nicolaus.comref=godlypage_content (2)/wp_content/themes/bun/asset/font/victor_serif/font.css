@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Victor Serif';
+    src: url('VictorSerif-Regular.woff2') format('woff2'),
+        url('VictorSerif-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,72 @@
+/**
+ * Bun: Component: Button
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body,
+.is-inverted,
+.is-not-inverted {
+	--button-background-color: transparent;
+	--button-color: var( --color );
+}
+
+.button {
+	--line-height: 1;
+	display: inline-block;
+}
+
+.button-inner {
+	display: block;
+	padding: 0.5em 0.55em 0.4em;
+	background: var( --button-background-color );
+	border: var( --border-width ) solid var( --border-color );
+	border-radius: 5em;
+	overflow: hidden;
+
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+a.button-inner {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+a.button-inner:hover,
+a.button-inner:active,
+.button.is-active > .button-inner {
+	--button-background-color: var( --background-color--inverted );
+	--button-color: var( --background-color );
+}
+
+
+
+.button.is-icon .button-inner {
+	height: 2.15em;
+	width: 2.15em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+
+
+.button__label {
+	--color: var( --button-color );
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	.button.is-hovered > .button-inner {
+		--button-background-color: var( --background-color--inverted );
+		--button-color: var( --background-color );
+	}
+}

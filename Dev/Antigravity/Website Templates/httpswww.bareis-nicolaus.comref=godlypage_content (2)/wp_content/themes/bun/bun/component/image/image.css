@@ -1,0 +1,42 @@
+/**
+ * BuN: Component: Image
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+
+}
+
+.image {}
+
+.image.is-loaded {
+	background: red;
+}
+
+.image-inner {}
+
+
+
+.image__markup {
+	position: relative;
+	padding-top: calc( 100 / var( --image-ratio, var( --ratio ) ) * 1% );
+}
+
+	.image__markup > img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.image__markup > img.has-focus-point {
+		object-position: var( --fpx, 50% ) var( --fpy, 50% );
+	}
+
+
+
+.image__caption {}

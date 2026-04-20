@@ -1,0 +1,45 @@
+/**
+ * Bun View: Research
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#research {}
+
+#research-inner {
+	display: flex;
+	flex-wrap: wrap;
+	background: var( --background-color--inverted );
+}
+
+	#research-inner > * {
+		flex: 1;
+		min-width: 50%;
+		max-width: 50%;
+	}
+
+	#research-inner > *:nth-child( odd ) {
+		border-right: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+
+	#research-inner > *:nth-child( even ) {
+		border-left: calc( var( --border-width ) * 0.5 ) solid var( --border-color );
+	}
+
+	#research-inner > *:nth-last-child( 2 ):nth-child( odd ) {
+		border-bottom: none;
+	}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#research {
+		border-left: var( --border-width ) solid var( --border-color );
+	}
+}

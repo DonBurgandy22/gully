@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[341],{279:(e,t,s)=>{"use strict";var n=s(540),a=(s(787),new n.ZP(".case-studies-slider",{modules:[n.W_],slidesPerView:1,autoHeight:!0,loop:!0,breakpoints:{640:{spaceBetween:30}},navigation:{nextEl:".next-button",prevEl:".prev-button"}})),i=document.querySelector("[data-slide-link]");a.on("slideChange",(function(){var e=a.slides[a.activeIndex];i.href=e.getAttribute("data-case-study-link")}))}},e=>{"use strict";e.O(0,[660],(()=>{return t=279,e(e.s=t);var t}));e.O()}])
+;

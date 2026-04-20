@@ -1,0 +1,35 @@
+/**
+ * Bun: Component: Marquee
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#marquee {
+	--line-height: 1;
+
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: sticky;
+	bottom: 0px;
+	z-index: 100;
+	overflow: hidden;
+	background: var( --background-color );
+	flex-shrink: 0;
+}
+
+.marquee-inner {
+	padding: calc( var( --grid-column-gap-vertical ) * 0.4 ) 0 calc( var( --grid-column-gap-vertical ) * 0.35 );
+	display: inline-flex !important;
+}
+
+
+
+.marquee-part {
+	margin-right: 0.5em;
+	white-space: nowrap;
+}

@@ -1,0 +1,266 @@
+/**
+ * @author Valentin Alisch <hallo@valentinalisch.de>
+ * @version 2.1.6
+ *
+ * SliderJS.css
+ */
+
+
+
+/**
+ * Wrap
+ * 
+ * @since 2.0
+ */
+slider-wrap,
+.slider-wrap {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+slider-wrap *,
+.slider-wrap * {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+
+
+/**
+ * Slides 
+ * 
+ * @since 2.0
+ */
+slider-slides,
+.slider-slides {
+	display: flex;
+	position: relative;
+	height: 100%;
+	z-index: 10;
+
+	min-width: 100%;
+	box-sizing: content-box;
+
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+slider-slides::-webkit-scrollbar,
+.slider-slides::-webkit-scrollbar {
+	display: none;
+}
+
+slider-wrap[data-does-autosize="true"] slider-slides,
+slider-wrap[data-does-autosize="true"] .slider-slides,
+.slider-wrap[data-does-autosize="true"] slider-slides,
+.slider-wrap[data-does-autosize="true"] .slider-slides {
+	align-items: flex-start;
+}
+
+slider-wrap[data-transition="vertical"] slider-slides,
+slider-wrap[data-transition="vertical"] .slider-slides,
+.slider-wrap[data-transition="vertical"] slider-slides,
+.slider-wrap[data-transition="vertical"] .slider-slides {
+	flex-direction: column;
+}
+
+slider-wrap[data-transition-type="scroll"] slider-slides,
+slider-wrap[data-transition-type="scroll"] .slider-slides,
+.slider-wrap[data-transition-type="scroll"] slider-slides,
+.slider-wrap[data-transition-type="scroll"] .slider-slides {
+	overflow: hidden;
+	will-change: scroll-position;
+}
+
+slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"] slider-slides,
+slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"] .slider-slides,
+.slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"] slider-slides,
+.slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"] .slider-slides {
+	cursor: grab;
+}
+
+slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"]:active slider-slides,
+slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"]:active .slider-slides,
+.slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"]:active slider-slides,
+.slider-wrap[data-does-listen-to*="mouse"][data-does-listen-to*="drag"]:active .slider-slides {
+	cursor: grabbing;
+}
+
+slider-wrap[data-transition="horizontal"][data-does-listen-to*="wheel"] slider-slides,
+slider-wrap[data-transition="horizontal"][data-does-listen-to*="wheel"] .slider-slides,
+.slider-wrap[data-transition="horizontal"][data-does-listen-to*="wheel"] slider-slides,
+.slider-wrap[data-transition="horizontal"][data-does-listen-to*="wheel"] .slider-slides {
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+slider-wrap[data-transition="vertical"][data-does-listen-to*="wheel"] slider-slides,
+slider-wrap[data-transition="vertical"][data-does-listen-to*="wheel"] .slider-slides,
+.slider-wrap[data-transition="vertical"][data-does-listen-to*="wheel"] slider-slides,
+.slider-wrap[data-transition="vertical"][data-does-listen-to*="wheel"] .slider-slides {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+slider-wrap[data-transition="horizontal"][data-transition-type="transform"] slider-slides,
+slider-wrap[data-transition="horizontal"][data-transition-type="transform"] .slider-slides,
+.slider-wrap[data-transition="horizontal"][data-transition-type="transform"] slider-slides,
+.slider-wrap[data-transition="horizontal"][data-transition-type="transform"] .slider-slides {
+	-webkit-transform: translate3d( calc( var( --transform, 0 ) * -1px ), 0, 0 );
+	-moz-transform: translate3d( calc( var( --transform, 0 ) * -1px ), 0, 0 );
+	transform: translate3d( calc( var( --transform, 0 ) * -1px ), 0, 0 );
+	will-change: -webkit-transform, -moz-transform, transform;
+}
+
+slider-wrap[data-transition="vertical"][data-transition-type="transform"] slider-slides,
+slider-wrap[data-transition="vertical"][data-transition-type="transform"] .slider-slides,
+.slider-wrap[data-transition="vertical"][data-transition-type="transform"] slider-slides,
+.slider-wrap[data-transition="vertical"][data-transition-type="transform"] .slider-slides {
+	-webkit-transform: translate3d( 0, calc( var( --transform, 0 ) * -1px ), 0 );
+	-moz-transform: translate3d( 0, calc( var( --transform, 0 ) * -1px ), 0 );
+	transform: translate3d( 0, calc( var( --transform, 0 ) * -1px ), 0 );
+	will-change: -webkit-transform, -moz-transform, transform;
+}
+
+
+
+/**
+ * Slide
+ * 
+ * @since 2.0
+ */
+slider-slide,
+.slider-slide {
+	position: relative;
+	z-index: 1;
+	flex: 1;
+
+	min-width: var( --slider-slide-width, 100% );
+	max-width: var( --slider-slide-width, 100% );
+	width: var( --slider-slide-width, 100% );
+}
+
+slider-slide.is-former,
+.slider-slide.is-former {
+	z-index: 10;
+}
+
+slider-slide.is-target,
+.slider-slide.is-target {
+	z-index: 20;
+}
+
+slider-slide.is-active,
+.slider-slide.is-active {
+	z-index: 30;
+}
+
+slider-slide[data-clone="buffer"],
+.slider-slide[data-clone="buffer"] {
+	min-width: var( --slider-buffer-width, 100% );
+	max-width: var( --slider-buffer-width, 100% );
+	width: var( --slider-buffer-width, 100% );
+}
+
+	slider-slide img,
+	.slider-slide img {
+		pointer-events: none;
+	}
+
+slider-wrap[data-transition="fade"] slider-slide:not( .is-target ),
+slider-wrap[data-transition="fade"] .slider-slide:not( .is-target ),
+.slider-wrap[data-transition="fade"] slider-slide:not( .is-target ),
+.slider-wrap[data-transition="fade"] .slider-slide:not( .is-target ) {
+	will-change: opacity;
+}
+
+slider-wrap[data-transition="fade"] slider-slide:not( .is-target ):not( .is-active ),
+slider-wrap[data-transition="fade"] .slider-slide:not( .is-target ):not( .is-active ),
+.slider-wrap[data-transition="fade"] slider-slide:not( .is-target ):not( .is-active ),
+.slider-wrap[data-transition="fade"] .slider-slide:not( .is-target ):not( .is-active ) {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+slider-wrap[data-transition="fade"] slider-slide:not( .is-former ):not( .is-target ):not( .is-active ):not( .might-become-visible ),
+slider-wrap[data-transition="fade"] .slider-slide:not( .is-former ):not( .is-target ):not( .is-active ):not( .might-become-visible ),
+.slider-wrap[data-transition="fade"] slider-slide:not( .is-former ):not( .is-target ):not( .is-active ):not( .might-become-visible ),
+.slider-wrap[data-transition="fade"] .slider-slide:not( .is-former ):not( .is-target ):not( .is-active ):not( .might-become-visible ) {
+	display: none;
+}
+
+
+
+/**
+ * Controls
+ * 
+ * @since 2.0
+ */
+slider-controls,
+.slider-controls {
+	display: flex;
+	position: relative;
+	z-index: 20;
+	align-items: center;
+	justify-content: space-between;
+	pointer-events: none;
+}
+
+slider-control,
+.slider-control {
+	cursor: pointer;
+	pointer-events: all;
+}
+
+slider-control[data-trigger="prev"],
+.slider-control[data-trigger="prev"],
+slider-control[data-trigger="next"],
+.slider-control[data-trigger="next"] {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+slider-control[data-trigger="next"],
+.slider-control[data-trigger="next"] {
+	justify-content: flex-end;
+}
+
+
+
+/**
+ * Indicators
+ * 
+ * @since 2.0
+ */
+slider-indicators,
+.slider-indicators {
+	display: flex;
+	position: relative;
+	z-index: 30;
+	align-items: center;
+	justify-content: center;
+}
+
+slider-indicator,
+.slider-indicator {
+	width: var( --slider-indicator-size, var( --slider-indicator-size--default ) );
+	height: var( --slider-indicator-size, var( --slider-indicator-size--default ) );
+	margin: var( --slider-indicator-margin, calc( var( --slider-indicator-size, var( --slider-indicator-size--default ) ) * 0.25 ) );
+
+	cursor: pointer;
+	border: var( --slider-indicator-border, 1px solid currentColor );
+	border-radius: var( --slider-indicator-radius, var( --slider-indicator-size, var( --slider-indicator-size--default ) ) );
+}
+
+slider-indicator.active,
+.slider-indicator.active {
+	background: currentColor;
+}

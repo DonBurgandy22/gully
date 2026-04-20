@@ -1,0 +1,156 @@
+/**
+ * Bun View: Page
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#page {}
+
+#page-inner {
+	background-color: var( --background-color );
+	min-height: 100%;
+	position: relative;
+}
+
+
+
+.page-section {
+	position: relative;
+	z-index: 20;
+}
+
+.page-section[data-type="headline_1"]:not( :first-child ) {
+	border-top: var( --border-width ) solid var( --border-color );
+}
+
+.page-section[data-type="headline_1"]:not( :last-child ) {
+	border-bottom: var( --border-width ) solid var( --border-color );
+}
+
+.page-section[data-type="headline_1"],
+.page-section[data-type="headline_2"],
+.page-section[data-type="buttons"],
+.page-section[data-type="text"]:first-child {
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+}
+
+.page-section[data-type="text"] {
+	padding: 0 var( --grid-column-gap-horizontal ) var( --grid-column-gap-vertical );
+}
+
+.page-section[data-type="text"] + .page-section:not( [data-type="headline_1"] ):not( [data-type="text"] ) {
+	padding-top: calc( var( --grid-column-gap-vertical ) * 2 );
+}
+
+.page-section[data-type="headline_1"] + .page-section[data-type="text"],
+.page-section[data-type="image"] + .page-section[data-type="text"],
+.page-section[data-type="video"] + .page-section[data-type="text"] {
+	padding-top: var( --grid-column-gap-vertical );
+}
+
+	.page-section[data-type="buttons"] .button-group-inner {
+		justify-content: flex-start;
+	}
+
+
+
+#page__mobile-navigation {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: sticky;
+	
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	bottom: calc( var( --marquee-height, 0px ) - 1px );
+	width: 100%;
+	z-index: 30;
+	pointer-events: none;
+	overflow: visible;
+}
+
+#page__mobile-navigation::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: calc( 100% + var( --accordion-gradient-size ) );
+	background: var( --accordion-gradient );
+	width: 100%;
+	z-index: 10;
+	pointer-events: none;
+}
+
+	#page__mobile-navigation .button-group-inner {
+		position: relative;
+		z-index: 20;
+	}
+
+
+
+/* ------- @grid md ------- */
+@media ( max-width: 999px ) {
+	body.view-page.page-contact {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	body.view-page.page-contact #page {
+		flex: 1;
+	}
+
+	body.view-page.page-contact #page-inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	body.view-page.page-contact #page__mobile-navigation {
+		position: fixed;
+	}
+
+	#page__gif {
+		flex: 1;
+		object-fit: cover;
+	}
+
+	#page-inner {
+		--background-color: var( --black );
+		--background-color--inverted: var( --white );
+		--border-color: var( --background-color--inverted );
+		--color: var( --white );
+	}
+
+	.page-section[data-type="headline_1"] {
+		display: none;
+	}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#page {
+		border-left: var( --border-width ) solid var( --border-color );
+	}
+
+	#page__mobile-navigation,
+	.page-section.mobile-only {
+		display: none;
+	}
+
+	#page__gif {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 10;
+	}
+}

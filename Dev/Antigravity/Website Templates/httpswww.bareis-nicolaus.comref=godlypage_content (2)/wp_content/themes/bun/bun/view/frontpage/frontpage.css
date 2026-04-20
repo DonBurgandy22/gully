@@ -1,0 +1,72 @@
+/**
+ * Bun View: Frontpage
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+#frontpage {
+	position: relative;
+	/*display: none;*/
+}
+
+#frontpage-inner {}
+
+
+
+/* ------- @grid md ------- */
+@media ( max-width: 999px ) {
+	body.view-frontpage {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+
+/* ------- @grid ml ------- */
+@media ( min-width: 1000px ) {
+	#frontpage {
+		display: block;
+		border-left: var( --border-width ) solid var( --border-color );
+	}
+
+	#frontpage-inner,
+	#frontpage-inner slider-wrap,
+	#frontpage-inner slider-slides,
+	#frontpage-inner slider-slide,
+
+	#frontpage-inner slider-slide > .project,
+	#frontpage-inner slider-slide > .project .project-inner,
+	#frontpage-inner slider-slide > .project .project__thumbnail,
+
+	#frontpage-inner slider-slide > .project .project__thumbnail .image,
+	#frontpage-inner slider-slide > .project .project__thumbnail .image-inner,
+	#frontpage-inner slider-slide > .project .project__thumbnail .image__markup,
+	#frontpage-inner slider-slide > .project .project__thumbnail .video,
+	#frontpage-inner slider-slide > .project .project__thumbnail .video-inner,
+	#frontpage-inner slider-slide > .project .project__thumbnail .video__markup {
+		height: 100%;
+		padding-top: 0;
+	}
+
+	#frontpage-inner slider-slide > .project .project__thumbnail .video__markup {
+		position: relative;
+	}
+
+		#frontpage-inner slider-slide > .project .project__thumbnail .video__markup > video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+}

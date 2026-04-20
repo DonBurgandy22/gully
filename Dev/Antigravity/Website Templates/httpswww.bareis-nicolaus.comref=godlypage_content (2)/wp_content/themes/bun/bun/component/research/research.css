@@ -1,0 +1,40 @@
+/**
+ * Bun: Component: Research
+ * 
+ * @author alisch berlec hönow <info@abh.eu>
+ * @version 2.1.1
+ */
+
+body {
+	/* Variables */
+}
+
+.research {}
+
+.research:not( :last-child ) {
+	border-bottom: var( --border-width ) solid var( --border-color );
+}
+
+.research-inner {
+	position: relative;
+}
+
+
+
+.research__meta {
+	--color: var( --background-color--inverted );
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+	padding: var( --grid-column-gap-vertical ) var( --grid-column-gap-horizontal );
+	z-index: 20;
+	mix-blend-mode: difference;
+}
+
+.research__thumbnail {
+	position: relative;
+	z-index: 10;
+}

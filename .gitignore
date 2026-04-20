@@ -1,76 +1,54 @@
-# Runtime state (OpenClaw)
+# Runtime / Session State
 .openclaw/
-*.openclaw
-
-# Session/runtime data
-node_modules/
-venv/
-env/
-.venv/
-
-# WhatsApp/OpenClaw state
-whatsapp/
-channel/
-session/
-*.json.tmp
+**/.openclaw/
 
 # Logs
 *.log
-logs/
+
+# Backups / Clobbered Configs
+*.bak
+*.old
+*.backup
+*.clobbered*
+
+# Environment Files (tokens, keys, creds)
+.env
+.env.local
+.env.*
+
+# Python cache / virtual env
+__pycache__/
+*.pyc
+*.py[co]
+.venv/
+venv/
+ENV/
+
+# Node modules
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Cache
-__pycache__/
-*.pyc
-.cache/
-.caches/
+# Local memory / dumps / diagnostics
+memory/
+*.txt
 
-# IDE junk
+# Obsidian local state
+.obsidian/
+**/.obsidian/
+
+# Optional local test scripts
+test-*.ps1
+verify-*.ps1
+
+# Temporary files
+*.tmp
+*.temp
+~*
+
+# IDE / Editor state
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
-
-# Python cache
-.pytest_cache/
-.coverage
-htmlcov/
-*.egg-info/
-
-# Secrets/tokens
-.env
-.env.*
-.secrets/
-*.pem
-*.key
-
-# Temporary/generated
-tmp/
-temp/
-*.tmp
-*.bak
-*.old
-
-Dev/Antigravity/Website Templates/
-
-Obsidian/Burgandy Information Vault/.obsidian/plugins/
-
-# Obsidian plugins (may contain secrets)
-Obsidian/**/.obsidian/plugins/
-
-# Embedded git repos
-Dev/claude-code/
-Dev/firecrawl/
-Dev/gully/
-Dev/public-apis/
-
-# Binary/media files
-*.mp4
-*.exe
-*.pdf
-*.jpg
-*.png
-*.zip
