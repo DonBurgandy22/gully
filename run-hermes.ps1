@@ -1,0 +1,5 @@
+python "C:\Burgandy\hermes-log-analyzer.py"
+python "C:\Burgandy\hermes-consolidator.py"
+python "C:\Burgandy\hermes-optimization-writer.py"
+python "C:\Burgandy\hermes-routing-hints-writer.py"
+python "C:\Burgandy\hermes-status-writer.py"

@@ -1,0 +1,11 @@
+{
+  "total_events": 15,
+  "success_count": 1,
+  "failure_count": 0,
+  "log_scan_events": 14,
+  "timeout_total": 84,
+  "failover_total": 116,
+  "engines": {
+    "local": 1
+  }
+}
