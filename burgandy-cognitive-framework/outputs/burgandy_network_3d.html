@@ -2,693 +2,1216 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Burgandy Cognitive Framework — 3D Live Network</title>
+<title>Burgandy Cognitive Network</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#04040f;overflow:hidden;font-family:'Segoe UI',sans-serif;color:#ccc}
-#c{display:block;width:100vw;height:100vh}
-.label{background:rgba(0,0,0,0);color:#fff;font-size:11px;font-weight:600;pointer-events:none;text-shadow:0 0 6px rgba(0,0,0,0.9);white-space:nowrap}
-#ui{position:fixed;top:16px;left:16px;background:rgba(4,4,20,0.85);border:1px solid #222;border-radius:10px;padding:14px 16px;width:210px;backdrop-filter:blur(8px)}
-#ui h2{color:#fff;font-size:13px;letter-spacing:.5px;margin-bottom:10px;border-bottom:1px solid #333;padding-bottom:8px}
-.leg-row{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:11px}
-.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.sat-row{display:flex;align-items:center;gap:8px;margin:6px 0 0;font-size:11px;border-top:1px solid #333;padding-top:6px}
-#hints{font-size:10px;color:#666;margin-top:10px;border-top:1px solid #222;padding-top:8px;line-height:1.7}
-#info{position:fixed;bottom:20px;left:16px;background:rgba(4,4,20,0.9);border:1px solid #333;border-radius:10px;padding:14px 16px;width:240px;display:none;backdrop-filter:blur(8px)}
-#info h3{color:#fff;font-size:13px;margin-bottom:8px}
-.inf-row{display:flex;justify-content:space-between;font-size:11px;margin:3px 0}
-.inf-label{color:#666}
-.inf-val{color:#eee}
-#status{position:fixed;top:16px;right:16px;background:rgba(4,4,20,0.85);border:1px solid #222;border-radius:10px;padding:10px 14px;font-size:11px;backdrop-filter:blur(8px);max-width:300px}
-#status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#333;margin-right:6px;vertical-align:middle}
-#status-text{color:#888}
-#status-task{color:#aaa;margin-top:4px;font-size:10px}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #04040f; overflow: hidden; font-family: 'Courier New', monospace; }
+#c { display: block; width: 100vw; height: 100vh; }
+#ui {
+  position: fixed; top: 16px; left: 16px; z-index: 100;
+  color: #aaa; font-size: 12px; pointer-events: none;
+}
+#status {
+  position: fixed; top: 16px; right: 16px; z-index: 100;
+  background: rgba(0,0,0,0.6); border: 1px solid #333;
+  padding: 8px 14px; border-radius: 6px; color: #aaa; font-size: 12px;
+}
+#status-dot {
+  display: inline-block; width: 8px; height: 8px;
+  border-radius: 50%; background: #444; margin-right: 6px;
+}
+#status-dot.active { background: #FFD700; box-shadow: 0 0 6px #FFD700; }
+#hints {
+  position: fixed; bottom: 16px; left: 16px; z-index: 100;
+  color: #555; font-size: 11px; pointer-events: none;
+}
+#info {
+  position: fixed; bottom: 16px; right: 16px; z-index: 100;
+  color: #666; font-size: 11px; text-align: right;
+}
 </style>
 </head>
 <body>
 <canvas id="c"></canvas>
 <div id="ui">
-  <h2>Burgandy Cognitive Network</h2>
-  <div class="leg-row"><div class="leg-dot" style="background:#4A90D9"></div><span>Layer 1 — Foundational</span></div><div class="leg-row"><div class="leg-dot" style="background:#E67E22"></div><span>Layer 2 — Reasoning</span></div><div class="leg-row"><div class="leg-dot" style="background:#9B59B6"></div><span>Layer 3 — Formal</span></div><div class="leg-row"><div class="leg-dot" style="background:#27AE60"></div><span>Layer 4 — Executive</span></div><div class="leg-row"><div class="leg-dot" style="background:#E74C3C"></div><span>Layer 5 — Meta</span></div><div class="leg-row"><div class="leg-dot" style="background:#95A5A6"></div><span>Layer 6 — Domain</span></div>
-  <div class="sat-row"><div class="leg-dot" style="background:#FFD700"></div><span>Saturated / Active</span></div>
-  <div id="hints">
-    <b>Drag</b> — rotate<br>
-    <b>Scroll</b> — zoom<br>
-    <b>Right-drag</b> — pan<br>
-    <b>Click node</b> — inspect<br>
-    <b>Double-click bg</b> — reset
-  </div>
-</div>
-<div id="info">
-  <h3 id="i-name">—</h3>
-  <div class="inf-row"><span class="inf-label">ID</span><span class="inf-val" id="i-id">—</span></div>
-  <div class="inf-row"><span class="inf-label">Layer</span><span class="inf-val" id="i-layer">—</span></div>
-  <div class="inf-row"><span class="inf-label">Weight</span><span class="inf-val" id="i-weight">—</span></div>
-  <div class="inf-row"><span class="inf-label">Activation</span><span class="inf-val" id="i-act">—</span></div>
-  <div class="inf-row"><span class="inf-label">Status</span><span class="inf-val" id="i-status">—</span></div>
+  <div>BURGANDY COGNITIVE NETWORK</div>
+  <div id="node-count" style="color:#555; margin-top:4px;">40 nodes · 63 edges</div>
 </div>
 <div id="status">
-  <span id="status-dot"></span><span id="status-text">Idle</span>
-  <div id="status-task"></div>
+  <span id="status-dot"></span>
+  <span id="status-text">Idle</span>
+  <div id="status-task" style="color:#666; margin-top:4px; font-size:11px;"></div>
 </div>
+<div id="hints">drag to rotate · scroll to zoom · right-drag to pan</div>
+<div id="info">localhost:8765</div>
 
-<script type="importmap">
-{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}
-</script>
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+const NODE_DATA = [
+  {
+    "id": "language_comprehension",
+    "label": "language_comprehension",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 184.0,
+    "y": -200.0,
+    "z": 0.0
+  },
+  {
+    "id": "working_memory",
+    "label": "working_memory",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 130.11,
+    "y": -200.0,
+    "z": 130.11
+  },
+  {
+    "id": "long_term_retrieval",
+    "label": "long_term_retrieval",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 0.0,
+    "y": -200.0,
+    "z": 184.0
+  },
+  {
+    "id": "attention_control",
+    "label": "attention_control",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -130.11,
+    "y": -200.0,
+    "z": 130.11
+  },
+  {
+    "id": "abstraction",
+    "label": "abstraction",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -184.0,
+    "y": -200.0,
+    "z": 0.0
+  },
+  {
+    "id": "categorisation",
+    "label": "categorisation",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -130.11,
+    "y": -200.0,
+    "z": -130.11
+  },
+  {
+    "id": "pattern_recognition",
+    "label": "pattern_recognition",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -0.0,
+    "y": -200.0,
+    "z": -184.0
+  },
+  {
+    "id": "associative_linking",
+    "label": "associative_linking",
+    "layer": 1,
+    "color": "#4A90D9",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 130.11,
+    "y": -200.0,
+    "z": -130.11
+  },
+  {
+    "id": "logic",
+    "label": "logic",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 168.0,
+    "y": -120.0,
+    "z": 0.0
+  },
+  {
+    "id": "first_principles_reasoning",
+    "label": "first_principles_reasoning",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 84.0,
+    "y": -120.0,
+    "z": 145.49
+  },
+  {
+    "id": "causal_reasoning",
+    "label": "causal_reasoning",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -84.0,
+    "y": -120.0,
+    "z": 145.49
+  },
+  {
+    "id": "analogical_reasoning",
+    "label": "analogical_reasoning",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -168.0,
+    "y": -120.0,
+    "z": 0.0
+  },
+  {
+    "id": "systems_thinking",
+    "label": "systems_thinking",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -84.0,
+    "y": -120.0,
+    "z": -145.49
+  },
+  {
+    "id": "probabilistic_reasoning",
+    "label": "probabilistic_reasoning",
+    "layer": 2,
+    "color": "#E67E22",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 84.0,
+    "y": -120.0,
+    "z": -145.49
+  },
+  {
+    "id": "symbolic_reasoning",
+    "label": "symbolic_reasoning",
+    "layer": 3,
+    "color": "#9B59B6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 160.0,
+    "y": -40.0,
+    "z": 0.0
+  },
+  {
+    "id": "mathematics",
+    "label": "mathematics",
+    "layer": 3,
+    "color": "#9B59B6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 49.44,
+    "y": -40.0,
+    "z": 152.17
+  },
+  {
+    "id": "variable_mapping",
+    "label": "variable_mapping",
+    "layer": 3,
+    "color": "#9B59B6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -129.44,
+    "y": -40.0,
+    "z": 94.05
+  },
+  {
+    "id": "rule_application",
+    "label": "rule_application",
+    "layer": 3,
+    "color": "#9B59B6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -129.44,
+    "y": -40.0,
+    "z": -94.05
+  },
+  {
+    "id": "sequence_reasoning",
+    "label": "sequence_reasoning",
+    "layer": 3,
+    "color": "#9B59B6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 49.44,
+    "y": -40.0,
+    "z": -152.17
+  },
+  {
+    "id": "planning",
+    "label": "planning",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 176.0,
+    "y": 40.0,
+    "z": 0.0
+  },
+  {
+    "id": "prioritisation",
+    "label": "prioritisation",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 109.73,
+    "y": 40.0,
+    "z": 137.6
+  },
+  {
+    "id": "decision_making",
+    "label": "decision_making",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -39.16,
+    "y": 40.0,
+    "z": 171.59
+  },
+  {
+    "id": "task_decomposition",
+    "label": "task_decomposition",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -158.57,
+    "y": 40.0,
+    "z": 76.36
+  },
+  {
+    "id": "error_detection",
+    "label": "error_detection",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -158.57,
+    "y": 40.0,
+    "z": -76.36
+  },
+  {
+    "id": "error_correction",
+    "label": "error_correction",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -39.16,
+    "y": 40.0,
+    "z": -171.59
+  },
+  {
+    "id": "self_monitoring",
+    "label": "self_monitoring",
+    "layer": 4,
+    "color": "#27AE60",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 109.73,
+    "y": 40.0,
+    "z": -137.6
+  },
+  {
+    "id": "reflection",
+    "label": "reflection",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 168.0,
+    "y": 120.0,
+    "z": 0.0
+  },
+  {
+    "id": "self_optimization",
+    "label": "self_optimization",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 84.0,
+    "y": 120.0,
+    "z": 145.49
+  },
+  {
+    "id": "confidence_calibration",
+    "label": "confidence_calibration",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -84.0,
+    "y": 120.0,
+    "z": 145.49
+  },
+  {
+    "id": "strategy_adaptation",
+    "label": "strategy_adaptation",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -168.0,
+    "y": 120.0,
+    "z": 0.0
+  },
+  {
+    "id": "synthesis",
+    "label": "synthesis",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -84.0,
+    "y": 120.0,
+    "z": -145.49
+  },
+  {
+    "id": "transfer_learning",
+    "label": "transfer_learning",
+    "layer": 5,
+    "color": "#E74C3C",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 84.0,
+    "y": 120.0,
+    "z": -145.49
+  },
+  {
+    "id": "engineering_cluster",
+    "label": "engineering_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 184.0,
+    "y": 200.0,
+    "z": 0.0
+  },
+  {
+    "id": "legal_cluster",
+    "label": "legal_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 130.11,
+    "y": 200.0,
+    "z": 130.11
+  },
+  {
+    "id": "finance_cluster",
+    "label": "finance_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 0.0,
+    "y": 200.0,
+    "z": 184.0
+  },
+  {
+    "id": "content_cluster",
+    "label": "content_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -130.11,
+    "y": 200.0,
+    "z": 130.11
+  },
+  {
+    "id": "coding_cluster",
+    "label": "coding_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -184.0,
+    "y": 200.0,
+    "z": 0.0
+  },
+  {
+    "id": "web_design_cluster",
+    "label": "web_design_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -130.11,
+    "y": 200.0,
+    "z": -130.11
+  },
+  {
+    "id": "research_cluster",
+    "label": "research_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": -0.0,
+    "y": 200.0,
+    "z": -184.0
+  },
+  {
+    "id": "operations_cluster",
+    "label": "operations_cluster",
+    "layer": 6,
+    "color": "#95A5A6",
+    "size": 8.0,
+    "weight": 0.5,
+    "x": 130.11,
+    "y": 200.0,
+    "z": -130.11
+  }
+];
+const EDGE_DATA = [
+  {
+    "source": "language_comprehension",
+    "target": "logic",
+    "weight": 0.92,
+    "type": "base"
+  },
+  {
+    "source": "language_comprehension",
+    "target": "abstraction",
+    "weight": 0.9,
+    "type": "base"
+  },
+  {
+    "source": "language_comprehension",
+    "target": "symbolic_reasoning",
+    "weight": 0.85,
+    "type": "base"
+  },
+  {
+    "source": "language_comprehension",
+    "target": "variable_mapping",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "language_comprehension",
+    "target": "mathematics",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "logic",
+    "target": "mathematics",
+    "weight": 0.88,
+    "type": "base"
+  },
+  {
+    "source": "mathematics",
+    "target": "symbolic_reasoning",
+    "weight": 0.82,
+    "type": "base"
+  },
+  {
+    "source": "symbolic_reasoning",
+    "target": "language_comprehension",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "abstraction",
+    "target": "first_principles_reasoning",
+    "weight": 0.88,
+    "type": "base"
+  },
+  {
+    "source": "abstraction",
+    "target": "systems_thinking",
+    "weight": 0.85,
+    "type": "base"
+  },
+  {
+    "source": "logic",
+    "target": "first_principles_reasoning",
+    "weight": 0.85,
+    "type": "base"
+  },
+  {
+    "source": "symbolic_reasoning",
+    "target": "mathematics",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "variable_mapping",
+    "target": "mathematics",
+    "weight": 0.78,
+    "type": "base"
+  },
+  {
+    "source": "first_principles_reasoning",
+    "target": "mathematics",
+    "weight": 0.82,
+    "type": "base"
+  },
+  {
+    "source": "logic",
+    "target": "decision_making",
+    "weight": 0.85,
+    "type": "base"
+  },
+  {
+    "source": "mathematics",
+    "target": "logic",
+    "weight": 0.75,
+    "type": "base"
+  },
+  {
+    "source": "mathematics",
+    "target": "planning",
+    "weight": 0.75,
+    "type": "base"
+  },
+  {
+    "source": "self_monitoring",
+    "target": "error_detection",
+    "weight": 0.9,
+    "type": "base"
+  },
+  {
+    "source": "error_detection",
+    "target": "error_correction",
+    "weight": 0.88,
+    "type": "base"
+  },
+  {
+    "source": "error_correction",
+    "target": "self_optimization",
+    "weight": 0.82,
+    "type": "base"
+  },
+  {
+    "source": "self_optimization",
+    "target": "self_monitoring",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "reflection",
+    "target": "self_optimization",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "synthesis",
+    "target": "strategy_adaptation",
+    "weight": 0.82,
+    "type": "base"
+  },
+  {
+    "source": "strategy_adaptation",
+    "target": "planning",
+    "weight": 0.78,
+    "type": "base"
+  },
+  {
+    "source": "first_principles_reasoning",
+    "target": "systems_thinking",
+    "weight": 0.78,
+    "type": "base"
+  },
+  {
+    "source": "systems_thinking",
+    "target": "synthesis",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "synthesis",
+    "target": "abstraction",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "pattern_recognition",
+    "target": "analogical_reasoning",
+    "weight": 0.75,
+    "type": "base"
+  },
+  {
+    "source": "associative_linking",
+    "target": "synthesis",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "reflection",
+    "target": "decision_making",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "self_monitoring",
+    "target": "planning",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "working_memory",
+    "target": "logic",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "working_memory",
+    "target": "planning",
+    "weight": 0.82,
+    "type": "base"
+  },
+  {
+    "source": "working_memory",
+    "target": "decision_making",
+    "weight": 0.78,
+    "type": "base"
+  },
+  {
+    "source": "attention_control",
+    "target": "working_memory",
+    "weight": 0.85,
+    "type": "base"
+  },
+  {
+    "source": "long_term_retrieval",
+    "target": "associative_linking",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "long_term_retrieval",
+    "target": "pattern_recognition",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "pattern_recognition",
+    "target": "categorisation",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "categorisation",
+    "target": "rule_application",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "rule_application",
+    "target": "logic",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "analogical_reasoning",
+    "target": "abstraction",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "causal_reasoning",
+    "target": "systems_thinking",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "causal_reasoning",
+    "target": "decision_making",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "probabilistic_reasoning",
+    "target": "decision_making",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "probabilistic_reasoning",
+    "target": "confidence_calibration",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "sequence_reasoning",
+    "target": "planning",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "sequence_reasoning",
+    "target": "rule_application",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "planning",
+    "target": "task_decomposition",
+    "weight": 0.8,
+    "type": "base"
+  },
+  {
+    "source": "task_decomposition",
+    "target": "prioritisation",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "error_correction",
+    "target": "confidence_calibration",
+    "weight": 0.65,
+    "type": "base"
+  },
+  {
+    "source": "reflection",
+    "target": "strategy_adaptation",
+    "weight": 0.75,
+    "type": "base"
+  },
+  {
+    "source": "transfer_learning",
+    "target": "synthesis",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "confidence_calibration",
+    "target": "decision_making",
+    "weight": 0.7,
+    "type": "base"
+  },
+  {
+    "source": "strategy_adaptation",
+    "target": "self_optimization",
+    "weight": 0.68,
+    "type": "base"
+  },
+  {
+    "source": "decision_making",
+    "target": "planning",
+    "weight": 0.72,
+    "type": "base"
+  },
+  {
+    "source": "planning",
+    "target": "engineering_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "planning",
+    "target": "coding_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "decision_making",
+    "target": "finance_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "decision_making",
+    "target": "legal_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "synthesis",
+    "target": "content_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "synthesis",
+    "target": "research_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "systems_thinking",
+    "target": "operations_cluster",
+    "weight": 0.5,
+    "type": "base"
+  },
+  {
+    "source": "pattern_recognition",
+    "target": "web_design_cluster",
+    "weight": 0.5,
+    "type": "base"
+  }
+];
 
-const NODES = [{"id": "language_comprehension", "name": "Language Comprehension", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.95, "color": "#4A90D9", "activation": 0.95, "x": 17.32, "y": 264.23, "z": 103.41}, {"id": "working_memory", "name": "Working Memory", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.92, "color": "#4A90D9", "activation": 0.0, "x": 109.66, "y": -225.16, "z": -141.11}, {"id": "long_term_retrieval", "name": "Long-Term Retrieval", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.43, "color": "#4A90D9", "activation": 0.0, "x": -226.33, "y": 179.32, "z": 1.23}, {"id": "attention_control", "name": "Attention Control", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.45, "color": "#4A90D9", "activation": 0.0, "x": 158.14, "y": -205.63, "z": 165.83}, {"id": "abstraction", "name": "Abstraction", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.88, "color": "#4A90D9", "activation": 0.95, "x": 237.55, "y": -128.08, "z": -116.1}, {"id": "categorisation", "name": "Categorisation", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.4, "color": "#4A90D9", "activation": 0.0, "x": -259.52, "y": -65.64, "z": 6.05}, {"id": "pattern_recognition", "name": "Pattern Recognition", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.85, "color": "#4A90D9", "activation": 0.0, "x": 193.28, "y": -118.5, "z": 113.21}, {"id": "associative_linking", "name": "Associative Linking", "layer": 1, "layerName": "Layer 1 \u2014 Foundational", "weight": 0.48, "color": "#4A90D9", "activation": 0.0, "x": -229.19, "y": -56.1, "z": -138.13}, {"id": "logic", "name": "Logic", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.9, "color": "#E67E22", "activation": 0.95, "x": -32.02, "y": 189.87, "z": -198.85}, {"id": "first_principles_reasoning", "name": "First-Principles Reasoning", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.8, "color": "#E67E22", "activation": 0.95, "x": 24.69, "y": 62.14, "z": -274.84}, {"id": "causal_reasoning", "name": "Causal Reasoning", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.6, "color": "#E67E22", "activation": 0.0, "x": 62.18, "y": -171.05, "z": -230.45}, {"id": "analogical_reasoning", "name": "Analogical Reasoning", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.58, "color": "#E67E22", "activation": 0.0, "x": 255.01, "y": 138.56, "z": 104.19}, {"id": "systems_thinking", "name": "Systems Thinking", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.78, "color": "#E67E22", "activation": 0.95, "x": -69.62, "y": -258.65, "z": 96.14}, {"id": "probabilistic_reasoning", "name": "Probabilistic Reasoning", "layer": 2, "layerName": "Layer 2 \u2014 Reasoning", "weight": 0.53, "color": "#E67E22", "activation": 0.0, "x": 75.0, "y": -264.65, "z": -3.93}, {"id": "symbolic_reasoning", "name": "Symbolic Reasoning", "layer": 3, "layerName": "Layer 3 \u2014 Formal", "weight": 0.63, "color": "#9B59B6", "activation": 0.95, "x": -201.61, "y": 177.41, "z": -128.1}, {"id": "mathematics", "name": "Mathematics", "layer": 3, "layerName": "Layer 3 \u2014 Formal", "weight": 0.82, "color": "#9B59B6", "activation": 0.95, "x": 254.55, "y": -70.15, "z": 2.21}, {"id": "variable_mapping", "name": "Variable Mapping", "layer": 3, "layerName": "Layer 3 \u2014 Formal", "weight": 0.55, "color": "#9B59B6", "activation": 0.95, "x": 123.8, "y": -101.83, "z": 244.19}, {"id": "rule_application", "name": "Rule Application", "layer": 3, "layerName": "Layer 3 \u2014 Formal", "weight": 0.38, "color": "#9B59B6", "activation": 0.0, "x": 175.8, "y": 146.26, "z": 198.13}, {"id": "sequence_reasoning", "name": "Sequence Reasoning", "layer": 3, "layerName": "Layer 3 \u2014 Formal", "weight": 0.5, "color": "#9B59B6", "activation": 0.0, "x": 80.99, "y": 220.59, "z": -180.31}, {"id": "planning", "name": "Planning", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.73, "color": "#27AE60", "activation": 0.95, "x": -167.89, "y": -218.23, "z": -91.98}, {"id": "prioritisation", "name": "Prioritisation", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.25, "color": "#27AE60", "activation": 0.1883, "x": 11.75, "y": -77.27, "z": 264.88}, {"id": "decision_making", "name": "Decision Making", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.75, "color": "#27AE60", "activation": 0.95, "x": -63.19, "y": -240.93, "z": -69.68}, {"id": "task_decomposition", "name": "Task Decomposition", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.35, "color": "#27AE60", "activation": 0.7564, "x": -165.19, "y": 100.56, "z": -221.93}, {"id": "error_detection", "name": "Error Detection", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.7, "color": "#27AE60", "activation": 0.0371, "x": 269.24, "y": 98.7, "z": -97.48}, {"id": "error_correction", "name": "Error Correction", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.68, "color": "#27AE60", "activation": 0.0241, "x": -260.03, "y": 105.72, "z": 78.77}, {"id": "self_monitoring", "name": "Self Monitoring", "layer": 4, "layerName": "Layer 4 \u2014 Executive", "weight": 0.72, "color": "#27AE60", "activation": 0.0508, "x": 175.6, "y": 106.44, "z": -209.52}, {"id": "reflection", "name": "Reflection", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.67, "color": "#E74C3C", "activation": 0.0, "x": -17.21, "y": -215.42, "z": 194.86}, {"id": "self_optimization", "name": "Self Optimization", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.65, "color": "#E74C3C", "activation": 0.1262, "x": 154.65, "y": -54.5, "z": -233.94}, {"id": "confidence_calibration", "name": "Confidence Calibration", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.33, "color": "#E74C3C", "activation": 0.0139, "x": -139.49, "y": -119.45, "z": 198.3}, {"id": "strategy_adaptation", "name": "Strategy Adaptation", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.28, "color": "#E74C3C", "activation": 0.7017, "x": 119.71, "y": 247.05, "z": -50.06}, {"id": "synthesis", "name": "Synthesis", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.62, "color": "#E74C3C", "activation": 0.95, "x": -173.41, "y": 106.99, "z": 195.23}, {"id": "transfer_learning", "name": "Transfer Learning", "layer": 5, "layerName": "Layer 5 \u2014 Meta", "weight": 0.3, "color": "#E74C3C", "activation": 0.0, "x": 188.2, "y": 184.03, "z": 28.14}, {"id": "engineering_cluster", "name": "Engineering Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.2595, "x": -15.65, "y": -44.19, "z": -280.0}, {"id": "legal_cluster", "name": "Legal Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.3424, "x": -199.25, "y": -209.06, "z": 64.31}, {"id": "finance_cluster", "name": "Finance Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.3424, "x": -30.12, "y": 51.8, "z": 272.99}, {"id": "content_cluster", "name": "Content Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.2269, "x": -199.89, "y": -19.09, "z": 180.2}, {"id": "coding_cluster", "name": "Coding Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.2595, "x": -104.72, "y": -178.95, "z": -195.94}, {"id": "web_design_cluster", "name": "Web Design Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.0, "x": -112.04, "y": 214.08, "z": 170.5}, {"id": "research_cluster", "name": "Research Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.2269, "x": 80.97, "y": 187.52, "z": 202.49}, {"id": "operations_cluster", "name": "Operations Cluster", "layer": 6, "layerName": "Layer 6 \u2014 Domain", "weight": 0.1, "color": "#95A5A6", "activation": 0.3966, "x": -101.76, "y": 261.3, "z": -22.91}];
-const EDGES = [{"source": "language_comprehension", "target": "logic", "weight": 0.92, "relation": "dependency"}, {"source": "language_comprehension", "target": "abstraction", "weight": 0.9, "relation": "dependency"}, {"source": "language_comprehension", "target": "symbolic_reasoning", "weight": 0.85, "relation": "translation"}, {"source": "language_comprehension", "target": "variable_mapping", "weight": 0.8, "relation": "translation"}, {"source": "language_comprehension", "target": "mathematics", "weight": 0.7, "relation": "dependency"}, {"source": "working_memory", "target": "logic", "weight": 0.8, "relation": "dependency"}, {"source": "working_memory", "target": "planning", "weight": 0.82, "relation": "dependency"}, {"source": "working_memory", "target": "decision_making", "weight": 0.78, "relation": "dependency"}, {"source": "long_term_retrieval", "target": "associative_linking", "weight": 0.72, "relation": "amplification"}, {"source": "long_term_retrieval", "target": "pattern_recognition", "weight": 0.7, "relation": "amplification"}, {"source": "attention_control", "target": "working_memory", "weight": 0.85, "relation": "dependency"}, {"source": "abstraction", "target": "first_principles_reasoning", "weight": 0.88, "relation": "dependency"}, {"source": "abstraction", "target": "systems_thinking", "weight": 0.85, "relation": "amplification"}, {"source": "categorisation", "target": "rule_application", "weight": 0.65, "relation": "dependency"}, {"source": "pattern_recognition", "target": "analogical_reasoning", "weight": 0.75, "relation": "amplification"}, {"source": "pattern_recognition", "target": "categorisation", "weight": 0.68, "relation": "amplification"}, {"source": "pattern_recognition", "target": "web_design_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "associative_linking", "target": "synthesis", "weight": 0.65, "relation": "amplification"}, {"source": "logic", "target": "mathematics", "weight": 0.88, "relation": "amplification"}, {"source": "logic", "target": "first_principles_reasoning", "weight": 0.85, "relation": "dependency"}, {"source": "logic", "target": "decision_making", "weight": 0.85, "relation": "dependency"}, {"source": "first_principles_reasoning", "target": "mathematics", "weight": 0.82, "relation": "amplification"}, {"source": "first_principles_reasoning", "target": "systems_thinking", "weight": 0.78, "relation": "amplification"}, {"source": "causal_reasoning", "target": "systems_thinking", "weight": 0.72, "relation": "amplification"}, {"source": "causal_reasoning", "target": "decision_making", "weight": 0.7, "relation": "amplification"}, {"source": "analogical_reasoning", "target": "abstraction", "weight": 0.65, "relation": "amplification"}, {"source": "systems_thinking", "target": "synthesis", "weight": 0.8, "relation": "amplification"}, {"source": "systems_thinking", "target": "operations_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "probabilistic_reasoning", "target": "decision_making", "weight": 0.68, "relation": "amplification"}, {"source": "probabilistic_reasoning", "target": "confidence_calibration", "weight": 0.65, "relation": "amplification"}, {"source": "symbolic_reasoning", "target": "language_comprehension", "weight": 0.65, "relation": "feedback"}, {"source": "symbolic_reasoning", "target": "mathematics", "weight": 0.8, "relation": "dependency"}, {"source": "mathematics", "target": "symbolic_reasoning", "weight": 0.82, "relation": "amplification"}, {"source": "mathematics", "target": "logic", "weight": 0.75, "relation": "feedback"}, {"source": "mathematics", "target": "planning", "weight": 0.75, "relation": "amplification"}, {"source": "variable_mapping", "target": "mathematics", "weight": 0.78, "relation": "dependency"}, {"source": "rule_application", "target": "logic", "weight": 0.72, "relation": "amplification"}, {"source": "sequence_reasoning", "target": "planning", "weight": 0.68, "relation": "amplification"}, {"source": "sequence_reasoning", "target": "rule_application", "weight": 0.65, "relation": "amplification"}, {"source": "planning", "target": "task_decomposition", "weight": 0.8, "relation": "dependency"}, {"source": "planning", "target": "engineering_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "planning", "target": "coding_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "decision_making", "target": "planning", "weight": 0.72, "relation": "dependency"}, {"source": "decision_making", "target": "finance_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "decision_making", "target": "legal_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "task_decomposition", "target": "prioritisation", "weight": 0.72, "relation": "dependency"}, {"source": "error_detection", "target": "error_correction", "weight": 0.88, "relation": "dependency"}, {"source": "error_correction", "target": "self_optimization", "weight": 0.82, "relation": "amplification"}, {"source": "error_correction", "target": "confidence_calibration", "weight": 0.65, "relation": "feedback"}, {"source": "self_monitoring", "target": "error_detection", "weight": 0.9, "relation": "dependency"}, {"source": "self_monitoring", "target": "planning", "weight": 0.68, "relation": "amplification"}, {"source": "reflection", "target": "self_optimization", "weight": 0.8, "relation": "amplification"}, {"source": "reflection", "target": "decision_making", "weight": 0.72, "relation": "feedback"}, {"source": "reflection", "target": "strategy_adaptation", "weight": 0.75, "relation": "amplification"}, {"source": "self_optimization", "target": "self_monitoring", "weight": 0.7, "relation": "feedback"}, {"source": "confidence_calibration", "target": "decision_making", "weight": 0.7, "relation": "dependency"}, {"source": "strategy_adaptation", "target": "planning", "weight": 0.78, "relation": "dependency"}, {"source": "strategy_adaptation", "target": "self_optimization", "weight": 0.68, "relation": "amplification"}, {"source": "synthesis", "target": "strategy_adaptation", "weight": 0.82, "relation": "amplification"}, {"source": "synthesis", "target": "abstraction", "weight": 0.68, "relation": "feedback"}, {"source": "synthesis", "target": "content_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "synthesis", "target": "research_cluster", "weight": 0.5, "relation": "co_activation"}, {"source": "transfer_learning", "target": "synthesis", "weight": 0.7, "relation": "amplification"}];
+// ── SCENE SETUP ─────────────────────────────────────────────────────────────
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x04040f);
 
-// ── Scene ──────────────────────────────────────────────
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x04040f);
-scene.fog = new THREE.FogExp2(0x04040f, 0.0008);
+scene.fog = new THREE.Fog(0x04040f, 400, 1200);
 
-const W = window.innerWidth, H = window.innerHeight;
-const camera = new THREE.PerspectiveCamera(55, W/H, 1, 8000);
-camera.position.set(0, 0, 700);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+camera.position.set(0, 80, 380);
+camera.lookAt(0, 0, 0);
 
-const renderer = new THREE.WebGLRenderer({canvas:document.getElementById('c'), antialias:true});
-renderer.setSize(W, H);
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+// Ambient + directional light
+scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(1, 2, 3);
+scene.add(dirLight);
 
-const labelRenderer = new CSS2DRenderer();
-labelRenderer.setSize(W, H);
-labelRenderer.domElement.style.cssText = 'position:fixed;top:0;left:0;pointer-events:none';
-document.body.appendChild(labelRenderer.domElement);
+// ── NODE + EDGE MAPS ────────────────────────────────────────────────────────
+const nodeMap = {};
+const edgeMap = {};
 
-// ── Controls ───────────────────────────────────────────
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.06;
-controls.autoRotate = true;
-controls.autoRotateSpeed = 0.25;
-controls.minDistance = 80;
-controls.maxDistance = 2500;
-
-// ── Lights ─────────────────────────────────────────────
-scene.add(new THREE.AmbientLight(0xffffff, 0.4));
-const sun = new THREE.PointLight(0xffffff, 1.2, 2000);
-sun.position.set(300, 300, 300);
-scene.add(sun);
-const fill = new THREE.PointLight(0x2244aa, 0.6, 1500);
-fill.position.set(-300, -200, -300);
-scene.add(fill);
-
-// ── Node map ───────────────────────────────────────────
-const nodeMap = {};       // id → {mesh, data, label, baseColor, active}
-const edgeMap = {};       // "src->tgt" → {line, pulse, active}
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2(-9999, -9999);
-let liveState = {active_nodes:[], active_edges:[], pending_nodes:[], pending_edges:[], task:''};
-
-// ── Build nodes ────────────────────────────────────────
-NODES.forEach(n => {
-  const r = Math.max(4, n.weight * 18);
-  const geo = new THREE.SphereGeometry(r, 32, 32);
-  const col = new THREE.Color(n.color);
+// Build nodes
+NODE_DATA.forEach(nd => {
+  const geo = new THREE.SphereGeometry(nd.size, 16, 16);
   const mat = new THREE.MeshPhongMaterial({
-    color: col.clone(),
-    emissive: col.clone(),
+    color: nd.color,
+    emissive: nd.color,
     emissiveIntensity: 0.15,
-    shininess: 80,
     transparent: true,
-    opacity: 0.92,
+    opacity: 0.85,
   });
   const mesh = new THREE.Mesh(geo, mat);
-  mesh.position.set(n.x, n.y, n.z);
-  mesh.userData = n;
+  mesh.position.set(nd.x, nd.y, nd.z);
   scene.add(mesh);
 
-  // CSS2D label
-  const div = document.createElement('div');
-  div.className = 'label';
-  div.textContent = n.name;
-  div.style.opacity = '0.7';
-  const label = new CSS2DObject(div);
-  label.position.set(0, r + 3, 0);
-  mesh.add(label);
+  // Label sprite
+  const canvas2 = document.createElement('canvas');
+  canvas2.width = 256; canvas2.height = 64;
+  const ctx = canvas2.getContext('2d');
+  ctx.fillStyle = 'rgba(0,0,0,0)';
+  ctx.fillRect(0,0,256,64);
+  ctx.font = 'bold 20px Courier New';
+  ctx.fillStyle = nd.color;
+  ctx.textAlign = 'center';
+  ctx.fillText(nd.label.replace(/_/g,' '), 128, 40);
+  const tex = new THREE.CanvasTexture(canvas2);
+  const spriteMat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.7 });
+  const sprite = new THREE.Sprite(spriteMat);
+  sprite.scale.set(60, 15, 1);
+  sprite.position.set(nd.x, nd.y + nd.size + 10, nd.z);
+  scene.add(sprite);
 
-  nodeMap[n.id] = {mesh, data:n, label:div, baseColor:col, active:false};
+  nodeMap[nd.id] = {
+    mesh, sprite, mat, spriteMat,
+    baseColor: new THREE.Color(nd.color),
+    active: false,
+    isThoughtTrain: false,
+    thoughtTrainFade: 0,
+    t: 0,
+  };
 });
 
-// ── Build edges ────────────────────────────────────────
-EDGES.forEach(e => {
-  const src = nodeMap[e.source], tgt = nodeMap[e.target];
-  if(!src || !tgt) return;
+// Build edges
+EDGE_DATA.forEach(ed => {
+  const src = nodeMap[ed.source];
+  const tgt = nodeMap[ed.target];
+  if (!src || !tgt) return;
+  const key = ed.source + '->' + ed.target;
+
+  const isAdaptive = ed.type === 'adaptive';
+  const weight = ed.weight || 0.5;
+  const baseOpacity = 0.08 + weight * 0.25;
+  const baseColor = isAdaptive ? 0x00FF88 : 0x334466;
 
   const points = [src.mesh.position.clone(), tgt.mesh.position.clone()];
   const geo = new THREE.BufferGeometry().setFromPoints(points);
-  
-  // Weight-based visual properties - STRONGER EFFECTS
-  const weight = e.weight || 0.5;
-  const isAdaptive = e.relation_type === 'adaptive';
-  // EXTREME color distinction - adaptive edges GLOW BRIGHT GREEN
-  const baseColor = isAdaptive ? 0x00FFAA : 0x3366CC; // BRIGHT green for adaptive, blue for base
-  // EXTREME width scaling - weight 0.1 = thin, weight 1.0 = very thick
-  const width = Math.max(0.2, weight * 6.0); // 1.5x stronger, lower minimum
-  // EXTREME opacity scaling - weight directly controls visibility
-  const opacity = Math.max(0.1, weight * 1.2); // 1.3x stronger, lower minimum
-  // EXTREME glow intensity - adaptive edges glow BRIGHTER
-  const glowIntensity = isAdaptive ? weight * 3.5 : weight * 2.5; // Adaptive: 3.5x, Base: 2.5x
-  
   const mat = new THREE.LineBasicMaterial({
     color: baseColor,
     transparent: true,
-    opacity: opacity,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
+    opacity: baseOpacity,
+    linewidth: 1,
   });
   const line = new THREE.Line(geo, mat);
   scene.add(line);
 
-  // Pulse sphere with weight-based size - STRONGER
-  const pGeo = new THREE.SphereGeometry(3.0 + weight * 3.0, 12, 12); // Larger, more detailed
-  const pMat = new THREE.MeshBasicMaterial({
-    color: isAdaptive ? 0xAAFFCC : 0xFFFFFF,
+  // Pulse sphere
+  const pulseGeo = new THREE.SphereGeometry(1.5, 8, 8);
+  const pulseMat = new THREE.MeshBasicMaterial({
+    color: baseColor,
     transparent: true,
-    opacity: weight * 0.3, // Weight-based initial opacity
-    // STRONG glow to pulse
-    emissive: isAdaptive ? 0x66FFAA : 0xAAFFFF,
-    emissiveIntensity: 0.8 + weight * 0.4, // Weight-based glow
+    opacity: 0,
   });
-  const pulse = new THREE.Mesh(pGeo, pMat);
+  const pulse = new THREE.Mesh(pulseGeo, pulseMat);
   scene.add(pulse);
 
-  const key = e.source + '->' + e.target;
   edgeMap[key] = {
-    line, 
-    pulse, 
-    src: src.mesh.position, 
-    tgt: tgt.mesh.position, 
-    active: false, 
+    line, pulse, mat, pulseMat,
+    src: src.mesh.position,
+    tgt: tgt.mesh.position,
+    weight,
+    baseOpacity,
+    baseColor: new THREE.Color(baseColor),
+    active: false,
+    isAdaptive,
+    isThoughtTrain: false,
+    thoughtTrainFade: 0,
     t: Math.random(),
-    weight: weight,
-    isAdaptive: isAdaptive,
-    baseColor: baseColor,
-    baseOpacity: opacity,
-    baseWidth: width
   };
 });
-// ── Arrow cones ────────────────────────────────────────
-EDGES.forEach(e => {
-  const src = nodeMap[e.source], tgt = nodeMap[e.target];
-  if(!src || !tgt) return;
-  const dir = new THREE.Vector3().subVectors(tgt.mesh.position, src.mesh.position).normalize();
-  const tgtR = Math.max(4, tgt.data.weight * 18);
-  const tip = tgt.mesh.position.clone().sub(dir.clone().multiplyScalar(tgtR + 4));
-  const cGeo = new THREE.ConeGeometry(2, 6, 8);
-  const cMat = new THREE.MeshBasicMaterial({color:0x334466, transparent:true, opacity:0.4});
-  const cone = new THREE.Mesh(cGeo, cMat);
-  cone.position.copy(tip);
-  cone.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), dir);
-  scene.add(cone);
+
+// ── ORBIT CONTROLS (manual) ─────────────────────────────────────────────────
+let isDragging = false, isRightDrag = false;
+let prevMouse = { x: 0, y: 0 };
+let spherical = { theta: 0, phi: Math.PI / 2.5, r: 380 };
+let panOffset = new THREE.Vector3();
+
+canvas.addEventListener('mousedown', e => {
+  isDragging = true;
+  isRightDrag = e.button === 2;
+  prevMouse = { x: e.clientX, y: e.clientY };
+});
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+window.addEventListener('mouseup', () => isDragging = false);
+window.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const dx = e.clientX - prevMouse.x;
+  const dy = e.clientY - prevMouse.y;
+  prevMouse = { x: e.clientX, y: e.clientY };
+  if (isRightDrag) {
+    panOffset.x -= dx * 0.3;
+    panOffset.y += dy * 0.3;
+  } else {
+    spherical.theta -= dx * 0.005;
+    spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi + dy * 0.005));
+  }
+});
+canvas.addEventListener('wheel', e => {
+  spherical.r = Math.max(100, Math.min(1200, spherical.r + e.deltaY * 0.5));
 });
 
-// ── Live state update ──────────────────────────────────
+// ── LIVE STATE POLLING ───────────────────────────────────────────────────────
+let liveState = { active_nodes: [], active_edges: [], thought_trains: [], task: '' };
+
+function pollLiveState() {
+  fetch('/live_state.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(state => {
+      liveState = state;
+      applyLiveState(state);
+    })
+    .catch(() => {});
+}
+setInterval(pollLiveState, 500);
+
 function applyLiveState(state) {
-  const activeSet = new Set(state.active_nodes || []);
-  const activeEdgeSet = new Set((state.active_edges || []).map(e => e[0]+'->'+e[1]));
+  const activeNodeSet = new Set(state.active_nodes || []);
+  const activeEdgeSet = new Set((state.active_edges || []).map(e =>
+    (typeof e === 'string') ? e : (e.source + '->' + e.target)
+  ));
 
+  // Sync any missing edges from all_edges
+  (state.all_edges || []).forEach(ed => {
+    const key = ed.source + '->' + ed.target;
+    if (!edgeMap[key]) {
+      const src = nodeMap[ed.source];
+      const tgt = nodeMap[ed.target];
+      if (!src || !tgt) return;
+      const isAdaptive = ed.type === 'adaptive';
+      const weight = ed.weight || 0.5;
+      const baseOpacity = 0.08 + weight * 0.25;
+      const baseColor = isAdaptive ? 0x00FF88 : 0x334466;
+      const points = [src.mesh.position.clone(), tgt.mesh.position.clone()];
+      const geo = new THREE.BufferGeometry().setFromPoints(points);
+      const mat = new THREE.LineBasicMaterial({
+        color: baseColor, transparent: true, opacity: baseOpacity,
+      });
+      const line = new THREE.Line(geo, mat);
+      scene.add(line);
+      const pulseGeo = new THREE.SphereGeometry(1.5, 8, 8);
+      const pulseMat = new THREE.MeshBasicMaterial({
+        color: baseColor, transparent: true, opacity: 0,
+      });
+      const pulse = new THREE.Mesh(pulseGeo, pulseMat);
+      scene.add(pulse);
+      edgeMap[key] = {
+        line, pulse, mat, pulseMat,
+        src: src.mesh.position, tgt: tgt.mesh.position,
+        weight, baseOpacity, baseColor: new THREE.Color(baseColor),
+        active: false, isAdaptive, isThoughtTrain: false, thoughtTrainFade: 0, t: Math.random(),
+      };
+    }
+  });
+
+  // Update node states
   Object.entries(nodeMap).forEach(([id, n]) => {
-    const wasActive = n.active;
-    n.active = activeSet.has(id);
-    // Label snaps immediately; color/scale lerp in animation loop
-    if(n.active) {
-      n.label.style.opacity = '1';
-      n.label.style.color = '#FFD700';
-    } else {
-      n.label.style.opacity = '0.7';
-      n.label.style.color = '#fff';
-    }
-  });
-
-  Object.entries(edgeMap).forEach(([key, e]) => {
-    const isActive = activeEdgeSet.has(key);
-    e.active = isActive;
-    
-    // SKIP regular styling for active thought-train edges
-    if(e.isThoughtTrain && e.thoughtTrainFade > 0) {
-      // Thought-train edges keep their gold styling - don't override
-      return;
-    }
-    
-    // EXTREME weight-based visual updates
-    const weight = e.weight || 0.5;
-    const targetOpacity = e.baseOpacity * (isActive ? 3.0 : 1.0); // 3x boost when active
-    const targetWidth = e.baseWidth * (isActive ? 2.5 : 1.0); // 2.5x boost when active
-    const glowBoost = isActive ? 3.0 : 1.0; // 3x glow boost
-    
-    if(isActive) {
-      // Active edges get BRIGHT gold color and EXTREME glow
-      e.line.material.color.set(0xFFEE00); // Brighter gold
-      e.line.material.opacity = Math.min(1.0, targetOpacity * 2.0); // 2x brighter
-      e.line.material.linewidth = targetWidth * 2.0; // 2x thicker
-      e.line.material.emissiveIntensity = weight * 1.5 * glowBoost; // EXTREME glow
-      
-      // EXTREME pulse for stronger weights
-      e.pulse.material.opacity = 0.9 + weight * 0.5;
-      e.pulse.material.color.set(e.isAdaptive ? 0xCCFFDD : 0xFFFFFF);
-      e.pulse.material.emissiveIntensity = 1.5 + weight * 0.8;
-      // Make pulse larger based on weight
-      const pulseScale = 1.0 + weight * 0.5;
-      e.pulse.scale.set(pulseScale, pulseScale, pulseScale);
-    } else {
-      // Inactive edges show STRONG weight-based properties
-      e.line.material.color.set(e.baseColor);
-      e.line.material.opacity = targetOpacity * 1.2; // 20% brighter
-      e.line.material.linewidth = targetWidth * 1.3; // 30% thicker
-      e.line.material.emissiveIntensity = weight * 2.5; // EXTREME glow - weight 1.0 = glow 2.5
-      e.pulse.material.opacity = weight * 0.5; // MUCH stronger pulse visibility
-      e.pulse.material.emissiveIntensity = weight * 1.2; // MUCH stronger pulse glow
-    }
-  });
-
-  // Status bar - reflect VISIBLE screen activity, not just node activation
-  const dot = document.getElementById('status-dot');
-  const txt = document.getElementById('status-text');
-  const taskEl = document.getElementById('status-task');
-  
-  // Check for ANY visible screen activity
-  let hasVisibleActivity = false;
-  let visibleEdgeCount = 0;
-  
-  // 1. Active nodes always count as visible activity
-  if(activeSet.size > 0) {
-    hasVisibleActivity = true;
-  }
-  
-  // 2. Check edges for visible glow/weight (what users actually see)
-  Object.values(edgeMap).forEach(e => {
-    const weight = e.weight || 0.5;
-    const isVisible = 
-      e.line.material.opacity > 0.1 &&  // Edge is visible
-      e.line.material.emissiveIntensity > 0.5 &&  // Edge has glow
-      weight > 0.2;  // Edge has meaningful weight
-    
-    if(isVisible) {
-      visibleEdgeCount++;
-      hasVisibleActivity = true;
-    }
-  });
-  
-  // 3. If ANY visible activity exists, show Active (not Idle)
-  if(hasVisibleActivity) {
-    dot.style.background = '#FFD700';
-    txt.style.color = '#FFD700';
-    // Show what's actually visible
-    if(activeSet.size > 0) {
-      txt.textContent = `Active (${activeSet.size} nodes)`;
-    } else if(visibleEdgeCount > 0) {
-      txt.textContent = `Active (${visibleEdgeCount} edges)`;
-    } else {
-      txt.textContent = 'Active';
-    }
-  } else {
-    // Only show Idle when truly nothing visible
-    dot.style.background = '#444';
-    txt.style.color = '#AAA';
-    txt.textContent = 'Idle';
-  }
-  taskEl.textContent = state.task || '';
-
-  // ===== THOUGHT-TRAIN VISUALIZATION =====
-  // Clear previous thought-train highlights
-  Object.values(edgeMap).forEach(e => {
-    e.isThoughtTrain = false;
-    e.thoughtTrainFade = 0;
-  });
-  Object.values(nodeMap).forEach(n => {
+    n.active = activeNodeSet.has(id);
     n.isThoughtTrain = false;
     n.thoughtTrainFade = 0;
   });
-  
-  // Clear previous temporary thought-train-only edges
-  if(window.thoughtTrainEdgeMap) {
-    Object.values(window.thoughtTrainEdgeMap).forEach(e => {
-      scene.remove(e.line);
-      scene.remove(e.pulse);
-    });
-  }
-  window.thoughtTrainEdgeMap = {};
-  
-  // Process most recent thought-train if available
-  if(state.thought_trains && state.thought_trains.length > 0) {
-    const thoughtTrain = state.thought_trains[0]; // Most recent
+
+  // Update edge states
+  Object.entries(edgeMap).forEach(([key, e]) => {
+    e.active = activeEdgeSet.has(key);
+    e.isThoughtTrain = false;
+    e.thoughtTrainFade = 0;
+  });
+
+  // Apply thought-train highlights
+  const trains = state.thought_trains || [];
+  if (trains.length > 0) {
+    const train = trains[0];
     const now = Date.now();
-    const trainAge = now - new Date(thoughtTrain.timestamp).getTime();
-    
-    // Only show thought-trains from last 10 seconds
-    if(trainAge < 10000) {
-      const fadeFactor = 1.0 - (trainAge / 10000); // 1.0 (new) to 0.0 (10s old)
-      
-      // Highlight thought-train nodes with GOLD glow
-      (thoughtTrain.activated_nodes || []).forEach(nodeId => {
-        const node = nodeMap[nodeId];
-        if(node) {
-          node.isThoughtTrain = true;
-          node.thoughtTrainFade = fadeFactor;
-          // Gold label for thought-train nodes
-          node.label.style.color = '#FFAA00';
-          node.label.style.opacity = '1';
-          node.label.style.fontWeight = 'bold';
+    const age = now - new Date(train.timestamp).getTime();
+    const fade = Math.max(0, 1 - age / 10000);
+    if (fade > 0) {
+      (train.activated_nodes || []).forEach(id => {
+        if (nodeMap[id]) {
+          nodeMap[id].isThoughtTrain = true;
+          nodeMap[id].thoughtTrainFade = fade;
         }
       });
-      
-      // Highlight thought-train edges with GOLD pulsing trail
-      (thoughtTrain.traversed_edges || []).forEach(([source, target]) => {
-        const key = source + '->' + target;
-        const edge = edgeMap[key];
-        
-        if(edge) {
-          // Edge exists in base graph - highlight it
-          edge.isThoughtTrain = true;
-          edge.thoughtTrainFade = fadeFactor;
-          
-          // GOLD thought-train edge - distinct from adaptive green and base blue
-          edge.line.material.color.set(0xFFAA00); // Gold/orange
-          edge.line.material.opacity = Math.min(1.0, 0.8 * fadeFactor);
-          edge.line.material.linewidth = 8.0; // Thicker than all other edges
-          edge.line.material.emissiveIntensity = 3.0 * fadeFactor; // Strong glow
-          
-          // Strong gold pulse for thought-train edges
-          edge.pulse.material.color.set(0xFFD700); // Brighter gold
-          edge.pulse.material.opacity = 0.9 * fadeFactor;
-          edge.pulse.material.emissiveIntensity = 2.0 * fadeFactor;
-        } else {
-          // Edge doesn't exist in base graph - create temporary overlay
-          const src = nodeMap[source], tgt = nodeMap[target];
-          if(src && tgt) {
-            // Create temporary thought-train-only edge
-            const points = [src.mesh.position.clone(), tgt.mesh.position.clone()];
-            const geo = new THREE.BufferGeometry().setFromPoints(points);
-            const mat = new THREE.LineBasicMaterial({
-              color: 0xFFAA00, // Gold/orange
-              transparent: true,
-              opacity: 0.8 * fadeFactor,
-              linewidth: 8.0 // Thicker than all other edges
-            });
-            const line = new THREE.Line(geo, mat);
-            scene.add(line);
-            
-            const pGeo = new THREE.SphereGeometry(2.5, 8, 8);
-            const pMat = new THREE.MeshBasicMaterial({
-              color: 0xFFD700, // Brighter gold
-              transparent: true,
-              opacity: 0.9 * fadeFactor
-            });
-            const pulse = new THREE.Mesh(pGeo, pMat);
-            scene.add(pulse);
-            
-            // Store in temporary thought-train edge map
-            window.thoughtTrainEdgeMap[key] = {
-              line, pulse,
-              src: src.mesh.position,
-              tgt: tgt.mesh.position,
-              isThoughtTrain: true,
-              thoughtTrainFade: fadeFactor,
-              t: 0,
-              isTemporary: true
-            };
-          }
-        }
-        
-        // Update status to show thought-train path
-        if(fadeFactor > 0.8) { // Only show when fresh
-          const pathStr = thoughtTrain.activated_nodes.join(' → ');
-          txt.textContent = `Thinking: ${pathStr}`;
-          txt.style.color = '#FFAA00';
+      (train.traversed_edges || []).forEach(pair => {
+        const key = Array.isArray(pair) ? pair[0] + '->' + pair[1] : pair;
+        if (edgeMap[key]) {
+          edgeMap[key].isThoughtTrain = true;
+          edgeMap[key].thoughtTrainFade = fade;
         }
       });
     }
   }
-  // ===== END THOUGHT-TRAIN VISUALIZATION =====
 
-  // Add pending nodes
-  (state.pending_nodes || []).forEach(pn => {
-    if(nodeMap[pn.id]) return;
-    addDynamicNode(pn);
-  });
-
-  // Add pending edges
-  (state.pending_edges || []).forEach(pe => {
-    const key = pe.source+'->'+pe.target;
-    if(edgeMap[key]) return;
-    const src = nodeMap[pe.source], tgt = nodeMap[pe.target];
-    if(!src || !tgt) return;
-    const points = [src.mesh.position.clone(), tgt.mesh.position.clone()];
-    const geo = new THREE.BufferGeometry().setFromPoints(points);
-    const mat = new THREE.LineBasicMaterial({color:0x334466, transparent:true, opacity:0.3, linewidth:3});
-    const line = new THREE.Line(geo, mat);
-    scene.add(line);
-    const pGeo = new THREE.SphereGeometry(2.5, 8, 8);
-    const pMat = new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, opacity:0});
-    const pulse = new THREE.Mesh(pGeo, pMat);
-    scene.add(pulse);
-    edgeMap[key] = {line, pulse, src:src.mesh.position, tgt:tgt.mesh.position, active:false, t:0};
-  });
+  // Update status badge
+  const dot = document.getElementById('status-dot');
+  const txt = document.getElementById('status-text');
+  const taskEl = document.getElementById('status-task');
+  const hasActive = activeNodeSet.size > 0;
+  dot.className = hasActive ? 'active' : '';
+  txt.textContent = hasActive ? 'Active' : 'Idle';
+  taskEl.textContent = state.task || '';
 }
 
-function addDynamicNode(n) {
-  const r = Math.max(4, (n.weight||0.1) * 18);
-  const geo = new THREE.SphereGeometry(r, 32, 32);
-  const col = new THREE.Color(n.color || '#95A5A6');
-  const mat = new THREE.MeshPhongMaterial({color:col, emissive:col, emissiveIntensity:0.3, shininess:80, transparent:true, opacity:0});
-  const mesh = new THREE.Mesh(geo, mat);
-  mesh.position.set(n.x||0, n.y||0, n.z||0);
-  mesh.userData = n;
-  scene.add(mesh);
-  const div = document.createElement('div');
-  div.className = 'label';
-  div.textContent = n.name || n.id;
-  div.style.opacity = '0';
-  const label = new CSS2DObject(div);
-  label.position.set(0, r+3, 0);
-  mesh.add(label);
-  nodeMap[n.id] = {mesh, data:n, label:div, baseColor:col, active:false};
-  // Fade in
-  let opacity = 0;
-  const fadeIn = setInterval(() => {
-    opacity = Math.min(1, opacity + 0.05);
-    mat.opacity = opacity * 0.92;
-    div.style.opacity = String(opacity * 0.7);
-    if(opacity >= 1) clearInterval(fadeIn);
-  }, 30);
-}
-
-// ── Poll live state ────────────────────────────────────
-let _serverReachable = null;
-
-async function pollLiveState() {
-  try {
-    const r = await fetch('./live_state.json?t=' + Date.now(), {cache:'no-store'});
-    if(r.ok) {
-      if(_serverReachable !== true) {
-        _serverReachable = true;
-        document.getElementById('status-dot').style.background = '#333';
-        document.getElementById('status-text').style.color = '#888';
-      }
-      const state = await r.json();
-      liveState = state;
-      applyLiveState(state);
-    }
-  } catch(e) {
-    if(_serverReachable !== false) {
-      _serverReachable = false;
-      const dot = document.getElementById('status-dot');
-      const txt = document.getElementById('status-text');
-      const task = document.getElementById('status-task');
-      dot.style.background = '#ff4444';
-      txt.style.color = '#ff6666';
-      txt.textContent = 'No server — run: python serve.py';
-      task.textContent = 'Then open: http://localhost:8765/burgandy_network_3d.html';
-    }
-  }
-}
-pollLiveState();
-setInterval(pollLiveState, 500); // Faster polling for immediate status updates
-
-// ── Click to inspect ───────────────────────────────────
-window.addEventListener('click', ev => {
-  mouse.x = (ev.clientX / W) * 2 - 1;
-  mouse.y = -(ev.clientY / H) * 2 + 1;
-  raycaster.setFromCamera(mouse, camera);
-  const meshes = Object.values(nodeMap).map(n => n.mesh);
-  const hits = raycaster.intersectObjects(meshes);
-  if(hits.length) {
-    const n = hits[0].object.userData;
-    const st = liveState.active_nodes && liveState.active_nodes.includes(n.id) ? 'ACTIVE' : 'idle';
-    document.getElementById('i-name').textContent = n.name || n.id;
-    document.getElementById('i-id').textContent = n.id;
-    document.getElementById('i-layer').textContent = n.layerName || 'Layer ' + n.layer;
-    document.getElementById('i-weight').textContent = (n.weight||0).toFixed(2);
-    document.getElementById('i-act').textContent = (n.activation||0) > 0 ? (n.activation).toFixed(4) : 'not activated';
-    document.getElementById('i-status').textContent = st;
-    document.getElementById('info').style.display = 'block';
-    controls.autoRotate = false;
-  }
-});
-window.addEventListener('dblclick', () => {
-  document.getElementById('info').style.display = 'none';
-  controls.autoRotate = true;
-  controls.reset();
-});
-
-// ── Resize ─────────────────────────────────────────────
-window.addEventListener('resize', () => {
-  const w = window.innerWidth, h = window.innerHeight;
-  camera.aspect = w/h;
-  camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
-  labelRenderer.setSize(w, h);
-});
-
-// ── Animation loop ─────────────────────────────────────
+// ── ANIMATION LOOP ───────────────────────────────────────────────────────────
 const clock = new THREE.Clock();
+
 function animate() {
   requestAnimationFrame(animate);
-  const t = clock.getElapsedTime();
-  controls.update();
-
-  // Smooth activate / cooldown via lerp — no snapping
-  const _gold = new THREE.Color(0xFFD700);
-  const _thoughtGold = new THREE.Color(0xFFAA00); // Thought-train gold
-  Object.values(nodeMap).forEach(n => {
-    // ===== THOUGHT-TRAIN NODE ANIMATION (OVERRIDES NORMAL) =====
-    if(n.isThoughtTrain && n.thoughtTrainFade > 0) {
-      const fade = n.thoughtTrainFade;
-      
-      // Strong gold glow for thought-train nodes
-      n.mesh.material.color.set(0xFFAA00);
-      n.mesh.material.emissive.set(0xFFAA00);
-      n.mesh.material.emissiveIntensity = 0.8 * fade + 0.3 * Math.sin(t * 4 + n.data.x);
-      
-      // Pulse scale for thought-train nodes
-      const targetScale = 1.1 + 0.1 * Math.sin(t * 5 + n.data.y);
-      n.mesh.scale.setScalar(n.mesh.scale.x + (targetScale - n.mesh.scale.x) * 0.2);
-      
-      return; // Skip normal animation for thought-train nodes
-    }
-    // ===== END THOUGHT-TRAIN NODE ANIMATION =====
-    
-    if(n.active) {
-      // Pulse emissive and scale
-      n.mesh.material.emissiveIntensity = 0.5 + 0.4 * Math.sin(t * 3 + n.data.x);
-      const targetScale = 1 + 0.06 * Math.sin(t * 4 + n.data.y);
-      n.mesh.scale.setScalar(n.mesh.scale.x + (targetScale - n.mesh.scale.x) * 0.15);
-      // Lerp color toward gold
-      n.mesh.material.color.lerp(_gold, 0.08);
-      n.mesh.material.emissive.lerp(_gold, 0.08);
-    } else {
-      // Lerp emissive back to base
-      n.mesh.material.emissiveIntensity += (0.15 - n.mesh.material.emissiveIntensity) * 0.08;
-      // Lerp scale back to 1
-      n.mesh.scale.setScalar(n.mesh.scale.x + (1 - n.mesh.scale.x) * 0.12);
-      // Lerp color back to base
-      n.mesh.material.color.lerp(n.baseColor, 0.08);
-      n.mesh.material.emissive.lerp(n.baseColor, 0.08);
-    }
-  });
-
-  // Animate ALL edges with VISIBLE weight-based movement
   const time = clock.getElapsedTime();
-  Object.values(edgeMap).forEach(e => {
-    const weight = e.weight || 0.5;
-    const isAdaptive = e.isAdaptive || false;
-    
-    // ===== THOUGHT-TRAIN EDGE ANIMATION (OVERRIDES NORMAL) =====
-    if(e.isThoughtTrain && e.thoughtTrainFade > 0) {
-      // GOLD thought-train edge with strong directional pulse
-      const fade = e.thoughtTrainFade;
-      
-      // Fast directional pulse along thought-train path
-      e.t = (e.t + 0.03) % 1; // Fast movement
-      e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
-      
-      // Strong gold glow that fades over time
-      e.line.material.color.set(0xFFAA00); // Gold/orange
-      e.line.material.opacity = 0.9 * fade;
-      
-      // Bright gold pulse
-      e.pulse.material.color.set(0xFFD700);
-      e.pulse.material.opacity = 0.8 * fade;
-      
-      // Scale pulse based on fade
-      const pulseScale = 1.2 * fade;
-      e.pulse.scale.set(pulseScale, pulseScale, pulseScale);
-      
-      return; // Skip normal animation for thought-train edges
+
+  // Update camera from spherical
+  camera.position.set(
+    panOffset.x + spherical.r * Math.sin(spherical.phi) * Math.sin(spherical.theta),
+    panOffset.y + spherical.r * Math.cos(spherical.phi),
+    panOffset.z + spherical.r * Math.sin(spherical.phi) * Math.cos(spherical.theta)
+  );
+  camera.lookAt(panOffset.x, panOffset.y, panOffset.z);
+
+  // Animate nodes
+  Object.values(nodeMap).forEach(n => {
+    if (n.isThoughtTrain && n.thoughtTrainFade > 0) {
+      const f = n.thoughtTrainFade;
+      n.mat.color.setHex(0xFFAA00);
+      n.mat.emissive.setHex(0xFFAA00);
+      n.mat.emissiveIntensity = 0.8 * f + 0.3 * Math.sin(time * 6);
+      n.mat.opacity = 0.7 + 0.3 * f;
+      n.spriteMat.opacity = 0.9 * f;
+      return;
     }
-    // ===== END THOUGHT-TRAIN EDGE ANIMATION =====
-    
-    // FIX: LineBasicMaterial doesn't support emissive, linewidth updates
-    // Use direct opacity and color controls instead
-    const activeOpacity = e.active ? Math.max(0.6, weight * 1.8) : Math.max(0.3, weight * 1.2);
-    const activeColor = e.active ? 0xFFD700 : e.baseColor || 0x334466;
-    e.line.material.color.set(activeColor);
-    e.line.material.opacity = activeOpacity;
-    
-    // Pulse animation - speed based on weight (strong edges move faster)
-    const pulseSpeed = e.active ? 0.02 : 0.008 * weight; // Active edges fast, weight-based speed
-    
-    if(e.active) {
-      // Active edges: OBVIOUS directional flow
-      e.t = (e.t + pulseSpeed * 2.0) % 1;
-      e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
-      // STRONG active pulse glow
-      e.pulse.material.emissiveIntensity = 2.0 + weight * 1.2 + 0.5 * Math.sin(time * 3);
-      e.pulse.material.opacity = 0.9 + weight * 0.3;
-      // Active edge color boost
-      e.line.material.color.lerp(new THREE.Color(0xFFEE00), 0.1);
+    if (n.active) {
+      n.mat.color.setHex(0xFFD700);
+      n.mat.emissive.setHex(0xFFD700);
+      n.mat.emissiveIntensity = 0.6 + 0.4 * Math.sin(time * 4);
+      n.mat.opacity = 0.95;
+      n.spriteMat.opacity = 1.0;
     } else {
-      // Inactive edges: subtle weight-based movement
-      const idleSpeed = 0.004 * weight; // Weight controls idle speed
-      const idleT = (time * idleSpeed + e.idHash * 0.05) % 1;
-      e.pulse.position.lerpVectors(e.src, e.tgt, idleT);
-      // Weight-based idle pulse glow
-      e.pulse.material.emissiveIntensity = weight * 1.0 + 0.2 * Math.sin(time * 0.8);
-      e.pulse.material.opacity = weight * 0.6;
-      // Return to base color
-      e.line.material.color.lerp(e.baseColor, 0.05);
+      n.mat.color.copy(n.baseColor);
+      n.mat.emissive.copy(n.baseColor);
+      n.mat.emissiveIntensity = 0.08 + 0.04 * Math.sin(time * 1.5);
+      n.mat.opacity = 0.55;
+      n.spriteMat.opacity = 0.45;
     }
   });
-  
-  // Animate temporary thought-train edges
-  if(window.thoughtTrainEdgeMap) {
-    Object.values(window.thoughtTrainEdgeMap).forEach(e => {
-      if(e.isThoughtTrain && e.thoughtTrainFade > 0) {
-        const fade = e.thoughtTrainFade;
-        
-        // Fast directional pulse along thought-train path
-        e.t = (e.t + 0.03) % 1; // Fast movement
-        e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
-        
-        // Strong gold glow that fades over time
-        e.line.material.color.set(0xFFAA00); // Gold/orange
-        e.line.material.emissiveIntensity = 3.0 * fade + 0.5 * Math.sin(time * 4);
-        e.line.material.linewidth = 8.0 * fade; // Thick gold line
-        e.line.material.opacity = 0.9 * fade;
-        
-        // Bright gold pulse
-        e.pulse.material.color.set(0xFFD700);
-        e.pulse.material.emissiveIntensity = 2.5 * fade + 0.8 * Math.sin(time * 5);
-        e.pulse.material.opacity = 0.8 * fade;
-        
-        // Scale pulse based on fade
-        const pulseScale = 1.2 * fade;
-        e.pulse.scale.set(pulseScale, pulseScale, pulseScale);
-      }
-    });
-  }
+
+  // Animate edges
+  Object.values(edgeMap).forEach(e => {
+    // Thought-train edges: gold, thick, directional pulse
+    if (e.isThoughtTrain && e.thoughtTrainFade > 0) {
+      const f = e.thoughtTrainFade;
+      e.line.material.color.setHex(0xFFAA00);
+      e.line.material.opacity = Math.max(0.3, 0.8 * f);
+      e.t = (e.t + 0.03) % 1;
+      e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
+      e.pulseMat.color.setHex(0xFFD700);
+      e.pulseMat.opacity = 0.9 * f;
+      return;
+    }
+
+    // Active edges: bright, animated
+    if (e.active) {
+      e.line.material.color.setHex(0xFFEE00);
+      e.line.material.opacity = Math.min(0.95, e.baseOpacity * 3.5 + 0.3 * Math.sin(time * 3));
+      e.t = (e.t + 0.015) % 1;
+      e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
+      e.pulseMat.color.setHex(0xFFEE00);
+      e.pulseMat.opacity = 0.7 + 0.3 * Math.sin(time * 4);
+      return;
+    }
+
+    // Adaptive edges: green tint, slightly brighter than base
+    if (e.isAdaptive) {
+      const w = e.weight || 0.5;
+      e.line.material.color.setHex(0x00CC66);
+      e.line.material.opacity = Math.max(0.06, 0.05 + w * 0.3 + 0.02 * Math.sin(time * 0.8));
+      e.t = (e.t + 0.003) % 1;
+      e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
+      e.pulseMat.color.setHex(0x00CC66);
+      e.pulseMat.opacity = Math.max(0.04, w * 0.12);
+      return;
+    }
+
+    // Base edges: subtle blue, always visible
+    const w = e.weight || 0.5;
+    e.line.material.color.setHex(0x334466);
+    e.line.material.opacity = Math.max(0.06, e.baseOpacity + 0.02 * Math.sin(time * 0.5));
+    e.t = (e.t + 0.002) % 1;
+    e.pulse.position.lerpVectors(e.src, e.tgt, e.t);
+    e.pulseMat.color.setHex(0x3355AA);
+    e.pulseMat.opacity = Math.max(0.03, w * 0.08);
+  });
 
   renderer.render(scene, camera);
-  labelRenderer.render(scene, camera);
 }
 animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
 </script>
 </body>
 </html>
