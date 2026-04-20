@@ -1,0 +1,27 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "C:\\Burgandy",
+      "model": "qwen2.5:7b-instruct",
+      "bootstrapMaxChars": 40000,
+      "llm": {
+        "idleTimeoutSeconds": 60
+      },
+      "memorySearch": {
+        "enabled": false
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "reserveTokensFloor": 20000
+      },
+      "maxConcurrent": 1,
+      "subagents": {
+        "maxConcurrent": 1
+      },
+      "heartbeat": {
+        "every": "0m",
+        "target": "last"
+      }
+    }
+  }
+}
