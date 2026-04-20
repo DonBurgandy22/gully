@@ -1,0 +1,2 @@
+# Burgandy Hermes v1 currently uses only Python standard library modules.
+# This file exists so bootstrap and future expansion have a stable install hook.
