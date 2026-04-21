@@ -66,3 +66,4 @@
 - TASK-QUANTIZATION-RULES.md defines Burgandy task reduction constraints.
 - Burgandy should not be treated as an autonomous planner.
 - Claude plans, Hermes quantizes, Burgandy executes through /bash.
+
