@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT = Path(r"C:\Burgandy")
 RESULTS = ROOT / "task-results"
+STATE = ROOT / "task-plan-state"
 
 
 def latest_result_file():
@@ -11,11 +12,57 @@ def latest_result_file():
     return files[0] if files else None
 
 
-def load_result(path: Path):
+def latest_state_file():
+    files = sorted(STATE.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    return files[0] if files else None
+
+
+def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def format_response(result: dict) -> str:
+def format_step_line(index, task_type, status, target):
+    return f"{index}. {task_type} -> {status} -> {target}"
+
+
+def format_plan_response(state: dict) -> str:
+    plan_id = str(state.get("plan_id", "unknown"))
+    status = str(state.get("status", "unknown")).upper()
+    steps_total = int(state.get("steps_total", 0))
+    steps_completed = int(state.get("steps_completed", 0))
+    stopped_on = state.get("stopped_on")
+    current_step = state.get("current_step")
+
+    lines = []
+    lines.append(f"PLAN {status}")
+    lines.append(f"PLAN_ID: {plan_id}")
+    lines.append(f"COMPLETED: {steps_completed}/{steps_total}")
+
+    if stopped_on:
+        lines.append(f"STOPPED_ON: {stopped_on}")
+
+    if current_step:
+        lines.append(f"CURRENT_STEP: {current_step}")
+
+    lines.append("STEPS:")
+
+    step_items = list(state.get("steps", {}).values())
+    step_items.sort(key=lambda s: s.get("task_id", ""))
+
+    for idx, step in enumerate(step_items, start=1):
+        lines.append(
+            format_step_line(
+                idx,
+                str(step.get("task_type", "unknown")),
+                str(step.get("status", "unknown")),
+                str(step.get("target", "")),
+            )
+        )
+
+    return "\n".join(lines)
+
+
+def format_result_response(result: dict) -> str:
     status = str(result.get("status", "unknown")).upper()
     task_type = str(result.get("task_type", "unknown"))
     target = str(result.get("target", ""))
@@ -55,17 +102,38 @@ def format_response(result: dict) -> str:
 
 def main():
     if len(sys.argv) > 1:
-        path = Path(sys.argv[1])
+        mode = sys.argv[1].strip().lower()
     else:
-        path = latest_result_file()
-
-    if path is None or not path.exists():
-        print("NO_RESULT")
-        return
+        mode = "auto"
 
     try:
-        result = load_result(path)
-        print(format_response(result))
+        if mode == "plan":
+            state_path = latest_state_file()
+            if state_path is None or not state_path.exists():
+                print("NO_PLAN_STATE")
+                return
+            print(format_plan_response(load_json(state_path)))
+            return
+
+        if mode == "result":
+            result_path = latest_result_file()
+            if result_path is None or not result_path.exists():
+                print("NO_RESULT")
+                return
+            print(format_result_response(load_json(result_path)))
+            return
+
+        state_path = latest_state_file()
+        if state_path is not None and state_path.exists():
+            print(format_plan_response(load_json(state_path)))
+            return
+
+        result_path = latest_result_file()
+        if result_path is not None and result_path.exists():
+            print(format_result_response(load_json(result_path)))
+            return
+
+        print("NO_RESULT")
     except Exception as exc:
         print("RESPONDER_FAILED")
         print(str(exc))

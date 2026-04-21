@@ -1,4 +1,4 @@
-﻿import json
+import json
 import subprocess
 import sys
 from datetime import datetime
@@ -64,7 +64,7 @@ def ensure_task_in_inbox(step: dict) -> Path:
         task_path.write_text(archived.read_text(encoding="utf-8"), encoding="utf-8")
         return task_path
 
-    task = dict(step)
+    task = step
     task_path.write_text(json.dumps(task, indent=2), encoding="utf-8")
     return task_path
 
