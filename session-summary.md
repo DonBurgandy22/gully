@@ -30,3 +30,13 @@ Date: 2026-04-21
 - C:\Burgandy\PROTOCOLS.md
 - C:\Burgandy\MEMORY.md
 - C:\Burgandy\routing-hints.txt
+
+## ACTIVE RULE FILES
+- C:\Burgandy\TASK-QUANTIZATION-RULES.md
+- C:\Burgandy\REPO-INCLUSION-RULES.md
+
+## HERMES BRIDGE STATUS
+- HERMES-BRIDGE-SPEC.md exists and is committed
+- TASK-QUANTIZATION-RULES.md exists and is committed
+- Claude is the reasoning and quantization layer
+- Burgandy remains the /bash execution layer

@@ -60,3 +60,9 @@
 - Hermes is invoked after task completion or postmortem.
 - Hermes never runs during active repair/debug.
 - Hermes state must persist through GitHub backup.
+
+## Hermes / Quantization truths
+- HERMES-BRIDGE-SPEC.md defines the Claude-side planning and quantization role.
+- TASK-QUANTIZATION-RULES.md defines Burgandy task reduction constraints.
+- Burgandy should not be treated as an autonomous planner.
+- Claude plans, Hermes quantizes, Burgandy executes through /bash.
