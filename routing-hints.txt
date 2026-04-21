@@ -1,0 +1,19 @@
+HERMES ROUTING HINTS
+Date: 2026-04-20
+
+PRIMARY LOCAL WORKER
+- ollama/qwen2.5:7b-instruct
+
+TASK SIZE
+- reduce task scope before changing model
+
+FAILURE PATTERN
+- investigate incomplete-turn or non-timeout stop causes
+
+WRITE STRATEGY
+- prefer read-only tasks when possible
+- prefer exact-content overwrites over generated edits
+
+MODEL RULE
+- keep ollama/qwen2.5:7b-instruct as primary
+- do not escalate model before reducing scope
