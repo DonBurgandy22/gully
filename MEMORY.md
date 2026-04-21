@@ -7,7 +7,7 @@
 - OpenClaw runtime state lives in `.openclaw` only.
 - The workspace is the durable continuity layer.
 - WhatsApp is the current primary live interface.
-- Current preferred local controller model is `deepseek/deepseek-chat`.
+- Current preferred local controller model is ollama/qwen2.5:7b-instruct.
 - Use the cheapest viable solution first.
 - Preserve continuity through files, not long chat history.
 - The laptop may later become a worker machine.
