@@ -1,0 +1,21 @@
+{
+  "plan_id": "plan-20260422-013457",
+  "status": "success",
+  "steps_total": 1,
+  "steps_completed": 1,
+  "steps": {
+    "plan-20260422-013457-step-01": {
+      "task_type": "read",
+      "status": "failed",
+      "target": "C:\\Burgandy\\TEST_MISSING.md",
+      "verified": false
+    },
+    "plan-20260422-013457-step-01-fallback-create": {
+      "task_type": "write",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST_MISSING.md",
+      "verified": true
+    }
+  },
+  "resumed": false
+}

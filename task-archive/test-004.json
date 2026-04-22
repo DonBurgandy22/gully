@@ -1,0 +1,6 @@
+{
+  "task_id": "test-004",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST.md",
+  "expected_content": "# hello from hermes"
+}

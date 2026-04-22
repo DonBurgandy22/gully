@@ -1,0 +1,6 @@
+{
+  "task_id": "plan-20260421-231150-step-01",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\broken_test.py",
+  "source_text": "run broken_test.py"
+}

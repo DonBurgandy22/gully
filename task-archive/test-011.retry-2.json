@@ -1,0 +1,7 @@
+{
+  "task_id": "test-011",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\broken_test.py",
+  "attempt": 2,
+  "max_retries": 2
+}

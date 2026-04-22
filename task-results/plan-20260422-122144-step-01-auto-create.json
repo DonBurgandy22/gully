@@ -1,0 +1,15 @@
+{
+  "task_id": "plan-20260422-122144-step-01-auto-create",
+  "status": "success",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\learning_test_4.md",
+  "verified": true,
+  "started_at": "2026-04-22T12:21:45",
+  "finished_at": "2026-04-22T12:21:45",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "plan-20260422-122144-step-01-auto-create.json",
+  "current_task_file": "plan-20260422-122144-step-01-auto-create.json"
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "plan-20260422-092546-step-01",
+  "status": "failed",
+  "task_type": "read",
+  "target": "C:\\Burgandy\\TEST_V14.md",
+  "verified": false,
+  "started_at": "2026-04-22T09:25:46",
+  "finished_at": "2026-04-22T09:25:46",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "plan-20260422-092546-step-01.json",
+  "current_task_file": "plan-20260422-092546-step-01.json",
+  "stderr": "Target does not exist",
+  "error_type": "missing_target"
+}

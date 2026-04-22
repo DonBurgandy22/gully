@@ -1,0 +1,14 @@
+{
+  "plan_id": "plan-20260422-102127",
+  "created_at": "2026-04-22T10:21:27.732440",
+  "source_message": "task: read TEST_PREDICT_1.md",
+  "step_count": 1,
+  "steps": [
+    {
+      "task_id": "plan-20260422-102127-step-01",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_PREDICT_1.md",
+      "source_text": "read TEST_PREDICT_1.md"
+    }
+  ]
+}

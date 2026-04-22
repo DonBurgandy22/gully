@@ -1,0 +1,19 @@
+{
+  "plan_id": "plan-20260421-222823",
+  "source_message": "task: write TEST7.md with hello plan and then verify TEST7.md contains hello plan",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260421-222823-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST7.md",
+      "source_text": "write TEST7.md with hello plan"
+    },
+    {
+      "task_id": "plan-20260421-222823-step-02",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST7.md",
+      "source_text": "verify TEST7.md contains hello plan"
+    }
+  ]
+}

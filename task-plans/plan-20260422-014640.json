@@ -1,0 +1,18 @@
+{
+  "plan_id": "plan-20260422-014640",
+  "created_at": "2026-04-22T01:46:40.335283",
+  "source_message": "task: run broken_test.py if it fails retry twice",
+  "step_count": 1,
+  "steps": [
+    {
+      "task_id": "plan-20260422-014640-step-01",
+      "task_type": "execute",
+      "target": "C:\\Burgandy\\broken_test.py",
+      "attempt": 1,
+      "max_retries": 0,
+      "source_text": "run broken_test.py if it fails retry twice",
+      "on_failure": "retry",
+      "retry_limit": 2
+    }
+  ]
+}

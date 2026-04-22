@@ -1,0 +1,22 @@
+{
+  "plan_id": "plan-20260422-004000",
+  "created_at": "2026-04-22T00:40:00.501196",
+  "source_message": "task: write TEST15.md with hello from v12.4 and then verify TEST15.md contains hello from v12.4",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260422-004000-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST15.md",
+      "content": "hello from v12.4",
+      "source_text": "write TEST15.md with hello from v12.4"
+    },
+    {
+      "task_id": "plan-20260422-004000-step-02",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST15.md",
+      "expected_content": "hello from v12.4",
+      "source_text": "verify TEST15.md contains hello from v12.4"
+    }
+  ]
+}

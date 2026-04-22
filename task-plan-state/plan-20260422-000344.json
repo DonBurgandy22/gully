@@ -1,0 +1,33 @@
+{
+  "plan_id": "plan-20260422-000344",
+  "plan_file": "C:\\Burgandy\\task-plans\\plan-20260422-000344.json",
+  "created_at": "2026-04-22T00:03:44",
+  "updated_at": "2026-04-22T00:03:45",
+  "status": "failed",
+  "steps_total": 2,
+  "steps_completed": 1,
+  "stopped_on": "plan-20260422-000344-step-02",
+  "current_step": null,
+  "steps": {
+    "plan-20260422-000344-step-01": {
+      "task_id": "plan-20260422-000344-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST12.md",
+      "source_text": "write TEST12.md with hello from v12",
+      "status": "success",
+      "verified": true,
+      "last_run_at": "2026-04-22T00:03:45",
+      "result_file": "C:\\Burgandy\\task-results\\plan-20260422-000344-step-01.json"
+    },
+    "plan-20260422-000344-step-02": {
+      "task_id": "plan-20260422-000344-step-02",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST12.md",
+      "source_text": "verify TEST12.md contains hello from v12",
+      "status": "failed",
+      "verified": false,
+      "last_run_at": "2026-04-22T00:03:45",
+      "result_file": "C:\\Burgandy\\task-results\\plan-20260422-000344-step-02.json"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "patterns": {
+    "write|pre-create|.md": {
+      "task_type": "write",
+      "strategy": "pre-create",
+      "target_suffix": ".md",
+      "success_count": 2,
+      "failure_count": 0,
+      "last_reason": "system used recency-weighted learned routing hints to create the target before reading",
+      "last_next_best_action": "continue",
+      "last_target": "C:\\Burgandy\\learning_test_6.md",
+      "total_count": 4,
+      "success_rate": 1.0,
+      "weighted_success": 3.295,
+      "weighted_failure": 0.0,
+      "last_updated": "2026-04-22T12:33:33"
+    },
+    "read|direct-success|.md": {
+      "task_type": "read",
+      "strategy": "direct-success",
+      "target_suffix": ".md",
+      "success_count": 2,
+      "failure_count": 0,
+      "last_reason": "task completed successfully",
+      "last_next_best_action": "continue",
+      "last_target": "C:\\Burgandy\\learning_test_6.md",
+      "total_count": 4,
+      "success_rate": 1.0,
+      "weighted_success": 3.295,
+      "weighted_failure": 0.0,
+      "last_updated": "2026-04-22T12:33:33"
+    },
+    "read|direct-read|.md": {
+      "task_type": "read",
+      "strategy": "direct-read",
+      "target_suffix": ".md",
+      "weighted_success": 0.0,
+      "weighted_failure": 1.0,
+      "total_count": 1,
+      "success_rate": 0.0,
+      "last_reason": "target file does not exist",
+      "last_next_best_action": "create_missing_target",
+      "last_target": "C:\\Burgandy\\learning_test_4.md",
+      "last_updated": "2026-04-22T12:21:44"
+    },
+    "write|auto-create|.md": {
+      "task_type": "write",
+      "strategy": "auto-create",
+      "target_suffix": ".md",
+      "weighted_success": 1.0,
+      "weighted_failure": 0.0,
+      "total_count": 1,
+      "success_rate": 1.0,
+      "last_reason": "system autonomously created missing file after failure",
+      "last_next_best_action": "continue",
+      "last_target": "C:\\Burgandy\\learning_test_4.md",
+      "last_updated": "2026-04-22T12:21:45"
+    }
+  }
+}

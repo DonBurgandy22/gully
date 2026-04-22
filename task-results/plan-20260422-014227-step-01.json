@@ -1,0 +1,19 @@
+{
+  "task_id": "plan-20260422-014227-step-01",
+  "status": "failed",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\broken_test.py",
+  "verified": false,
+  "started_at": "2026-04-22T01:42:27",
+  "finished_at": "2026-04-22T01:42:27",
+  "attempt": 3,
+  "max_retries": 3,
+  "requeued": false,
+  "is_retry": true,
+  "source_task_file": "plan-20260422-014227-step-01.retry-3.json",
+  "current_task_file": "plan-20260422-014227-step-01.retry-3.json",
+  "content": "start\n",
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Burgandy\\broken_test.py\", line 2, in <module>\n    raise Exception(\"boom\")\nException: boom\n",
+  "exit_code": 1,
+  "error_type": "execution"
+}

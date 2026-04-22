@@ -1,0 +1,53 @@
+{
+  "plan_id": "plan-20260422-095219",
+  "status": "success",
+  "steps_total": 1,
+  "steps_completed": 1,
+  "steps": {
+    "plan-20260422-095219-step-01": {
+      "task_type": "read",
+      "status": "failed",
+      "target": "C:\\Burgandy\\TEST_MISSING_5.md",
+      "verified": false,
+      "attempt": 1,
+      "max_retries": 0
+    },
+    "plan-20260422-095219-step-01-fallback-create": {
+      "task_type": "write",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST_MISSING_5.md",
+      "verified": true
+    }
+  },
+  "decision_log": [
+    {
+      "task_id": "plan-20260422-095219-step-01",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_MISSING_5.md",
+      "strategy": "fallback-create",
+      "reason": "read failed and create_if_missing policy is available",
+      "next_best_action": "create_missing_target",
+      "fallback_used": false,
+      "status": "failed",
+      "verified": false,
+      "attempt": 1,
+      "max_retries": 0,
+      "error_type": "missing_target"
+    },
+    {
+      "task_id": "plan-20260422-095219-step-01-fallback-create",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST_MISSING_5.md",
+      "strategy": "fallback-create",
+      "reason": "missing target was created after failed read",
+      "next_best_action": "continue",
+      "fallback_used": true,
+      "status": "success",
+      "verified": true,
+      "attempt": 1,
+      "max_retries": 0,
+      "error_type": null
+    }
+  ],
+  "resumed": false
+}

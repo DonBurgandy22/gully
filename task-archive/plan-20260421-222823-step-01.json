@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260421-222823-step-01",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST7.md",
+  "content": "hello plan",
+  "plan_id": "plan-20260421-222823",
+  "step_index": 1,
+  "source_text": "write TEST7.md with hello plan"
+}

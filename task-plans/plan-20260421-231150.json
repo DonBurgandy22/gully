@@ -1,0 +1,19 @@
+{
+  "plan_id": "plan-20260421-231150",
+  "source_message": "task: run broken_test.py and then write TEST9.md with should not happen",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260421-231150-step-01",
+      "task_type": "execute",
+      "target": "C:\\Burgandy\\broken_test.py",
+      "source_text": "run broken_test.py"
+    },
+    {
+      "task_id": "plan-20260421-231150-step-02",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST9.md",
+      "source_text": "write TEST9.md with should not happen"
+    }
+  ]
+}

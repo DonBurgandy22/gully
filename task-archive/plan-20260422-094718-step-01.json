@@ -1,0 +1,6 @@
+{
+  "task_id": "plan-20260422-094718-step-01",
+  "task_type": "read",
+  "target": "C:\\Burgandy\\TEST_MISSING_4.md",
+  "on_failure": "create_if_missing"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260421-225948-step-02",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST8.md",
+  "expected_content": "hello executor",
+  "plan_id": "plan-20260421-225948",
+  "step_index": 2,
+  "source_text": "verify TEST8.md contains hello executor"
+}

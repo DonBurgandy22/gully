@@ -1,0 +1,33 @@
+{
+  "plan_id": "plan-20260421-230017",
+  "plan_file": "C:\\Burgandy\\task-plans\\plan-20260421-230017.json",
+  "created_at": "2026-04-21T23:00:19",
+  "updated_at": "2026-04-21T23:00:19",
+  "status": "failed",
+  "steps_total": 2,
+  "steps_completed": 0,
+  "stopped_on": "plan-20260421-230017-step-01",
+  "current_step": "plan-20260421-230017-step-01",
+  "steps": {
+    "plan-20260421-230017-step-01": {
+      "task_id": "plan-20260421-230017-step-01",
+      "task_type": "execute",
+      "target": "C:\\Burgandy\\broken_test.py",
+      "source_text": "run broken_test.py",
+      "status": "failed",
+      "verified": false,
+      "last_run_at": "2026-04-21T23:00:19",
+      "result_file": "C:\\Burgandy\\task-results\\plan-20260421-230017-step-01.json"
+    },
+    "plan-20260421-230017-step-02": {
+      "task_id": "plan-20260421-230017-step-02",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST9.md",
+      "source_text": "write TEST9.md with should not happen",
+      "status": "pending",
+      "verified": false,
+      "last_run_at": null,
+      "result_file": "C:\\Burgandy\\task-results\\plan-20260421-230017-step-02.json"
+    }
+  }
+}

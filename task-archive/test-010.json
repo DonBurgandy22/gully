@@ -1,0 +1,7 @@
+{
+  "task_id": "test-010",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\structai_beam_calc.py",
+  "attempt": 1,
+  "max_retries": 1
+}

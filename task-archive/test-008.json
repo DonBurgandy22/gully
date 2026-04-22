@@ -1,0 +1,6 @@
+{
+  "task_id": "test-008",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\BATCH1.txt",
+  "content": "first batch file"
+}

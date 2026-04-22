@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260421-225948-step-01",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST8.md",
+  "content": "hello executor",
+  "plan_id": "plan-20260421-225948",
+  "step_index": 1,
+  "source_text": "write TEST8.md with hello executor"
+}

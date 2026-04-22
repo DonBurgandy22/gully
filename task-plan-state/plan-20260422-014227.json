@@ -1,0 +1,16 @@
+{
+  "plan_id": "plan-20260422-014227",
+  "status": "failed",
+  "steps_total": 1,
+  "steps_completed": 0,
+  "steps": {
+    "plan-20260422-014227-step-01": {
+      "task_type": "execute",
+      "status": "failed",
+      "target": "C:\\Burgandy\\broken_test.py",
+      "verified": false
+    }
+  },
+  "resumed": false,
+  "stopped_on": "plan-20260422-014227-step-01"
+}

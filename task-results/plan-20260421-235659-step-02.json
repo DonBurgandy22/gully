@@ -1,0 +1,17 @@
+{
+  "task_id": "plan-20260421-235659-step-02",
+  "status": "failed",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST12.md",
+  "verified": false,
+  "started_at": "2026-04-21T23:56:59",
+  "finished_at": "2026-04-21T23:56:59",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "plan-20260421-235659-step-02.json",
+  "current_task_file": "plan-20260421-235659-step-02.json",
+  "stderr": "Content mismatch",
+  "error_type": "verification"
+}

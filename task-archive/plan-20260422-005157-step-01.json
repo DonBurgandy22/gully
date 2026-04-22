@@ -1,0 +1,7 @@
+{
+  "task_id": "plan-20260422-005157-step-01",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST16.md",
+  "expected_content": "hello v13",
+  "source_text": "confirm file TEST16.md contains hello v13"
+}

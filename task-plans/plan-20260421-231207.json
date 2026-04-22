@@ -1,0 +1,19 @@
+{
+  "plan_id": "plan-20260421-231207",
+  "source_message": "task: write TEST10.md with hello v11 and then verify TEST10.md contains hello v11",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260421-231207-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST10.md",
+      "source_text": "write TEST10.md with hello v11"
+    },
+    {
+      "task_id": "plan-20260421-231207-step-02",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST10.md",
+      "source_text": "verify TEST10.md contains hello v11"
+    }
+  ]
+}

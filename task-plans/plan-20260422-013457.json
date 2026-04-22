@@ -1,0 +1,15 @@
+{
+  "plan_id": "plan-20260422-013457",
+  "created_at": "2026-04-22T01:34:57.696308",
+  "source_message": "task: read TEST_MISSING.md if it doesn't exist create it",
+  "step_count": 1,
+  "steps": [
+    {
+      "task_id": "plan-20260422-013457-step-01",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_MISSING.md",
+      "source_text": "read TEST_MISSING.md if it doesn't exist create it",
+      "on_failure": "create_if_missing"
+    }
+  ]
+}

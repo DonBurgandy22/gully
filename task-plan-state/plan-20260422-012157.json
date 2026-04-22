@@ -1,0 +1,21 @@
+{
+  "plan_id": "plan-20260422-012157",
+  "status": "success",
+  "steps_total": 2,
+  "steps_completed": 2,
+  "steps": {
+    "plan-20260422-012157-step-01": {
+      "task_type": "write",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST17.md",
+      "verified": true
+    },
+    "plan-20260422-012157-step-02": {
+      "task_type": "verify",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST17.md",
+      "verified": true
+    }
+  },
+  "resumed": false
+}

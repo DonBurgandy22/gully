@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260421-222823-step-02",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST7.md",
+  "expected_content": "hello plan",
+  "plan_id": "plan-20260421-222823",
+  "step_index": 2,
+  "source_text": "verify TEST7.md contains hello plan"
+}

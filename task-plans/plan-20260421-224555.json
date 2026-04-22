@@ -1,0 +1,19 @@
+{
+  "plan_id": "plan-20260421-224555",
+  "source_message": "task: write TEST8.md with hello executor and then verify TEST8.md contains hello executor",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260421-224555-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST8.md",
+      "source_text": "write TEST8.md with hello executor"
+    },
+    {
+      "task_id": "plan-20260421-224555-step-02",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST8.md",
+      "source_text": "verify TEST8.md contains hello executor"
+    }
+  ]
+}

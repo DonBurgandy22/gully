@@ -1,0 +1,6 @@
+{
+  "task_id": "plan-20260422-012157-step-02",
+  "task_type": "verify",
+  "target": "C:\\Burgandy\\TEST17.md",
+  "expected_content": "hello implicit"
+}

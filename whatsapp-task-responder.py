@@ -3,140 +3,116 @@ import sys
 from pathlib import Path
 
 ROOT = Path(r"C:\Burgandy")
-RESULTS = ROOT / "task-results"
 STATE = ROOT / "task-plan-state"
 
 
-def latest_result_file():
-    files = sorted(RESULTS.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
-    return files[0] if files else None
-
-
-def latest_state_file():
+def latest_state():
     files = sorted(STATE.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     return files[0] if files else None
 
 
-def load_json(path: Path):
+def load(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def format_step_line(index, task_type, status, target):
-    return f"{index}. {task_type} -> {status} -> {target}"
+def explain_strategy(d):
+    strategy = d.get("strategy")
+    target = d.get("target")
+
+    if strategy == "pre-create":
+        return f'I created "{target}" based on learned behavior from previous successful tasks.'
+
+    if strategy == "auto-create":
+        return f'I created "{target}" automatically after detecting it was missing.'
+
+    if strategy == "direct-success":
+        return f'I successfully completed the task on "{target}".'
+
+    if strategy == "direct-read":
+        return f'The file "{target}" did not exist when I tried to read it.'
+
+    if strategy == "verify-check":
+        return f'The verification failed for "{target}" due to a content mismatch.'
+
+    if strategy == "execute-script":
+        return f'The script "{target}" failed during execution.'
+
+    return None
 
 
-def format_plan_response(state: dict) -> str:
-    plan_id = str(state.get("plan_id", "unknown"))
-    status = str(state.get("status", "unknown")).upper()
-    steps_total = int(state.get("steps_total", 0))
-    steps_completed = int(state.get("steps_completed", 0))
-    stopped_on = state.get("stopped_on")
-    current_step = state.get("current_step")
+def build_suggestions(state):
+    decision_log = state.get("decision_log", [])
 
+    # PRIORITY: learned intelligence
+    for d in decision_log:
+        if d.get("strategy") == "pre-create":
+            return [explain_strategy(d)]
+
+    # fallback intelligence
+    for d in decision_log:
+        if d.get("strategy") == "auto-create":
+            return [explain_strategy(d)]
+
+    # success fallback
+    if state.get("status") == "success":
+        return ["Task completed successfully."]
+
+    return []
+
+
+def format_response(state):
     lines = []
-    lines.append(f"PLAN {status}")
-    lines.append(f"PLAN_ID: {plan_id}")
-    lines.append(f"COMPLETED: {steps_completed}/{steps_total}")
 
-    if stopped_on:
-        lines.append(f"STOPPED_ON: {stopped_on}")
+    lines.append(f"PLAN {state.get('status', '').upper()}")
+    lines.append(f"PLAN_ID: {state.get('plan_id')}")
 
-    if current_step:
-        lines.append(f"CURRENT_STEP: {current_step}")
+    completed = state.get("steps_completed", 0)
+    total = state.get("steps_total", 0)
+    lines.append(f"COMPLETED: {completed}/{total}")
 
-    lines.append("STEPS:")
+    if state.get("stopped_on"):
+        lines.append(f"STOPPED_ON: {state['stopped_on']}")
 
-    step_items = list(state.get("steps", {}).values())
-    step_items.sort(key=lambda s: s.get("task_id", ""))
+    lines.append("")
 
-    for idx, step in enumerate(step_items, start=1):
-        lines.append(
-            format_step_line(
-                idx,
-                str(step.get("task_type", "unknown")),
-                str(step.get("status", "unknown")),
-                str(step.get("target", "")),
-            )
-        )
+    decision_log = state.get("decision_log", [])
 
-    return "\n".join(lines)
+    if decision_log:
+        lines.append("WHAT HAPPENED:")
 
+        for d in decision_log:
+            task_type = d.get("task_type")
+            target = d.get("target")
+            reason = d.get("reason")
+            action = d.get("next_best_action")
 
-def format_result_response(result: dict) -> str:
-    status = str(result.get("status", "unknown")).upper()
-    task_type = str(result.get("task_type", "unknown"))
-    target = str(result.get("target", ""))
-    verified = result.get("verified", False)
+            lines.append(f"- Tried to {task_type} {target}")
+            lines.append(f"  -> {reason}")
+            lines.append(f"  -> Next action: {action}")
 
-    lines = []
-    lines.append(f"{status}: {task_type} for {target}")
+    suggestions = build_suggestions(state)
 
-    if "attempt" in result and "max_retries" in result:
-        lines.append(f"ATTEMPT: {result['attempt']}/{result['max_retries']}")
-
-    lines.append(f"VERIFIED: {verified}")
-
-    if result.get("is_retry") is True:
-        lines.append("RETRY: yes")
-
-    content = result.get("content")
-    if isinstance(content, str) and content.strip():
-        lines.append("CONTENT:")
-        lines.append(content.rstrip())
-
-    stderr = result.get("stderr")
-    if isinstance(stderr, str) and stderr.strip():
-        lines.append("ERROR:")
-        lines.append(stderr.rstrip())
-
-    exit_code = result.get("exit_code")
-    if exit_code is not None:
-        lines.append(f"EXIT_CODE: {exit_code}")
-
-    error_type = result.get("error_type")
-    if isinstance(error_type, str) and error_type.strip():
-        lines.append(f"ERROR_TYPE: {error_type}")
+    if suggestions:
+        lines.append("")
+        lines.append("SUGGESTED NEXT STEPS:")
+        for s in suggestions:
+            lines.append(f"- {s}")
 
     return "\n".join(lines)
 
 
 def main():
     if len(sys.argv) > 1:
-        mode = sys.argv[1].strip().lower()
+        path = Path(sys.argv[1])
     else:
-        mode = "auto"
+        path = latest_state()
 
-    try:
-        if mode == "plan":
-            state_path = latest_state_file()
-            if state_path is None or not state_path.exists():
-                print("NO_PLAN_STATE")
-                return
-            print(format_plan_response(load_json(state_path)))
-            return
+    if not path or not path.exists():
+        print("NO_STATE")
+        return
 
-        if mode == "result":
-            result_path = latest_result_file()
-            if result_path is None or not result_path.exists():
-                print("NO_RESULT")
-                return
-            print(format_result_response(load_json(result_path)))
-            return
-
-        state_path = latest_state_file()
-        if state_path is not None and state_path.exists():
-            print(format_plan_response(load_json(state_path)))
-            return
-
-        result_path = latest_result_file()
-        if result_path is not None and result_path.exists():
-            print(format_result_response(load_json(result_path)))
-            return
-
-        print("NO_RESULT")
-    except Exception as exc:
-        print("RESPONDER_FAILED")
-        print(str(exc))
+    state = load(path)
+    print(format_response(state))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,22 @@
+{
+  "plan_id": "plan-20260422-010737",
+  "status": "failed",
+  "steps_total": 2,
+  "steps_completed": 1,
+  "steps": {
+    "plan-20260422-010737-step-01": {
+      "task_type": "write",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST18.md",
+      "verified": true
+    },
+    "plan-20260422-010737-step-02": {
+      "task_type": "read",
+      "status": "failed",
+      "target": "C:\\Burgandy\\it",
+      "verified": false
+    }
+  },
+  "resumed": false,
+  "stopped_on": "plan-20260422-010737-step-02"
+}

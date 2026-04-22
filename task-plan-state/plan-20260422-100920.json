@@ -1,0 +1,33 @@
+{
+  "plan_id": "plan-20260422-100920",
+  "status": "success",
+  "steps_total": 1,
+  "steps_completed": 1,
+  "steps": {
+    "plan-20260422-100920-step-01": {
+      "task_type": "read",
+      "status": "success",
+      "target": "C:\\Burgandy\\TEST_AUTO_2.md",
+      "verified": true,
+      "attempt": 1,
+      "max_retries": 0
+    }
+  },
+  "decision_log": [
+    {
+      "task_id": "plan-20260422-100920-step-01",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_AUTO_2.md",
+      "strategy": "direct-success",
+      "reason": "task completed successfully",
+      "next_best_action": "continue",
+      "fallback_used": false,
+      "status": "success",
+      "verified": true,
+      "attempt": 1,
+      "max_retries": 0,
+      "error_type": null
+    }
+  ],
+  "resumed": false
+}

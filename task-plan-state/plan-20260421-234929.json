@@ -1,0 +1,23 @@
+{
+  "plan_id": "plan-20260421-234929",
+  "plan_file": "C:\\Burgandy\\task-plans\\plan-20260421-234929.json",
+  "created_at": "2026-04-21T23:49:30",
+  "updated_at": "2026-04-21T23:49:30",
+  "status": "success",
+  "steps_total": 1,
+  "steps_completed": 1,
+  "stopped_on": null,
+  "current_step": null,
+  "steps": {
+    "plan-20260421-234929-step-01": {
+      "task_id": "plan-20260421-234929-step-01",
+      "task_type": "write",
+      "target": "C:\\Burgandy\\TEST14.md",
+      "source_text": "write TEST14.md with hello v12 simple",
+      "status": "success",
+      "verified": true,
+      "last_run_at": "2026-04-21T23:49:30",
+      "result_file": "C:\\Burgandy\\task-results\\plan-20260421-234929-step-01.json"
+    }
+  }
+}

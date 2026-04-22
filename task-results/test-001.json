@@ -1,0 +1,7 @@
+{
+  "task_id": "test-001",
+  "status": "pending",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST.md",
+  "verified": false
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260422-014640-step-01",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\broken_test.py",
+  "attempt": 3,
+  "max_retries": 3,
+  "on_failure": "retry",
+  "retry_limit": 2
+}

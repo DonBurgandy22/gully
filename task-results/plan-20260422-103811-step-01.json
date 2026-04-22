@@ -1,0 +1,16 @@
+{
+  "task_id": "plan-20260422-103811-step-01",
+  "status": "success",
+  "task_type": "read",
+  "target": "C:\\Burgandy\\config_test.json",
+  "verified": true,
+  "started_at": "2026-04-22T10:38:11",
+  "finished_at": "2026-04-22T10:38:11",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "plan-20260422-103811-step-01.json",
+  "current_task_file": "plan-20260422-103811-step-01.json",
+  "content": "{}"
+}

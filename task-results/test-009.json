@@ -1,0 +1,8 @@
+{
+  "task_id": "test-009",
+  "status": "success",
+  "task_type": "read",
+  "target": "C:\\Burgandy\\TEST.md",
+  "verified": true,
+  "content": "# hello from hermes"
+}

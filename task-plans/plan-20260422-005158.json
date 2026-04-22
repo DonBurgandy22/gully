@@ -1,0 +1,22 @@
+{
+  "plan_id": "plan-20260422-005158",
+  "created_at": "2026-04-22T00:51:58.602192",
+  "source_message": "task: run structai_beam_calc.py then show file TEST15.md",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260422-005158-step-01",
+      "task_type": "execute",
+      "target": "C:\\Burgandy\\structai_beam_calc.py",
+      "attempt": 1,
+      "max_retries": 0,
+      "source_text": "run structai_beam_calc.py"
+    },
+    {
+      "task_id": "plan-20260422-005158-step-02",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST15.md",
+      "source_text": "show file TEST15.md"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "plan_id": "plan-20260422-092546",
+  "created_at": "2026-04-22T09:25:46.144477",
+  "source_message": "task: read TEST_V14.md and tell me what happened",
+  "step_count": 2,
+  "steps": [
+    {
+      "task_id": "plan-20260422-092546-step-01",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_V14.md",
+      "source_text": "read TEST_V14.md"
+    },
+    {
+      "task_id": "plan-20260422-092546-step-02",
+      "task_type": "read",
+      "target": "C:\\Burgandy\\TEST_V14.md",
+      "source_text": "tell me what happened"
+    }
+  ]
+}

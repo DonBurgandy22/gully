@@ -1,0 +1,17 @@
+{
+  "task_id": "task-20260421-235723",
+  "status": "blocked",
+  "task_type": "execute",
+  "target": "C:\\Burgandy\\broken_test.py and then write TEST13.md with should not happen",
+  "verified": false,
+  "started_at": "2026-04-21T23:57:23",
+  "finished_at": "2026-04-21T23:57:23",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "task-20260421-235723.json",
+  "current_task_file": "task-20260421-235723.json",
+  "stderr": "Only .py execution is allowed in v9",
+  "error_type": "policy"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "plan-20260421-230017-step-02",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST9.md",
+  "content": "should not happen",
+  "plan_id": "plan-20260421-230017",
+  "step_index": 2,
+  "source_text": "write TEST9.md with should not happen"
+}

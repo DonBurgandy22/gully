@@ -1,0 +1,15 @@
+{
+  "task_id": "task-20260421-220125",
+  "status": "success",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST6.md",
+  "verified": true,
+  "started_at": "2026-04-21T22:01:25",
+  "finished_at": "2026-04-21T22:01:25",
+  "attempt": 1,
+  "max_retries": 0,
+  "requeued": false,
+  "is_retry": false,
+  "source_task_file": "task-20260421-220125.json",
+  "current_task_file": "task-20260421-220125.json"
+}

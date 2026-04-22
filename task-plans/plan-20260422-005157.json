@@ -1,0 +1,15 @@
+{
+  "plan_id": "plan-20260422-005157",
+  "created_at": "2026-04-22T00:51:57.151082",
+  "source_message": "task: confirm file TEST16.md contains hello v13",
+  "step_count": 1,
+  "steps": [
+    {
+      "task_id": "plan-20260422-005157-step-01",
+      "task_type": "verify",
+      "target": "C:\\Burgandy\\TEST16.md",
+      "expected_content": "hello v13",
+      "source_text": "confirm file TEST16.md contains hello v13"
+    }
+  ]
+}

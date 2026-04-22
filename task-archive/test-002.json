@@ -1,0 +1,6 @@
+{
+  "task_id": "test-002",
+  "task_type": "write",
+  "target": "C:\\Burgandy\\TEST.md",
+  "content": "# hello from hermes"
+}
