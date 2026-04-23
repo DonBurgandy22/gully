@@ -9,7 +9,7 @@ TASK_BRIDGE = ROOT / "task-prefix-bridge.py"
 OLLAMA_MODEL = "qwen3.5:4b"
 OLLAMA_URL = "http://127.0.0.1:11434/api/chat"
 
-CLASSIFY_SYSTEM = "You are a message classifier. Reply with only ONE word: EXECUTE if the message asks to do something on the computer (read/write files, run commands, git, etc). CONVERSE if it is chat or a question. CLARIFY if ambiguous. One word only."
+CLASSIFY_SYSTEM = "You are a message classifier. Reply with only ONE word. Rules: EXECUTE = message clearly asks to DO something on a computer (read file, write file, run script, git, create, delete, check folder, run command). CONVERSE = message is chat, greeting, question, opinion, or discussion with no computer action needed. CLARIFY = message is vague with no clear subject or action (example: do the thing, handle it, sort it out, fix it). One word only: EXECUTE, CONVERSE, or CLARIFY."
 
 CONVERSE_SYSTEM = "You are Burgandy, a local AI assistant. Be direct and concise. No filler. You run on the user machine via WhatsApp."
 
@@ -31,7 +31,12 @@ def classify(msg):
 
 def execute(msg):
     r = subprocess.run(["python", str(TASK_BRIDGE), msg], capture_output=True, text=True, encoding="utf-8", cwd=str(ROOT))
-    return r.stdout.strip() or r.stderr.strip() or "EXECUTION_FAILED"
+    out = r.stdout.strip() or r.stderr.strip() or "EXECUTION_FAILED"
+    if "RESPONSE:" in out:
+        resp = out.split("RESPONSE:")[-1].strip()
+        lines = [l for l in resp.splitlines() if l.strip() and not l.startswith("ADAPTIVE") and not l.startswith("-")]
+        return "\n".join(lines[:3]).strip()
+    return out
 
 def converse(msg):
     result = ollama(CONVERSE_SYSTEM, msg, tokens=300)
